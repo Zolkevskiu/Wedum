@@ -527,7 +527,7 @@ body {
   gap: 0px 20px;
 }
 
-.increment, .mostIncrements, .increment-sec, .increment-relationship, .increment-krasota, .increment-works, .increment-health, .increment-finance, .increment-business, .increment-spiritual, .decrement, .mostDecrement, .decrement-sec, .decrement-relationship, .decrement-krasota, .decrement-works, .decrement-health, .decrement-finance, .decrement-business, .decrement-spiritual {
+.increment, .mostIncrements, .increment-sec, .increment-relationship, .increment-krasota, .increment-works, .increment-health, .increment-finance, .increment-business, .increment-spiritual, .increment-personal, .increment-hobby, .decrement, .mostDecrement, .decrement-sec, .decrement-relationship, .decrement-krasota, .decrement-works, .decrement-health, .decrement-finance, .decrement-business, .decrement-spiritual, .decrement-personal, .decrement-hobby {
   background: none;
   outline: none;
   border: none;
@@ -574,6 +574,14 @@ body {
   rotate: 180deg;
 }
 
+.decrement-personal img {
+  rotate: 180deg;
+}
+
+.decrement-hobby img {
+  rotate: 180deg;
+}
+
 .increment-wrap {
   display: flex;
   flex-direction: column;
@@ -615,6 +623,14 @@ body {
   position: absolute;
   margin-top: 19px;
   margin-left: 557.5px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.img-personal_wrap {
+  position: absolute;
+  margin-top: 46px;
+  margin-left: 543.5px;
   pointer-events: none;
   z-index: 2;
 }
@@ -759,6 +775,18 @@ body {
   rotate: -20deg;
 }
 
+#myChartPersonal {
+  position: absolute;
+  right: -391px;
+  margin-top: 80px;
+}
+
+#myChartHobby {
+  position: absolute;
+  right: -391px;
+  margin-top: 80px;
+}
+
 .test-result_block {
   padding: 0 60px;
   width: 100%;
@@ -887,6 +915,14 @@ body {
 
 #spiritual-block h2 {
   width: 280px;
+}
+
+#personal-block h2 {
+  width: 290px;
+}
+
+#hobby-block h2 {
+  width: 290px;
 }
 
 .spheres-works-block {
@@ -1293,7 +1329,15 @@ body {
   overflow: hidden;
 }
 
+.hobby-gallery-test_wrap {
+  overflow: hidden;
+}
+
 .spiritual-gallery-test_wrap {
+  overflow: hidden;
+}
+
+.personal-gallery-test_wrap {
   overflow: hidden;
 }
 

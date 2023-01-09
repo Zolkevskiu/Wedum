@@ -38,6 +38,30 @@ window.addEventListener('load', function (e) {
     let sumRelationship = [11, 0, 11, 0, 11, 0, 11, 0];
     let sumBusiness = [11, 0, 11, 0, 0, 0, 11, 0];
     let sumSpiritual = [11, 0, 11, 0, 0, 0, 11, 0];
+    let sumPersonal = [
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0
+    ];
+    let sumHobby = [
+    10, 
+    10, 
+    10, 
+    10, 
+    10, 
+    10, 
+    10, 
+    10, 
+    10,
+    10,
+    10
+    ];
     Chart.defaults.global.defaultFontSize = 0;
     const dataSets = {
         datasets: [{
@@ -72,6 +96,8 @@ window.addEventListener('load', function (e) {
     const incrementsFinance = document.querySelectorAll(".increment-finance");
     const incrementsBusiness = document.querySelectorAll(".increment-business");
     const incrementsSpiritual = document.querySelectorAll(".increment-spiritual");
+    const incrementsPersonal = document.querySelectorAll(".increment-personal");
+    const incrementsHobby = document.querySelectorAll(".increment-hobby");
     const decrements = document.querySelectorAll(".decrement");
     const mostDecrements = document.querySelectorAll(".mostDecrement");
     const decrementsSec = document.querySelectorAll(".decrement-sec");
@@ -82,6 +108,8 @@ window.addEventListener('load', function (e) {
     const decrementsFinance = document.querySelectorAll(".decrement-finance");
     const decrementsBusiness = document.querySelectorAll(".decrement-business");
     const decrementsSpiritual = document.querySelectorAll(".decrement-spiritual");
+    const decrementsPersonal = document.querySelectorAll(".decrement-personal");
+    const decrementsHobby = document.querySelectorAll(".decrement-hobby");
     const count = document.querySelectorAll(".count");
     const mostCount = document.querySelectorAll(".count-most");
     const countSec = document.querySelectorAll(".count-sec");
@@ -92,6 +120,8 @@ window.addEventListener('load', function (e) {
     const countFinance = document.querySelectorAll(".count-finance");
     const countBusiness = document.querySelectorAll(".count-business");
     const countSpiritual = document.querySelectorAll(".count-spiritual");
+    const countPersonal = document.querySelectorAll(".count-personal");
+    const countHobby = document.querySelectorAll(".count-hobby");
     const glWindow = document.querySelector(".gl-window");
     const btnCheck = document.querySelector(".btnCheck");
     const btnCheckSec = document.querySelector(".btnCheck-sec");
@@ -102,6 +132,8 @@ window.addEventListener('load', function (e) {
     const btnCheckFinance = document.querySelector(".btnCheck-finance");
     const btnCheckBusiness = document.querySelector(".btnCheck-business");
     const btnCheckSpiritual = document.querySelector(".btnCheck-spiritual");
+    const btnCheckPersonal = document.querySelector(".btnCheck-personal");
+    const btnCheckHobby = document.querySelector(".btnCheck-hobby");
 
     //functions
     function addSum(sum, index) {
@@ -1234,6 +1266,317 @@ window.addEventListener('load', function (e) {
     }
     })
 
+    btnCheckPersonal.addEventListener('click', (e) => { 
+        let temp_if = false;
+
+        for (let i2 = 0; i2 < sumPersonal.length; ++i2) {
+            if (sumPersonal[i2] <= 0) {
+                temp_if = true;
+            }
+        }
+
+        if (temp_if) {
+            alert('надо заполнить все сферы');
+        } else {
+
+            //очищаешь его
+
+            //diagrama2
+            let dataSum_temp = sumPersonal;
+
+            let diagramaPersonalCalc = [0,0,0,0,0,0,0,0,0];
+
+            for (let i = 0; i < 2; ++i) {
+                let minimum = dataSum_temp[0];
+                let min_index = 0;
+
+                for (let index = 0; index < dataSum_temp.length; ++index) {
+                    if (dataSum_temp[index] < minimum) {
+                        minimum = dataSum_temp[index];
+                        min_index = index;
+                    }
+                }
+                
+                diagramaPersonalCalc[min_index] = dataSum_temp[min_index];
+                dataSum_temp[min_index] = 100;
+
+            }
+            
+            for (let i3 = 0; i3 < diagramaPersonalCalc.length; ++i3) {
+                if(diagramaPersonalCalc[i3] > 0){
+                    dataSum_temp[i3] = diagramaPersonalCalc[i3];
+                }
+            }
+        const dataPersonal = {
+            datasets: [{
+                label: 'My personal Dataset',
+                data: diagramaPersonalCalc,
+                borderWidth: 1,
+                borderColor: 'rgb(0, 0, 0, 0)',
+                backgroundColor: [
+                    '#D400F5',
+                    '#C48FFA',
+                    '#F400CD',
+                    '#8512E7',
+                    '#CB11AB',
+                    '#A651F9',
+                    '#C48FFA',
+                    '#D400F5',
+                    '#F400CD',
+                    '#8512E7',
+                ]
+            }]
+        };
+
+        let myChartWorks = new Chart('myChartPersonal', {
+            type: 'polarArea',
+            data: dataPersonal,
+            options: {
+                events: ['none'],
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 10,
+                        stepSize: 1
+                    },
+                },
+                animation: {
+                    animateRotate: false
+                }
+            },
+        }) 
+        const personal_wrapper = document.getElementById("personal-block") 
+        personal_wrapper.innerHTML = ''          
+        if(diagramaPersonalCalc[0] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-self_motivation.svg">
+            <h2 class="works-block_title">Самомотивация</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_self()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[1] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-goal.svg">
+            <h2 class="works-block_title">Постановка и достижение целей</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_goal()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[2] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-menegment.svg">
+            <h2 class="works-block_title">Тайм-менеджмент</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_menegment()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[3] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-leadership.svg">
+            <h2 class="works-block_title">Лидерство</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_leadership()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[4] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-skills.svg">
+            <h2 class="works-block_title">Навыки общения</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_skills()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[5] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-brand.svg">
+            <h2 class="works-block_title">Личный бренд</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_brand()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[6] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-sexuality.svg">
+            <h2 class="works-block_title">Женственность и сексуальность</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_sexuality()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[7] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-history.svg">
+            <h2 class="works-block_title">Культура и история</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_history()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaPersonalCalc[8] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/personal-languages.svg">
+            <h2 class="works-block_title">Владение иностранными языками</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_languages()">Узнать подробнее</a>
+            </div>`
+        }
+    }
+    })
+
+    btnCheckHobby.addEventListener('click', (e) => { 
+        let temp_if = false;
+
+        for (let i2 = 0; i2 < sumHobby.length; ++i2) {
+            if (sumHobby[i2] <= 0) {
+                temp_if = true;
+            }
+        }
+
+        if (temp_if) {
+            alert('надо заполнить все сферы');
+        } else {
+
+            //очищаешь его
+
+            //diagrama2
+            let dataSum_temp = sumHobby;
+
+            let diagramaHobbyCalc = [0,0,0,0,0,0,0,0,0,0,0];
+
+            for (let i = 0; i < 2; ++i) {
+                let minimum = dataSum_temp[0];
+                let min_index = 0;
+
+                for (let index = 0; index < dataSum_temp.length; ++index) {
+                    if (dataSum_temp[index] < minimum) {
+                        minimum = dataSum_temp[index];
+                        min_index = index;
+                    }
+                }
+                
+                diagramaHobbyCalc[min_index] = dataSum_temp[min_index];
+                dataSum_temp[min_index] = 100;
+
+            }
+            
+            for (let i3 = 0; i3 < diagramaHobbyCalc.length; ++i3) {
+                if(diagramaHobbyCalc[i3] > 0){
+                    dataSum_temp[i3] = diagramaHobbyCalc[i3];
+                }
+            }
+        const dataHobby = {
+            datasets: [{
+                label: 'My hobby Dataset',
+                data: diagramaHobbyCalc,
+                borderWidth: 1,
+                borderColor: 'rgb(0, 0, 0, 0)',
+                backgroundColor: [
+                    '#D400F5',
+                    '#C48FFA',
+                    '#F400CD',
+                    '#8512E7',
+                    '#CB11AB',
+                    '#A651F9',
+                    '#C48FFA',
+                    '#D400F5',
+                    '#F400CD',
+                    '#8512E7',
+                ]
+            }]
+        };
+
+        let myChartHobby = new Chart('myChartHobby', {
+            type: 'polarArea',
+            data: dataHobby,
+            options: {
+                events: ['none'],
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 10,
+                        stepSize: 1
+                    },
+                },
+                animation: {
+                    animateRotate: false
+                }
+            },
+        }) 
+        const hobby_wrapper = document.getElementById("hobby-block") 
+        hobby_wrapper.innerHTML = ''          
+        if(diagramaHobbyCalc[0] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-needlework.svg">
+            <h2 class="works-block_title">Рукоделие</h2>
+            <a class="spheres-block_text-button" onclick="gallery_hobby_needlework()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[1] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-cooking.svg">
+            <h2 class="works-block_title">Кулинария</h2>
+            <a class="spheres-block_text-button" onclick="gallery_hobby_cooking()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[2] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-painting.svg">
+            <h2 class="works-block_title">Рисование</h2>
+            <a class="spheres-block_text-button" onclick="gallery_hobby_painting()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[3] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-photo.svg">
+            <h2 class="works-block_title">Фото и видео</h2>
+            <a class="spheres-block_text-button" onclick="gallery_hobby_photo()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[4] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-music.svg">
+            <h2 class="works-block_title">Музыка</h2>
+            <a class="spheres-block_text-button" onclick="gallery_hobby_music()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[5] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-house.svg">
+            <h2 class="works-block_title">Дом и сад</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_house()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[6] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-dancing.svg">
+            <h2 class="works-block_title">Танцы</h2>
+            <a class="spheres-block_text-button" onclick="gallery_hobby_dancing()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[7] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-driving.svg">
+            <h2 class="works-block_title">Вождение и тюнинг</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_driving()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[8] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-training.svg">
+            <h2 class="works-block_title">Дрессировка</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_training()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[9] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-modeling.svg">
+            <h2 class="works-block_title">Моделирование и пошив одежды</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_modeling()">Узнать подробнее</a>
+            </div>`
+        }
+        if(diagramaHobbyCalc[10] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+            <img src="assets/img/test-icon/hobby-decor.svg">
+            <h2 class="works-block_title">Декор и флористика</h2>
+            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_decor()">Узнать подробнее</a>
+            </div>`
+        }
+    }
+    })
+
+
     increments.forEach(function (val, index) {
         val.addEventListener('click', function () {
             let num = addSum(dataSum, index);
@@ -1393,6 +1736,24 @@ window.addEventListener('load', function (e) {
 
             countSpiritual[index].setAttribute("data-count", num)
             countSpiritual[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementsPersonal.forEach(function (val, index) {      
+        val.addEventListener('click', function () {
+            let num = addSum(sumPersonal, index);
+
+            countPersonal[index].setAttribute("data-count", num)
+            countPersonal[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementsHobby.forEach(function (val, index) {      
+        val.addEventListener('click', function () {
+            let num = addSum(sumHobby, index);
+
+            countHobby[index].setAttribute("data-count", num)
+            countHobby[index].innerHTML = `<span data-count=${num}>${num}</span>`;
         })
     });
 
@@ -1561,6 +1922,26 @@ window.addEventListener('load', function (e) {
             inters.push(num)
             countSpiritual[index].setAttribute("data-count", num)
             countSpiritual[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsPersonal.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = removeSum(sumPersonal, index);
+
+            inters.push(num)
+            countPersonal[index].setAttribute("data-count", num)
+            countPersonal[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsHobby.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = removeSum(sumHobby, index);
+
+            inters.push(num)
+            countHobby[index].setAttribute("data-count", num)
+            countHobby[index].innerHTML = `<span data-count=${num}>${num}</span>`;
         })
     });
 
