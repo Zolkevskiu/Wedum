@@ -50,17 +50,17 @@ window.addEventListener('load', function (e) {
     0
     ];
     let sumHobby = [
-    10, 
-    10, 
-    10, 
-    10, 
-    10, 
-    10, 
-    10, 
-    10, 
-    10,
-    10,
-    10
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0, 
+    0,
+    0,
+    0
     ];
     Chart.defaults.global.defaultFontSize = 0;
     const dataSets = {
@@ -1575,7 +1575,6 @@ window.addEventListener('load', function (e) {
         }
     }
     })
-
 
     increments.forEach(function (val, index) {
         val.addEventListener('click', function () {
