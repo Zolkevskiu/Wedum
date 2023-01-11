@@ -364,7 +364,7 @@ window.addEventListener('load', function (e) {
         }
         
     })
-
+        
     btnCheckRelationship.addEventListener('click', (e) => { 
         let temp_if = false;
 

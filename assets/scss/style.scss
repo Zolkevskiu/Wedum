@@ -691,8 +691,8 @@
     margin-top: 100px;
   }
   .gl-window_most .img-wrap {
-    margin-top: -58px;
-    margin-left: 134.5px;
+    margin-top: -35px;
+    margin-left: 153.5px;
   }
   
   #myChart {
@@ -711,7 +711,7 @@
     position: absolute;
     right: -391px;
     margin-top: 55px;
-    rotate: -20deg;
+    transform: rotate(-20deg);
   }
   
   #myChartWorks {
@@ -730,21 +730,21 @@
     position: absolute;
     right: -391px;
     margin-top: 55px;
-    rotate: -20deg;
+    transform: rotate(-20deg);
   }
 
   #myChartBusines {
     position: absolute;
     right: -429px;
     margin-top: 73px;
-    rotate: -20deg;
+    transform: rotate(-20deg);
   }
 
   #myChartSpiritual {
     position: absolute;
     right: -429px;
     margin-top: 73px;
-    rotate: -20deg;
+    transform: rotate(-20deg);
   }
 
   #myChartPersonal {
