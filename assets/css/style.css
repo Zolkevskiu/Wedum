@@ -534,52 +534,8 @@ body {
   cursor: pointer;
 }
 
-.decrement img {
-  rotate: 180deg;
-}
-
-.decrement-sec img {
-  rotate: 180deg;
-}
-
-.decrement-relationship img {
-  rotate: 180deg;
-}
-
-.decrement-krasota img {
-  rotate: 180deg;
-}
-
-.mostDecrement img {
-  rotate: 180deg;
-}
-
-.decrement-works img {
-  rotate: 180deg;
-}
-
-.decrement-health img {
-  rotate: 180deg;
-}
-
-.decrement-finance img {
-  rotate: 180deg;
-}
-
-.decrement-business img {
-  rotate: 180deg;
-}
-
-.decrement-spiritual img {
-  rotate: 180deg;
-}
-
-.decrement-personal img {
-  rotate: 180deg;
-}
-
-.decrement-hobby img {
-  rotate: 180deg;
+.decrement-sec img, .decrement img, .decrement-relationship img, .decrement-krasota img, .mostDecrement img, .decrement-works img, .decrement-health img, .decrement-finance img, .decrement-business img, .decrement-spiritual img, .decrement-personal img, .decrement-hobby img {
+  transform: rotate(180deg);
 }
 
 .increment-wrap {
@@ -1050,7 +1006,7 @@ body {
   max-width: 1096px;
   width: 97%;
   margin: 0 auto;
-  height: 349px;
+  height: 369px;
   background: #F6F3FF;
   border-radius: 10px;
   display: flex;
@@ -1563,16 +1519,22 @@ body {
 }
 @media (max-width: 1000px) {
   .img-relationship_wrap {
-    margin-left: 29px;
     left: 50%;
-    margin-top: 51.5px;
     transform: translateX(-50%);
+    margin-left: 0px;
+    margin-top: 51.5px;
+  }
+  .gl-window-sec {
+    width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
   }
   #myChartKrasota {
-    margin-left: 0;
+    margin-left: -5px;
     left: 50%;
-    margin-top: -50px;
-    transform: translateX(-50%);
+    margin-top: 87px;
+    transform: translateX(-50%) rotate(-20deg);
   }
   .swiper-button-next, .swiper-button-prev {
     z-index: 0 !important;

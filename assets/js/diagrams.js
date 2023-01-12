@@ -284,7 +284,6 @@ window.addEventListener('load', function (e) {
             const spheres_wrapper = document.getElementById("spheres-wrapper") 
             spheres_wrapper.innerHTML = ''          
             if(diagrama2[0] > 0) {
-
                 spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/krasota.svg" alt="">
                 <h2>Красота</h2>
