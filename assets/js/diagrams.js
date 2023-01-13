@@ -3,15 +3,15 @@ window.addEventListener('load', function (e) {
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let dataSum = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
     ];
 
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -158,27 +158,6 @@ window.addEventListener('load', function (e) {
         return sum[index];
     }
     //add listeners
-
-    // btnCheck.addEventListener('click', (e) => {
-    //     let myChart = new Chart('myChart', {
-    //         type: 'polarArea',
-    //         data: dataSets,
-    //         options: {
-    //             scale: {
-    //                 ticks: {
-    //                     beginAtZero: true,
-    //                     min: 0,
-    //                     max: 10,
-    //                     stepSize: 1
-    //                 },
-    //             },
-    //             animation: {
-    //                 animateRotate: false
-    //             }
-    //         },
-    //     })
-    // })
-
     btnCheck.addEventListener('click', (e) => {
         
         let temp_if = false;
@@ -254,13 +233,15 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
+
             item.satisfactorily = dataSum[index];
             item.significance = mostCountSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
+            item.value = 10 - item.satisfactorily * item.significance;
+            
         });
 
-        dataElements = dataElements.map(item => (10 - item.satisfactorily));
-
+        dataElements = dataElements.map(item => (10 - item.satisfactorily * item.significance));
+        
         let dataSum_temp = dataElements;
 
         let diagrama2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -275,7 +256,9 @@ window.addEventListener('load', function (e) {
                     min_index = index;
                 }
             }
-
+            // if (diagrama2[i] < 1) {
+            //     diagrama2[i] = 0;
+            // }
             diagrama2[min_index] = dataSum_temp[min_index];
             dataSum_temp[min_index] = 100;
 
@@ -284,6 +267,9 @@ window.addEventListener('load', function (e) {
         for (let i3 = 0; i3 < diagrama2.length; ++i3) {
             if (diagrama2[i3] > 0) {
                 dataSum_temp[i3] = diagrama2[i3];
+            }
+            if (diagrama2[i3] < 1) {
+                diagrama2[i3] = 0;
             }
         }
         // console.log(diagrama2);
