@@ -1949,8 +1949,6 @@
     .spheres-block {
       height: 890px;
     }
-  }
-  @media (max-width: 370px) {
     .gl-window_most .img-most_wrap {
       margin-top: 46px;
       margin-left: 153.5px;
@@ -1958,6 +1956,8 @@
     #myChartMost {
       margin-top: 70px;
     }
+  }
+  @media (max-width: 370px) {
     .rate-block_text {
       margin-left: 10px;
     }
