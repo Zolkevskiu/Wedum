@@ -575,6 +575,13 @@ body {
   pointer-events: none;
 }
 
+.img-most_wrap {
+  position: absolute;
+  margin-top: 13px;
+  margin-left: -10.5px;
+  pointer-events: none;
+}
+
 .img-relationship_wrap {
   position: absolute;
   margin-top: 19px;
@@ -683,6 +690,11 @@ body {
 }
 
 .gl-window_most .img-wrap {
+  margin-top: -35px;
+  margin-left: 153.5px;
+}
+
+.gl-window_most .img-most_wrap {
   margin-top: -35px;
   margin-left: 153.5px;
 }
@@ -1657,6 +1669,9 @@ body {
   #myChart {
     margin-left: -7px;
   }
+  #myChartMost {
+    margin-left: 149px;
+  }
   .result-block_sub-title {
     position: absolute;
     top: 70px;
@@ -1864,6 +1879,9 @@ body {
   .relationship-test_block {
     height: 1480px;
   }
+  .relationship-title_wrap {
+    margin-left: 15px;
+  }
   .relationship-block_sec {
     height: 1077px;
   }
@@ -1943,8 +1961,15 @@ body {
   .gl-window {
     width: 600px;
   }
+  .gl-window_most .img-most_wrap {
+    margin-top: -24px;
+    margin-left: 153.5px;
+  }
+  .img-most_wrap {
+    width: 372px;
+  }
   .img-wrap {
-    margin-top: 30.5px;
+    margin-top: 31.5px;
     margin-left: -9px;
     width: 392px;
   }
@@ -1993,11 +2018,14 @@ body {
   }
 }
 @media (max-width: 360px) {
+  .additional-test_text {
+    width: 95%;
+  }
   .counter-wrap img {
     height: 45px;
   }
   .relationship-block {
-    height: 1411px;
+    height: 1530px;
   }
   .relationship-blocktext_wrap {
     padding: 15px 20px;
@@ -2012,13 +2040,13 @@ body {
 }
 @media (max-width: 340px) {
   .relationship-block {
-    height: 1350px;
+    height: 1550px;
   }
   .relationship-block_sec {
     height: 1170px;
   }
   .test-result_block {
-    height: 1550px;
+    height: 1450px;
   }
   .our-live-block_text h2 {
     padding-right: 5px;
@@ -2029,7 +2057,7 @@ body {
     height: 760px;
   }
   .relationship-block {
-    height: 1575px;
+    height: 1605px;
   }
   .relationship-block_sec {
     height: 1170px;
@@ -2039,5 +2067,13 @@ body {
   }
   .rate-block img {
     top: -30px;
+  }
+}
+@media (max-width: 320px) {
+  .relationship-blocktext_wrap {
+    height: 785px;
+  }
+  .test-result_block {
+    height: 1470px;
   }
 }
