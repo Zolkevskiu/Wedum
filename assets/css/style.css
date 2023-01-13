@@ -1003,7 +1003,7 @@ body {
 }
 
 .relationship-block {
-  height: 980px;
+  height: 1000px;
   background: #fff;
   border-radius: 10px;
   margin-top: 25px;
@@ -1018,7 +1018,7 @@ body {
   max-width: 1096px;
   width: 97%;
   margin: 0 auto;
-  height: 369px;
+  height: 394px;
   background: #F6F3FF;
   border-radius: 10px;
   display: flex;
@@ -1704,7 +1704,7 @@ body {
     max-width: 385px;
     width: 100%;
     margin-top: 20px;
-    height: 850px;
+    height: 910px;
   }
   .relationship-block {
     margin-top: 10px;
@@ -1763,7 +1763,7 @@ body {
   }
   .spheres-block_sec {
     margin-top: 30px;
-    height: 900px;
+    height: 930px;
   }
   .spheres-block_sec .spheres-img_sec {
     position: absolute;
@@ -1938,6 +1938,20 @@ body {
   }
 }
 @media (max-width: 420px) {
+  .spheres-block_wrap img {
+    width: 44px;
+    top: -10px;
+  }
+  #krasota-block {
+    margin-top: 70px;
+  }
+  .spheres-block_wrap h2 {
+    font-size: 16px;
+    margin-top: -10px;
+  }
+  .spheres-block_wrap {
+    width: 250px;
+  }
   .footer {
     margin-top: 370px;
   }
@@ -1962,8 +1976,11 @@ body {
     width: 600px;
   }
   .gl-window_most .img-most_wrap {
-    margin-top: -24px;
+    margin-top: -4px;
     margin-left: 153.5px;
+  }
+  #myChartMost {
+    margin-top: 20px;
   }
   .img-most_wrap {
     width: 372px;
@@ -1998,8 +2015,21 @@ body {
   .test-result_block {
     height: 1370px;
   }
+  .spheres-block_text {
+    height: 928px;
+  }
+  .spheres-block {
+    height: 890px;
+  }
 }
 @media (max-width: 370px) {
+  .gl-window_most .img-most_wrap {
+    margin-top: 46px;
+    margin-left: 153.5px;
+  }
+  #myChartMost {
+    margin-top: 70px;
+  }
   .rate-block_text {
     margin-left: 10px;
   }
