@@ -570,7 +570,7 @@ body {
 
 .img-wrap {
   position: absolute;
-  margin-top: 13px;
+  margin-top: 11px;
   margin-left: -10.5px;
   pointer-events: none;
 }
@@ -1852,6 +1852,27 @@ body {
   .test-result_block {
     height: 1450px;
   }
+  .gl-window {
+    width: 600px;
+  }
+  .img-wrap {
+    margin-top: 31.5px;
+    margin-left: -9px;
+    width: 392px;
+  }
+  .gl-window_most .img-most_wrap {
+    margin-top: -4px;
+    margin-left: 153.5px;
+  }
+  #myChartMost {
+    margin-top: 20px;
+  }
+  .img-most_wrap {
+    width: 372px;
+  }
+  .step-block {
+    padding: 60px 15px;
+  }
 }
 @media (max-width: 500px) {
   .rate-block img {
@@ -1871,6 +1892,13 @@ body {
   }
 }
 @media (max-width: 460px) {
+  .relationship-blocktext_wrap {
+    align-items: flex-start;
+    padding: 15px 15px;
+  }
+  .relationship-blocktext_wrap h1 {
+    margin-left: 0;
+  }
   .swiper-slide {
     min-width: 212px;
   }
@@ -1960,8 +1988,6 @@ body {
   }
   .relationship-blocktext_wrap h1 {
     margin-left: 0;
-    max-width: 300px;
-    margin: 0 auto;
   }
   .gl-window-sec {
     width: 600px;
@@ -1971,24 +1997,6 @@ body {
   }
   .test-result_block {
     height: 1330px;
-  }
-  .gl-window {
-    width: 600px;
-  }
-  .gl-window_most .img-most_wrap {
-    margin-top: -4px;
-    margin-left: 153.5px;
-  }
-  #myChartMost {
-    margin-top: 20px;
-  }
-  .img-most_wrap {
-    width: 372px;
-  }
-  .img-wrap {
-    margin-top: 31.5px;
-    margin-left: -9px;
-    width: 392px;
   }
   .img-relationship_wrap {
     margin-top: 63.5px;

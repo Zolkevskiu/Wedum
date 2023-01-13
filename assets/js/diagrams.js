@@ -3,15 +3,15 @@ window.addEventListener('load', function (e) {
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let dataSum = [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
     ];
 
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -180,8 +180,19 @@ window.addEventListener('load', function (e) {
     // })
 
     btnCheck.addEventListener('click', (e) => {
-        document.getElementById('diagram-block').style.display = 'block'
+        
+        let temp_if = false;
 
+        for (let i2 = 0; i2 < dataSum.length; ++i2) {
+            if (dataSum[i2] <= 0) {
+                temp_if = true;
+            }
+        }
+
+        if (temp_if) {
+            alert('надо заполнить все сферы');
+        } else {
+        document.getElementById('diagram-block').style.display = 'block'
         //очищаешь его
         let myChart = new Chart('myChart', {
             type: 'polarArea',
@@ -208,71 +219,65 @@ window.addEventListener('load', function (e) {
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
-    
+
             {
                 value: 0,
             },
         ];
-    
+
         dataElements.forEach((item, index) => {
             item.satisfactorily = dataSum[index];
             item.significance = mostCountSum[index];
             item.value = (10 - item.satisfactorily) * item.significance;
         });
-    
-        function sortDataElements(a, b) {
-            return (a.value > b.value) ? 1 : -1;
-        }
-    
-        dataElements.sort(sortDataElements);
 
-        dataElements = dataElements.map(item => item.value);
+        dataElements = dataElements.map(item => (10 - item.satisfactorily));
 
-        let dataSum_temp = dataSum;
+        let dataSum_temp = dataElements;
 
-        let diagrama2 = dataElements;
+        let diagrama2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
         for (let i = 0; i < 3; ++i) {
             let minimum = dataSum_temp[0];
             let min_index = 0;
 
             for (let index = 0; index < dataSum_temp.length; ++index) {
-                if (dataSum_temp[index] > minimum) {
+                if (dataSum_temp[index] < minimum) {
                     minimum = dataSum_temp[index];
                     min_index = index;
                 }
             }
 
             diagrama2[min_index] = dataSum_temp[min_index];
-            dataSum_temp[min_index] = 0;
+            dataSum_temp[min_index] = 100;
 
         }
 
@@ -388,7 +393,7 @@ window.addEventListener('load', function (e) {
                 <a class="spheres-block_text-button" onclick="diagram_button_hobbies()">Узнать подробнее</a>
             </div>`
         }
-    })
+}})
 
     btnCheckRelationship.addEventListener('click', (e) => {
         let temp_if = false;
