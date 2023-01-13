@@ -1650,6 +1650,7 @@
     .relationship-title_wrap a {
       max-width: 400px;
       width: 100%;
+      margin-top: 20px;
     }
     .additional-test_text {
       flex-direction: column;
@@ -1732,7 +1733,7 @@
       min-width: 100%;
     }
     .relationship-test_block {
-      height: 1405px;
+      height: 1425px;
     }
   }
   @media (max-width: 550px) {
@@ -1787,6 +1788,9 @@
     }
   }
   @media (max-width: 450px) {
+    .relationship-test_block {
+      height: 1480px;
+    }
     .relationship-block_sec {
       height: 1077px;
     }
@@ -1837,7 +1841,7 @@
     .counter-item h1 {
       font-size: 16px;
     }
-    .counter-item p {
+    .counter-wrap div p  {
       font-size: 12px;
       line-height: 15px;
     }
@@ -1845,9 +1849,6 @@
   @media (max-width: 420px) {
     .footer {
       margin-top: 370px;
-    }
-    .relationship-block {
-      height: 1400px;
     }
     .relationship-block_sec {
       height: 1170px;
@@ -1857,11 +1858,39 @@
       max-width: 300px;
       margin: 0 auto;
     }
+    .gl-window-sec {
+      width: 600px;
+    }
+    .result-block_text p {
+      margin-top: 665px;
+    }
+    .test-result_block {
+      height: 1330px;
+    }
+    .gl-window {
+      width: 600px;
+    }
+    .img-wrap {
+      margin-top: 30.5px;
+      margin-left: -9px;
+      width: 392px;
+    }
+    .img-relationship_wrap {
+      margin-top: 63.5px;
+      margin-left: -1px;
+      width: 355px;
+    }
+    .spheres-block_sec .spheres-block_sub-title_sec {
+      margin-top: 440px;
+    }
+    .spheres-block_sec {
+      height: 800px;
+    }
   }
   @media (max-width: 400px) {
-    .spheres-block {
-      height: 930px;
-    }
+    // .spheres-block {
+    //   height: 930px;
+    // }
     .rate-block img {
       top: -90px;
     }
@@ -1870,6 +1899,9 @@
     }
     .rate-block {
       height: 550px;
+    }
+    .test-result_block {
+      height: 1370px;
     }
   }
   @media (max-width: 370px) {
@@ -1891,14 +1923,18 @@
     }
   }
   @media (max-width: 360px) {
+    .counter-wrap img {
+      height: 45px;
+    }
     .relationship-block {
-      height: 1460px;
+      height: 1411px;
     }
     .relationship-blocktext_wrap {
       padding: 15px 20px;
+      height: 730px;
     }
     .test-result_block {
-      height: 1500px;
+      height: 1400px;
     }
     .relationship-block_sec {
       height: 1170px;
@@ -1906,14 +1942,11 @@
   }
   @media (max-width: 340px) {
     .relationship-block {
-      height: 1500px;
+      height: 1350px;
     }
     .relationship-block_sec {
       height: 1170px;
     }
-    // .relationship-blocktext_wrap {
-    //   height: 660px;
-    // }
     .test-result_block {
       height: 1550px;
     }
@@ -1923,10 +1956,10 @@
   }
   @media (max-width: 330px) {
     .relationship-blocktext_wrap {
-      height: 687px;
+      height: 760px;
     }
     .relationship-block {
-      height: 1540px;
+      height: 1575px;
     }
     .relationship-block_sec {
       height: 1170px;
