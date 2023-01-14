@@ -256,9 +256,7 @@ window.addEventListener('load', function (e) {
                     min_index = index;
                 }
             }
-            // if (diagrama2[i] < 1) {
-            //     diagrama2[i] = 0;
-            // }
+
             diagrama2[min_index] = dataSum_temp[min_index];
             dataSum_temp[min_index] = 100;
 
@@ -573,7 +571,6 @@ window.addEventListener('load', function (e) {
                     }
                 },
             })
-            const spheres_krasota = document.getElementById("spheres-krasota")
             const krasota_wrapper = document.getElementById("krasota-block")
             krasota_wrapper.innerHTML = ''
             if (diagramaKrasotaCalc[1] > 0) {
