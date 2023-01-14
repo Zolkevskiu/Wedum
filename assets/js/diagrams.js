@@ -903,12 +903,11 @@ window.addEventListener('load', function (e) {
             </div>`
             }
             if (diagramaHealthCalc[6] > 0) {
-                health_wrapper.innerHTML += `
-            <div class="spheres-works_wrap spheres-block_wrap">
+                health_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
             <img src="assets/img/test-icon/wellness.svg">
             <div>
             <h2 class="works-block_title">Оздоровление</h2>
-            <p>Очищение организма, психосоматика, дыхание, массаж</p>
+            <p class="spheres-wrap_paragraph">Очищение организма, психосоматика, дыхание, массаж</p>
             <a class="spheres-works spheres-block_text-button" onclick="gallery_health_wellness()">Узнать подробнее</a>
             </div>
             </div>`

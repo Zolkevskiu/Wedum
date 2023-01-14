@@ -645,6 +645,11 @@
     position: absolute;
     margin-top: 30px;
   }
+  .gl-window-health {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
   .gl-window-works {
     width: 800px;
     position: absolute;
@@ -969,7 +974,9 @@
     margin-top: 25px;
     padding-top: 61px;
   }
-  
+  .health-block {
+    height: 1060px;
+  }
   .krasota-blocktext_wrap {
     height: 390px;
   }
@@ -985,6 +992,9 @@
     border-radius: 10px;
     display: flex;
     padding: 40px 0 0 40px;
+  }
+  .health-blocktext_wrap {
+    height: 460px;
   }
   .relationship-blocktext_wrap h1 {
     max-width: 370px;
@@ -1456,6 +1466,9 @@
     .header-ul .header-href {
       font-size: 16px;
     }
+    .gl-window-health {
+      margin-left: -100px;
+    }
   }
   @media (max-width: 1050px) {
     .our-live_img {
@@ -1482,6 +1495,14 @@
       transform: translateX(-50%);
       margin-left: 0px;
       margin-top: 51.5px;
+    }
+    .gl-window-health {
+      width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      margin-top: 40px;
+      margin-left: -75px;
     }
     .gl-window-sec {
       width: 800px;
@@ -1802,8 +1823,29 @@
     .works-blocktext_wrap {
       height: 570px;
     }
-    .spheres-works-block_title {
-
+    .health-blocktext_wrap {
+      height: 790px;
+    }
+    .health-block {
+      height: 1550px;
+    }
+    .step-health-block {
+      margin-top: 35px;
+    } 
+    .test-window-helath {
+      height: 835px;
+    }
+    .img-health_wrap {
+      margin-left: 177.5px;
+    }
+    #myChartHealth {
+      right: -50px;
+    }
+    .spheres-health-block {
+      height: 975px;
+    }
+    .spheres-health-block_text {
+      height: 940px;
     }
   }
   @media (max-width: 550px) {
@@ -1832,6 +1874,12 @@
     #test-window-works {
       height: 1220px;
     }
+    .test-window-helath {
+      height: 835px;
+    }
+    .test-window-helath .counter-item {
+      margin: 10px 0;
+    }
   }
   @media (max-width: 520px) {
     .test-result_block {
@@ -1839,6 +1887,15 @@
     }
     .gl-window {
       width: 600px;
+    }
+    .gl-window-health {
+      width: 600px;
+      margin-top: 60px;
+    }
+    .img-health_wrap {
+      margin-left: 148px;
+      margin-top: 37px;
+      width: 400px;
     }
     .img-wrap {
       margin-top: 31.5px;
@@ -1909,8 +1966,17 @@
     .swiper-slide {
       min-width: 212px;
     }
+    .spheres-health-block_text .spheres-block_sub-title_sec {
+      margin-top: 460px;
+    }
+    .spheres-health-block {
+      height: 893px;
+    }
   }
   @media (max-width: 450px) {
+    .health-block {
+      height: 1580px;
+    }
     .relationship-test_block {
       height: 1480px;
     }
@@ -2006,6 +2072,9 @@
       margin-left: 0;
 
     }
+    .gl-window-health {
+      width: 600px;
+    }
     .gl-window-sec {
       width: 600px;
     }
@@ -2037,6 +2106,19 @@
     }
     #test-window-works {
       height: 1220px;
+    }
+    .spheres-health-block {
+      height: 870px;
+      padding-left: 15px;
+    }
+    .spheres-health-block_title {
+      margin-left: 15px;
+    }
+    .spheres-health-block_text .spheres-block_sub-title_sec {
+      margin-left: 15px;
+    }
+    #health-block {
+      margin-top: 45px;
     }
   }
   @media (max-width: 400px) {
@@ -2071,8 +2153,17 @@
     .works-spheres-block_text {
       height: 1200px;
     }
+    .gl-window-health {
+      margin-left: -53px;
+    }
   }
   @media (max-width: 385px) {
+    .spheres-health-block_title {
+      margin-left: 0;
+    }
+    .spheres-health-block_text .spheres-block_sub-title_sec {
+      margin-left: 0;
+    }
     .gl-window-works {
       margin-top: 284px;
     }
@@ -2130,6 +2221,23 @@
     .works-block {
       height: 1470px;
     }
+    .health-blocktext_wrap {
+      height: 840px;
+    }
+    .health-block {
+      height: 1657px;
+    }
+  }
+  @media (max-width: 344px) {
+    .health-blocktext_wrap {
+      height: 895px;
+    }
+    .health-block {
+      height: 1705px;
+    }
+    .catalog-block .catalog-wrapper {
+      padding: 0 15px;
+    }
   }
   @media (max-width: 340px) {
     .relationship-block {
@@ -2149,6 +2257,12 @@
     }
     .spheres-works-block_title {
       margin-left: 5px;
+    }
+    .health-block {
+      height: 1735px;
+    }
+    .health-blocktext_wrap {
+      height: 925px;
     }
   }
   @media (max-width: 330px) {
@@ -2173,6 +2287,12 @@
     .works-block {
       height: 1540px;
     }
+    .health-blocktext_wrap {
+      height: 945px;
+    }
+    .health-block {
+      height: 1755px;
+    }
   }
   @media (max-width: 320px) {
     .relationship-blocktext_wrap {
@@ -2183,5 +2303,11 @@
     }
     .works-blocktext_wrap {
       height: 690px;
+    }
+    .health-blocktext_wrap {
+      height: 965px;
+    }
+    .health-block {
+      height: 1780px;
     }
   }
