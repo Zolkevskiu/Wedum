@@ -397,7 +397,9 @@
     padding-top: 60px;
     justify-content: center;
   }
-  
+  .step-health-block {
+    margin-top: 65px;
+  }
   .step-block_col {
     display: flex;
     width: 480px;
@@ -554,7 +556,13 @@
     pointer-events: none;
     z-index: 2;
   }
-
+  .img-krasota_wrap {
+    position: absolute;
+    margin-top: 19px;
+    margin-left: 557.5px;
+    pointer-events: none;
+    z-index: 2;
+  }
   .img-hobby_wrap {
     position: absolute;
     margin-top: 45px;
@@ -641,6 +649,36 @@
   }
   
   .gl-window-sec {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .gl-window-hobby {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .gl-window-personal {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .gl-window-spiritual {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .gl-window-business {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .gl-window-krasota {
+    width: 800px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .gl-window-relationship {
     width: 800px;
     position: absolute;
     margin-top: 30px;
@@ -833,7 +871,12 @@
     overflow: hidden;
     position: relative;
   }
-  
+  .spheres-block-spiritual {
+    margin-top: 58px;
+  }
+  .spheres-health-block {
+    margin-top: 40px;
+  }
   .spheres-block_text {
     margin-top: 60px;
     margin-left: 60px;
@@ -867,6 +910,9 @@
   }
   #hobby-block h2 {
     width: 290px;
+  }
+  #health-gallery_block {
+    overflow: hidden;
   }
   .spheres-works-block {
     height: 820px;
@@ -979,11 +1025,20 @@
     margin-top: 25px;
     padding-top: 61px;
   }
+  .relationship-block {
+    height: 950px;
+  }
+  .personal-block {
+    height: 1120px;
+  }
+  .spiritual-block {
+    height: 930px;
+  }
   .finance-block {
     height: 980px;
   }
   .health-block {
-    height: 1060px;
+    height: 1080px;
   }
   .krasota-blocktext_wrap {
     height: 390px;
@@ -995,14 +1050,29 @@
     max-width: 1096px;
     width: 97%;
     margin: 0 auto;
-    height: 394px;
+    height: 330px;
     background: #F6F3FF;
     border-radius: 10px;
     display: flex;
     padding: 40px 0 0 40px;
   }
+  .hobby-blocktext_wrap {
+    height: 305px;
+  }
+  .personal-blocktext_wrap {
+    height: 465px;
+  }
+  .spiritual-blocktext_wrap {
+    height: 244px;
+  }
+  .business-blocktext_wrap {
+    height: 275px;
+  }
+  .krasota-blocktext_wrap {
+    height: 380px;
+  }
   .health-blocktext_wrap {
-    height: 460px;
+    height: 440px;
   }
   .finance-blocktext_wrap {
     height: 330px;
@@ -1213,6 +1283,7 @@
     line-height: 130%;
     color: #252525;
   }
+
   .author-text a {
     text-decoration: none;
     color: #A43FD4;
@@ -1228,6 +1299,7 @@
     margin-top: 11px;
     color: #252525;
   }
+
   .swiper-star_wrap .swiper-star_span-sec {
     color: #A9A9A9;
     opacity: 0.7;
@@ -1239,6 +1311,22 @@
   
   .test-window-sec {
     height: 317px;
+  }
+
+  .test-window-hobby {
+    height: 600px;
+  }
+
+  .test-window-personal {
+    height: 506px;
+  }
+
+  .test-window-spiritual {
+    height: 350px;
+  }
+
+  .test-window-helath {
+    height: 480px;
   }
 
   .test-window_business {
@@ -1302,6 +1390,7 @@
   }
   
   .relationship-block_sec {
+    overflow: hidden;
     display: none;
     padding-top: 30px;
     height: 900px;
@@ -1477,10 +1566,31 @@
     .header-ul .header-href {
       font-size: 16px;
     }
+    .gl-window-krasota  {
+      margin-left: -100px;
+    }
     .gl-window-health {
       margin-left: -100px;
     }
     .gl-window-finance {
+      margin-left: -100px;
+    }
+    .gl-window-relationship {
+      margin-left: -100px;
+    }
+    .gl-window-business {
+      margin-left: -100px;
+    }
+    .gl-window-works {
+      margin-left: -100px;
+    }
+    .gl-window-spiritual {
+      margin-left: -100px;
+    }
+    .gl-window-personal {
+      margin-left: -100px;
+    }
+    .gl-window-hobby {
       margin-left: -100px;
     }
   }
@@ -1507,8 +1617,8 @@
     .img-relationship_wrap {
       left: 50%;
       transform: translateX(-50%);
-      margin-left: 0px;
-      margin-top: 51.5px;
+      margin-left: 111px;
+      margin-top: 20.5px;
     }
     .gl-window-health {
       width: 800px;
@@ -1524,11 +1634,55 @@
       transform: translateX(-50%);
       position: absolute;
     }
+    .gl-window-hobby {
+      width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      margin-left: -386px;
+      margin-top: 45px;
+    }
+    .gl-window-personal {
+      width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+    .gl-window-spiritual {
+      width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      margin-left: -443px;
+      margin-top: 70px;
+    }
+    .gl-window-business {
+      width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+    .gl-window-krasota  {
+      width: 800px;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
+    .img-business_wrap {
+      margin-left: 243.5px;
+    }
+    #myChartBusines {
+      right: -78px;
+    }
     #myChartKrasota {
-      margin-left: -5px;
+      margin-left: 80px;
       left: 50%;
       margin-top: 87px;
       transform: translateX(-50%) rotate(-20deg);
+    }
+    .img-krasota_wrap {
+      margin-top: 51px;
+      margin-left: 244.5px;
     }
     .swiper-button-next, .swiper-button-prev {
       z-index: 0 !important;
@@ -1644,6 +1798,17 @@
       justify-content: center;
       margin-top: 250px;
     }
+    .gl-window-relationship {
+      left: 50%;
+      translate: -50%;
+      display: flex;
+      justify-content: center;
+      margin-top: 72px;
+      margin-left: -125px;
+    }
+    #myChartRelationship {
+      right: -106px;
+    }
     .gl-window_most {
       margin-left: -70px;
       margin-top: 180px;
@@ -1690,11 +1855,11 @@
     }
     .relationship-block {
       margin-top: 10px;
-      height: 1327px;
+      height: 1390px;
       padding-top: 15px;
     }
     .relationship-blocktext_wrap {
-      height: 670px;
+      height: 630px;
       flex-direction: column;
       align-items: center;
       padding: 15px 0 0 0;
@@ -1745,7 +1910,7 @@
     }
     .spheres-block_sec {
       margin-top: 30px;
-      height: 930px;
+      height: 885px;
     }
     .spheres-block_sec .spheres-img_sec {
       position: absolute;
@@ -1814,6 +1979,7 @@
       display: flex;
       justify-content: center;
       margin-top: 250px;
+      margin-left: -25px;
     }
     .img-works_wrap {
       margin-left: -3px;
@@ -1856,7 +2022,7 @@
       right: -50px;
     }
     .spheres-health-block {
-      height: 975px;
+      height: 900px;
     }
     .spheres-health-block_text {
       height: 940px;
@@ -1882,6 +2048,57 @@
     }
     .spheres-finance-block {
       height: 890px;
+    }
+    .krasota-blocktext_wrap {
+      height: 680px;
+    }
+    .krasota-block {
+      height: 1441px;
+    }
+    .business-blocktext_wrap {
+      height: 509px;
+    }
+    .business-block {
+      height: 1300px;
+    }
+    .test-window_business {
+      height: 580px;
+    }
+    .spheres-block-spiritual .spheres-block_sub-title_sec {
+      margin-top: 584px;
+    }
+    .spheres-block-spiritual {
+      height: 1000px;
+      .spheres-block_text {
+        height: 981px;
+      }
+    }
+    .test-window-spiritual {
+      height: 561px;
+    }
+    .spiritual-blocktext_wrap {
+      height: 468px;
+    }
+    .spiritual-block {
+      height: 1260px;
+    }
+    .personal-blocktext_wrap {
+      height: 850px;
+    }
+    .personal-block {
+      height: 1628px;
+    }
+    .test-window-personal {
+      height: 927px;
+    }
+    .img-personal_wrap {
+      margin-left: 243.5px;
+    }
+    #myChartPersonal {
+      right: -89px;
+    }
+    .test-window-hobby {
+      height: 1110px;
     }
   }
   @media (max-width: 550px) {
@@ -1925,6 +2142,33 @@
     .gl-window-finance {
       margin-left: -80px;
     }
+    .test-window-relationship {
+      height: 470px;
+      .counter-item {
+        margin: 10px 0;
+      }
+    }
+    .test-window_business {
+      height: 680px;
+    }
+    .test-window-spiritual {
+      height: 560px;
+    }
+    .test-window-spiritual .counter-item {
+      margin: 10px 0;
+    }
+    .test-window-personal {
+      height: 928px;
+    }
+    .test-window-personal .counter-item {
+      margin: 10px 0;
+    }
+    .test-window-hobby {
+      height: 1110px;
+      .counter-item {
+        margin: 10px 0;
+      }
+    }
   }
   @media (max-width: 520px) {
     .test-result_block {
@@ -1944,6 +2188,12 @@
       margin-left: 148px;
       margin-top: 37px;
       width: 400px;
+    }
+    .gl-window-relationship {
+      width: 600px;
+    }
+    #myChartRelationship {
+      right: -207px;
     }
     .img-wrap {
       margin-top: 31.5px;
@@ -1998,9 +2248,60 @@
     }
     .spheres-finance-block {
       height: 804px;
-  }
+    }
+    .gl-window-business {
+      margin-left: -84px;
+    }
+    .gl-window-spiritual {
+      width: 600px;
+      margin-left: -535px;
+    }
+    .img-spiritual_wrap {
+      margin-top: 31.5px;
+      margin-left: 646px;
+      width: 369px;
+    }
+    #myChartSpiritual {
+      right: -527px;
+      margin-top: 54px;
+    }
+    .spheres-block-spiritual .spheres-block_sub-title_sec {
+      margin-top: 480px;
+    }
+    .spheres-block-spiritual {
+      height: 900px;
+    }
+    .gl-window-personal {
+      width: 600px;
+      margin-top: 80px;
+    }
+    .img-personal_wrap {
+      width: 372px;
+      margin-left: 205.5px;
+      margin-top: 56px;
+    }
+    .gl-window-hobby {
+      width: 600px;
+    }
+    .img-hobby_wrap {
+      width: 370px;
+      margin-top: 57px;
+      margin-left: 508.5px;
+    }
+    .spheres-block-hobby .spheres-block_sub-title_sec {
+      margin-top: 454px;
+    }
+    .spheres-block-hobby {
+      height: 830px;
+    }
   }
   @media (max-width: 500px) {
+    .gl-window-krasota {
+      margin-left: -86px;
+    }
+    .img-krasota_wrap {
+      margin-left: 245.5px;
+    }
     .rate-block img {
       width: 95%;
     }
@@ -2018,6 +2319,9 @@
     }
     #works-block {
       margin-top: 470px;
+    }
+    .gl-window-relationship {
+      margin-left: -109px;
     }
   }
   @media (max-width: 460px) {
@@ -2037,8 +2341,15 @@
     .spheres-health-block {
       height: 893px;
     }
+    .gl-window-works {
+      margin-left: -2px;
+      margin-top: 274px;
+    }
   }
   @media (max-width: 450px) {
+    .relationship-block {
+      height: 1420px;
+    }
     .health-block {
       height: 1580px;
     }
@@ -2111,14 +2422,30 @@
     #works-block {
       margin-top: 470px;
     }
+    .works-block {
+      height: 1380px;
+    }
+    .business-block {
+      height: 1350px;
+    }
+    .spiritual-block {
+      height: 1306px;
+    }
+    .personal-block {
+      height: 1655px;
+    }
   }
   @media (max-width: 420px) {
+    .relationship-block {
+      height: 1470px;
+    }
     .spheres-block_wrap img {
       width: 44px;
       top: -10px;
     }
     #krasota-block {
-      margin-top: 70px;
+      margin-top: 60px;
+      margin-left: 15px;
     }
     .spheres-block_wrap h2 {
       font-size: 16px;
@@ -2150,9 +2477,18 @@
       height: 1330px;
     }
     .img-relationship_wrap {
-      margin-top: 63.5px;
-      margin-left: -1px;
+      margin-top: 32.5px;
+      margin-left: 108px;
       width: 355px;
+    }
+    #relationship-block {
+      margin-top: 50px;
+    }
+    .spheres-block-relationship .spheres-block_sub-title_sec {
+      margin-left: 15px;
+    }
+    .test-window-relationship .spheres-block_title {
+      margin-left: 15px;
     }
     .spheres-block_sec .spheres-block_sub-title_sec {
       margin-top: 440px;
@@ -2195,6 +2531,73 @@
     .spheres-finance-block .spheres-block_sub-title_sec {
       margin-left: 15px;
     }
+    #myChartRelationship {
+      right: -104px;
+    }
+    .spheres-krasota-block {
+      height: 892px;
+      .spheres-block_title {
+        margin-left: 15px;
+      }
+    }
+    .spheres-krasota-block .spheres-block_sub-title_sec {
+      margin-left: 15px;
+      margin-top: 520px;
+    }
+    .business-block {
+      height: 1360px;
+    }
+    .spheres-block-business .spheres-block_title {
+      margin-left: 15px;
+    }
+    .spheres-block-business .spheres-block_sub-title_sec {
+      margin-top: 512px;
+      margin-left: 15px;
+    }
+    .spheres-block-business {
+      height: 874px;
+    }
+    #business-block {
+      margin-left: 15px;
+      margin-top: 47px;
+    }
+    .spheres-block-spiritual .spheres-block_sub-title_sec {
+      margin-left: 15px;
+    }
+    .spheres-block-spiritual .spheres-block_title {
+      margin-left: 15px;
+    }
+    .spiritual-block {
+      height: 1321px;
+    }
+    .personal-block {
+      height: 1667px;
+    }
+    .spheres-block-personal .spheres-block_title{
+      margin-left: 15px;
+    }
+    .spheres-block-personal .spheres-block_sub-title_sec {
+      margin-left: 15px;
+      margin-top: 465px;
+    }
+    .spheres-block-personal {
+      height: 837px;
+    }
+    #personal-block {
+      margin-top: 50px;
+    }
+    .gl-window-hobby {
+      margin-left: -391px;
+    }
+    .spheres-block-hobby {
+      .spheres-block_sub-title_sec, .spheres-block_title {
+        margin-left: 15px;
+      }
+    }
+    #hobby-block {
+      margin-top: 47px;
+      margin-left: 5px;
+    }
   }
   @media (max-width: 400px) {
     .rate-block img {
@@ -2213,7 +2616,7 @@
       height: 928px;
     }
     .spheres-block {
-      height: 890px;
+      height: 810px;
     }
     .gl-window_most .img-most_wrap {
       margin-top: 46px;
@@ -2236,6 +2639,18 @@
     }
     .spheres-finance-block {
       height: 805px;
+    }
+    .spheres-krasota-block {
+      height: 886px;
+    }
+    .spheres-block-business {
+      height: 885px;
+    }
+    .spheres-block-personal {
+      height: 835px;
+    }
+    .hobby-blocktext_wrap {
+      height: 645px;
     }
   }
   @media (max-width: 385px) {
@@ -2272,6 +2687,9 @@
     #works-block .spheres-block_wrap h2 {
       width: 250px;
     }
+    .hobby-blocktext_wrap {
+      height: 686px;
+    }
   }
   @media (max-width: 360px) {
     .additional-test_text {
@@ -2285,7 +2703,7 @@
     }
     .relationship-blocktext_wrap {
       padding: 15px 20px;
-      height: 730px;
+      height: 650px;
     }
     .test-result_block {
       height: 1400px;
@@ -2313,6 +2731,33 @@
     }
     .finance-blocktext_wrap {
       height: 605px;
+    }
+    .test-krasota-window .counter-item {
+      margin: 10px 0;
+    }
+    .test-krasota-window {
+      height: 470px;
+    }
+    .krasota-blocktext_wrap {
+      height: 707px;
+    }
+    .business-block {
+      height: 1430px;
+    }
+    .business-blocktext_wrap {
+      height: 550px;
+    }
+    .personal-blocktext_wrap {
+      height: 951px;
+    }
+    .personal-block {
+      height: 1830px;
+    }
+    .hobby-blocktext_wrap {
+      height: 705px;
+    }
+    .hobby-block {
+      height: 1590px;
     }
   }
   @media (max-width: 344px) {
@@ -2351,10 +2796,28 @@
     .health-blocktext_wrap {
       height: 925px;
     }
+    .business-block {
+      height: 1405px;
+    }
+    .spiritual-block {
+      height: 1520px;
+    }
+    .personal-blocktext_wrap {
+      height: 1040px;
+    }
+    .personal-block {
+      height: 1905px;
+    }
+    .hobby-blocktext_wrap {
+      height: 760px;
+    }
+    .hobby-block {
+      height: 1639px;
+    }
   }
   @media (max-width: 330px) {
     .relationship-blocktext_wrap {
-      height: 760px;
+      height: 690px;
     }
     .relationship-block {
       height: 1605px;
@@ -2386,10 +2849,34 @@
     .finance-block {
       height: 1555px;
     }
+    .business-blocktext_wrap {
+      height: 600px;
+    }
+    .business-block {
+      height: 1455px;
+    }
+    .spiritual-block {
+      height: 1552px;
+    }
+    .personal-blocktext_wrap {
+      height: 1060px;
+    }
+    .personal-block {
+      height: 1945px;
+    }
+    .hobby-blocktext_wrap {
+      height: 772px;
+    }
+    .hobby-block {
+      height: 1667px;
+    }
   }
   @media (max-width: 320px) {
+    .relationship-block {
+      height: 1635px;
+    }
     .relationship-blocktext_wrap {
-      height: 785px;
+      height: 735px;
     }
     .test-result_block {
       height: 1470px;
@@ -2405,5 +2892,29 @@
     }
     .finance-blocktext_wrap {
       height: 665px;
+    }
+    .works-block {
+      height: 1580px;
+    }
+    .business-blocktext_wrap {
+      height: 621px;
+    }
+    .business-block {
+      height: 1528px;
+    }
+    .spiritual-block {
+      height: 1606px;
+    }
+    .personal-blocktext_wrap {
+      height: 1060px;
+    }
+    .personal-block {
+      height: 1945px;
+    }
+    .hobby-blocktext_wrap {
+      height: 827px;
+    }
+    .hobby-block {
+      height: 1732px;
     }
   }

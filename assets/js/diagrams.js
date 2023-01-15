@@ -240,8 +240,8 @@ window.addEventListener('load', function (e) {
             
         });
 
+        // dataElements = dataElements.map(item => (10 - item.satisfactorily));
         dataElements = dataElements.map(item => (10 - item.satisfactorily * item.significance));
-        
         let dataSum_temp = dataElements;
 
         let diagrama2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -251,14 +251,18 @@ window.addEventListener('load', function (e) {
             let min_index = 0;
 
             for (let index = 0; index < dataSum_temp.length; ++index) {
-                if (dataSum_temp[index] < minimum) {
+                if (dataSum_temp[index] > minimum) {
                     minimum = dataSum_temp[index];
                     min_index = index;
                 }
             }
 
             diagrama2[min_index] = dataSum_temp[min_index];
-            dataSum_temp[min_index] = 100;
+            dataSum_temp[min_index] = 0;
+            // if(diagrama2[min_index] < 1) {
+            //     diagrama2[min_index] = 0
+            //     dataSum_temp[min_index] = 100;
+            // }
 
         }
 
@@ -266,9 +270,9 @@ window.addEventListener('load', function (e) {
             if (diagrama2[i3] > 0) {
                 dataSum_temp[i3] = diagrama2[i3];
             }
-            if (diagrama2[i3] < 1) {
-                diagrama2[i3] = 0;
-            }
+            // if (diagrama2[i3] < 1) {
+            //     diagrama2[i3] = 0;
+            // }
         }
         // console.log(diagrama2);
 
