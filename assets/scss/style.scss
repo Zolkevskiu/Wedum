@@ -1611,6 +1611,10 @@
     }
   }
   @media (max-width: 1000px) {
+    .img-wrap {
+      margin-top: 12px;
+      margin-left: -5.5px;
+    }
     #test-window-works {
       height: 1020px;
     }
@@ -1811,7 +1815,7 @@
     }
     .gl-window_most {
       margin-left: -70px;
-      margin-top: 180px;
+      margin-top: 220px;
     }
     #myChart {
       margin-left: -7px;
@@ -1832,7 +1836,7 @@
     .spheres-block {
       margin-top: 24px;
       flex-direction: column;
-      height: 912px;
+      height: 1050px;
     }
     .spheres-img {
       height: 359px;
@@ -1842,7 +1846,7 @@
     }
     .spheres-block_wrap {
       position: relative;
-      top: 380px;
+      top: 520px;
     }
     .spheres-block_text {
       margin-top: 0;
@@ -1851,7 +1855,7 @@
       max-width: 385px;
       width: 100%;
       margin-top: 20px;
-      height: 910px;
+      height: 1003px;
     }
     .relationship-block {
       margin-top: 10px;
@@ -2171,6 +2175,12 @@
     }
   }
   @media (max-width: 520px) {
+    .spheres-block {
+      height: 986px;
+    }
+    .spheres-block_wrap {
+      top: 451px;
+    }
     .test-result_block {
       height: 1450px;
     }
@@ -2613,10 +2623,10 @@
       height: 1370px;
     }
     .spheres-block_text {
-      height: 928px;
+      height: 990px;
     }
     .spheres-block {
-      height: 810px;
+      height: 990px;
     }
     .gl-window_most .img-most_wrap {
       margin-top: 46px;
@@ -2738,8 +2748,11 @@
     .test-krasota-window {
       height: 470px;
     }
+    .krasota-block {
+      height: 1576px;
+    }
     .krasota-blocktext_wrap {
-      height: 707px;
+      height: 747px;
     }
     .business-block {
       height: 1430px;
@@ -2870,6 +2883,9 @@
     .hobby-block {
       height: 1667px;
     }
+    .krasota-blocktext_wrap {
+      height: 775px;
+    }
   }
   @media (max-width: 320px) {
     .relationship-block {
@@ -2916,5 +2932,8 @@
     }
     .hobby-block {
       height: 1732px;
+    }
+    .krasota-blocktext_wrap {
+      height: 791px;
     }
   }
