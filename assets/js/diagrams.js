@@ -3,15 +3,15 @@ window.addEventListener('load', function (e) {
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let dataSum = [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        7,
+        6,
+        7,
+        7,
+        5,
+        6,
+        9,
+        6,
+        8
     ];
 
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -236,12 +236,12 @@ window.addEventListener('load', function (e) {
 
             item.satisfactorily = dataSum[index];
             item.significance = mostCountSum[index];
-            item.value = 10 - item.satisfactorily * item.significance;
+            item.value = (10 - item.satisfactorily) * item.significance;
             
         });
 
         // dataElements = dataElements.map(item => (10 - item.satisfactorily));
-        dataElements = dataElements.map(item => (10 - item.satisfactorily * item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
         let dataSum_temp = dataElements;
 
         let diagrama2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -259,10 +259,10 @@ window.addEventListener('load', function (e) {
 
             diagrama2[min_index] = dataSum_temp[min_index];
             dataSum_temp[min_index] = 0;
-            // if(diagrama2[min_index] < 1) {
-            //     diagrama2[min_index] = 0
-            //     dataSum_temp[min_index] = 100;
-            // }
+            if(diagrama2[min_index] > 9) {
+                diagrama2[min_index] = 10
+
+            }
 
         }
 

@@ -1025,9 +1025,7 @@
     margin-top: 25px;
     padding-top: 61px;
   }
-  .relationship-block {
-    height: 950px;
-  }
+
   .personal-block {
     height: 1120px;
   }
@@ -2194,6 +2192,18 @@
       width: 600px;
       margin-top: 60px;
     }
+    .gl-window-krasota {
+      width: 600px;
+      margin-left: -90px;
+    }
+    .spheres-block_sec .spheres-block_sub-title_sec {
+      margin-top: 434px;
+    }
+    .img-krasota_wrap {
+      width: 354px;
+      margin-top: 64px;
+      margin-left: 206.5px;
+    }
     .img-health_wrap {
       margin-left: 148px;
       margin-top: 37px;
@@ -2303,6 +2313,12 @@
     }
     .spheres-block-hobby {
       height: 830px;
+    }
+    .spheres-krasota-block {
+      height: 842px;
+    }
+    .test-krasota-window {
+      height: 543px;
     }
   }
   @media (max-width: 500px) {
