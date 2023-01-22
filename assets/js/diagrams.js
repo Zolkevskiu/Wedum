@@ -1,4 +1,7 @@
 window.addEventListener('load', function (e) {
+    Chart.register( ChartDataLabels );
+    // Chart.defaults.color = "rgb(90, 8, 162, 0%)";
+    const legendLabelColors = ["#B670F7"];
     let data = [];
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -13,8 +16,9 @@ window.addEventListener('load', function (e) {
         6,
         8
     ];
-
+    // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
+    let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumWorks = [
         0,
         0,
@@ -26,6 +30,17 @@ window.addEventListener('load', function (e) {
         0,
         0,
         0];
+    let mostWorksSum = [
+        0, 
+        0, 
+        0, 
+        0, 
+        0, 
+        0, 
+        0, 
+        0, 
+        0, 
+        0];
     let sumHealth = [
         0,
         0,
@@ -35,10 +50,23 @@ window.addEventListener('load', function (e) {
         0,
         0,
         0];
+    let mostHealthSum = [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0];
     let sumFinance = [11, 0, 11, 0, 11, 0, 11, 0];
+    let mostFinanceSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumRelationship = [11, 0, 11, 0, 11, 0, 11, 0];
+    let mostRelationshipSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumBusiness = [11, 0, 11, 0, 0, 0, 11, 0];
+    let mostBusinessSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumSpiritual = [11, 0, 11, 0, 0, 0, 11, 0];
+    let mostSpiritualSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumPersonal = [
         0,
         0,
@@ -50,6 +78,7 @@ window.addEventListener('load', function (e) {
         0,
         0
     ];
+    let mostPersonalSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let sumHobby = [
         0,
         0,
@@ -63,7 +92,7 @@ window.addEventListener('load', function (e) {
         0,
         0
     ];
-    Chart.defaults.global.defaultFontSize = 0;
+    let mostHobbySum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     const dataSets = {
         datasets: [{
             label: "My First Dataset",
@@ -80,10 +109,12 @@ window.addEventListener('load', function (e) {
                 '#5A08A2',
                 '#6D00DD',
                 '#C48FFA',
-            ]
+            ],
+            datalabels: {
+                display: false,
+            },
         }]
     };
-
     // Test functions
     // const counterItem = document.querySelectorAll(".counter-item");
     const counters = document.querySelector(".counters");
@@ -99,6 +130,15 @@ window.addEventListener('load', function (e) {
     const incrementsSpiritual = document.querySelectorAll(".increment-spiritual");
     const incrementsPersonal = document.querySelectorAll(".increment-personal");
     const incrementsHobby = document.querySelectorAll(".increment-hobby");
+    const incrementKrasotaMost = document.querySelectorAll(".krasota-most-increment");
+    const incrementWorksMost = document.querySelectorAll(".works-most-increment");
+    const incrementHealthMost = document.querySelectorAll(".health-most-increment");
+    const incrementFinanceMost = document.querySelectorAll(".finance-most-increment");
+    const incrementRelationshipMost = document.querySelectorAll(".relationship-most-increment");
+    const incrementBusinessMost = document.querySelectorAll(".business-most-increment");
+    const incrementSpiritualMost = document.querySelectorAll(".spiritual-most-increment");
+    const incrementPersonalMost = document.querySelectorAll(".personal-most-increment");
+    const incrementHobbyMost = document.querySelectorAll(".hobby-most-increment");
     const decrements = document.querySelectorAll(".decrement");
     const mostDecrements = document.querySelectorAll(".mostDecrement");
     const decrementsSec = document.querySelectorAll(".decrement-sec");
@@ -111,6 +151,15 @@ window.addEventListener('load', function (e) {
     const decrementsSpiritual = document.querySelectorAll(".decrement-spiritual");
     const decrementsPersonal = document.querySelectorAll(".decrement-personal");
     const decrementsHobby = document.querySelectorAll(".decrement-hobby");
+    const decrementsKrasotaMost = document.querySelectorAll(".krasota-most-decrement");
+    const decrementsWorksMost = document.querySelectorAll(".works-most-decrement");
+    const decrementsHealthMost = document.querySelectorAll(".health-most-decrement");
+    const decrementsFinanceMost = document.querySelectorAll(".finance-most-decrement");
+    const decrementsRelationshipMost = document.querySelectorAll(".relationship-most-decrement");
+    const decrementsBusinessMost = document.querySelectorAll(".business-most-decrement");
+    const decrementsSpiritualMost = document.querySelectorAll(".spiritual-most-decrement");
+    const decrementsPersonalMost = document.querySelectorAll(".personal-most-decrement");
+    const decrementsHobbyMost = document.querySelectorAll(".hobby-most-decrement");
     const count = document.querySelectorAll(".count");
     const mostCount = document.querySelectorAll(".count-most");
     const countSec = document.querySelectorAll(".count-sec");
@@ -123,6 +172,15 @@ window.addEventListener('load', function (e) {
     const countSpiritual = document.querySelectorAll(".count-spiritual");
     const countPersonal = document.querySelectorAll(".count-personal");
     const countHobby = document.querySelectorAll(".count-hobby");
+    const mostKrasotaCount = document.querySelectorAll(".count-krasota-sum");
+    const mostWorksCount = document.querySelectorAll(".count-works-sum");
+    const mostHealthCount = document.querySelectorAll(".count-health-sum");
+    const mostFinanceCount = document.querySelectorAll(".count-finance-sum");
+    const mostRelationshipCount = document.querySelectorAll(".count-relationship-sum");
+    const mostBusinessCount = document.querySelectorAll(".count-business-sum");
+    const mostSpiritualCount = document.querySelectorAll(".count-spiritual-sum");
+    const mostPersonalCount = document.querySelectorAll(".count-personal-sum");
+    const mostHobbyCount = document.querySelectorAll(".count-hobby-sum");
     const glWindow = document.querySelector(".gl-window");
     const btnCheck = document.querySelector(".btnCheck");
     const btnCheckSec = document.querySelector(".btnCheck-sec");
@@ -172,24 +230,43 @@ window.addEventListener('load', function (e) {
             alert('надо заполнить все сферы');
         } else {
         document.getElementById('diagram-block').style.display = 'block'
-        //очищаешь его
+
+        let chartDestroyMain = Chart.getChart("myChart"); // <canvas> id
+        if (chartDestroyMain != undefined) {
+            chartDestroyMain.destroy();
+        }
+
         let myChart = new Chart('myChart', {
             type: 'polarArea',
             data: dataSets,
             options: {
                 events: ['none'],
-                scale: {
-                    ticks: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 10,
-                        stepSize: 1
+            scales: {
+                r: {
+                    angleLines: {
+                        display: false
                     },
-                },
-                animation: {
-                    animateRotate: false
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
                 }
             },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            animation: {
+                animateRotate: false
+            }
+        }
         })
 
         //diagrama2
@@ -270,52 +347,138 @@ window.addEventListener('load', function (e) {
             if (diagrama2[i3] > 0) {
                 dataSum_temp[i3] = diagrama2[i3];
             }
-            // if (diagrama2[i3] < 1) {
-            //     diagrama2[i3] = 0;
-            // }
         }
-        // console.log(diagrama2);
+        let diagrama2Bg = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        for(let i = 0; i < diagrama2.length; i++) {
+            diagrama2[i] > 0 ? diagrama2Bg[i] = 10 : false
+        }
+
 
         const dataSetsMost = {
-            datasets: [{
-                label: "My sds Dataset",
+            labels: ["Красота", "Карьера и работа", "Здоровье", "Финансы", "Отношения", "Бизнес", "Духовный рост", "Личностный рост", "Творчество и хобби"],
+            datasets: [
+            {
                 data: diagrama2,
-                borderWidth: 1,
-                lineTension: 0,
                 backgroundColor: [
-                    '#B670F7',
-                    '#A651F9',
-                    '#A557E0',
+                    '#F301C9',
+                    '#9702B2',
+                    '#D201F3',
                     '#8512E7',
-                    '#D400F5',
                     '#4C0A86',
-                    '#5A08A2',
+                    '#D400F5',
                     '#6D00DD',
+                    '#5A08A2',
                     '#C48FFA',
-                ]
-            }]
-        }
-        //очищаешь его        
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagrama2Bg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
+                }
+            }
+            ]
+        } 
+        let chartDestroyMost = Chart.getChart("myChartMost"); // <canvas> id
+        if (chartDestroyMost != undefined) {
+            chartDestroyMost.destroy();
+        } 
 
         let myChartMost = new Chart('myChartMost', {
             type: 'polarArea',
             data: dataSetsMost,
             options: {
                 events: ['none'],
-                scale: {
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
                     ticks: {
-                        beginAtZero: true,
-                        min: 0,
-                        max: 10,
-                        stepSize: 1
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
                 },
-                animation: {
-                    animateRotate: false
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
                 }
             },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 27,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
+            }
+        }
         })
-        // myChartMost.update();    
+
         const spheres_wrapper = document.getElementById("spheres-wrapper")
         spheres_wrapper.innerHTML = ''
         if (diagrama2[0] > 0) {
@@ -384,247 +547,497 @@ window.addEventListener('load', function (e) {
 }})
 
     btnCheckRelationship.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },   
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            }, 
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumRelationship.length; ++i2) {
-            if (sumRelationship[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumRelationship[index];
+            item.significance = mostRelationshipSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagrama3 = [0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagrama3[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagrama3[min_index] > 9) {
+                diagrama3[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumRelationship;
-
-            let diagrama3 = [0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagrama3[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagrama3.length; ++i3) {
+            if (diagrama3[i3] > 0) {
+                dataSum_temp[i3] = diagrama3[i3];
             }
+        }
 
-            for (let i3 = 0; i3 < diagrama3.length; ++i3) {
-                if (diagrama3[i3] > 0) {
-                    dataSum_temp[i3] = diagrama3[i3];
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0]
+
+        for(let i = 0; i < diagrama3.length; i++) {
+            diagrama3[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+
+        const dataRelationship = {
+            labels: ["", "Отношения с мужчиной", "", "Отношения с детьми", "", "Отношения с родителями", "", "Отношения с коллегами"],
+            datasets: [
+            {
+                data: diagrama3,
+                backgroundColor: [
+                    'rgb(0, 0, 0, 0)',
+                    '#F301C9',
+                    'rgb(0, 0, 0, 0)',
+                    '#9702B2',
+                    'rgb(0, 0, 0, 0)',
+                    '#D201F3',
+                    'rgb(0, 0, 0, 0)',
+                    '#8512E7',
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataRelationship = {
-                datasets: [{
-                    label: 'My relation Dataset',
-                    data: diagrama3,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartRelationship = new Chart('myChartRelationship', {
-                type: 'polarArea',
-                data: dataRelationship,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroyRelationship = Chart.getChart("myChartRelationship");
+        if (chartDestroyRelationship != undefined) {
+            chartDestroyRelationship.destroy();
+        } 
+
+        let myChartRelationship = new Chart('myChartRelationship', {
+            type: 'polarArea',
+            data: dataRelationship,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const spheres_relationship = document.getElementById("spheres-relationship")
-            const relationship_wrapper = document.getElementById("relationship-block")
-            relationship_wrapper.innerHTML = ''
-            if (diagrama3[1] > 0) {
-                relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/krasota.svg" alt="">
-            <h2>Отношения с мужчиной</h2>
-            <a class="spheres-block_text-button" onclick="gallery_relationship_male()">Узнать подробнее</a>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 21,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
-            if (diagrama3[3] > 0) {
-                relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/krasota.svg" alt="">
-            <h2>Отношения с детьми</h2>
-            <a class="spheres-block_text-button" onclick="gallery_relationship_child()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagrama3[5] > 0) {
-                relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/krasota.svg" alt="">
-            <h2>Отношения с родителями</h2>
-            <a class="spheres-block_text-button" onclick="gallery_relationship_parents()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagrama3[7] > 0) {
-                relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/krasota.svg" alt="">
-            <h2>Отношения с коллегами/партнёрами</h2>
-            <a class="spheres-block_text-button" onclick="gallery_relationship_partners()">Узнать подробнее</a>
-            </div>`
-            }
+        }
+        })
+        const relationship_wrapper = document.getElementById("relationship-block")
+        relationship_wrapper.innerHTML = ''
+        if (diagrama3[1] > 0) {
+            relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/relationship-men-icon.svg" alt="">
+        <h2>Отношения с мужчиной</h2>
+        <a class="spheres-block_text-button" onclick="gallery_relationship_male()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagrama3[3] > 0) {
+            relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/relationship-chaild-icon.svg" alt="">
+        <h2>Отношения с детьми</h2>
+        <a class="spheres-block_text-button" onclick="gallery_relationship_child()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagrama3[5] > 0) {
+            relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/relationship-parents-icon.svg" alt="">
+        <h2>Отношения с родителями</h2>
+        <a class="spheres-block_text-button" onclick="gallery_relationship_parents()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagrama3[7] > 0) {
+            relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/relationship-colegs-icon.svg" alt="">
+        <h2>Отношения с коллегами</h2>
+        <a class="spheres-block_text-button" onclick="gallery_relationship_partners()">Узнать подробнее</a>
+        </div>`
         }
     })
 
     btnCheckKrasota.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },   
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            }, 
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumKrasota.length; ++i2) {
-            if (sumKrasota[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumKrasota[index];
+            item.significance = mostKrasotaSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagramaKrasotaCalc = [0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagramaKrasotaCalc[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagramaKrasotaCalc[min_index] > 9) {
+                diagramaKrasotaCalc[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumKrasota;
-
-            let diagramaKrasotaCalc = [0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagramaKrasotaCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagramaKrasotaCalc.length; ++i3) {
+            if (diagramaKrasotaCalc[i3] > 0) {
+                dataSum_temp[i3] = diagramaKrasotaCalc[i3];
             }
+        }
 
-            for (let i3 = 0; i3 < diagramaKrasotaCalc.length; ++i3) {
-                if (diagramaKrasotaCalc[i3] > 0) {
-                    dataSum_temp[i3] = diagramaKrasotaCalc[i3];
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0]
+
+        for(let i = 0; i < diagramaKrasotaCalc.length; i++) {
+            diagramaKrasotaCalc[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+
+        const dataKrasota = {
+            labels: ["", "Фигура", "", "Волосы", "", "Лицо", "", "Мода и стиль"],
+            datasets: [
+            {
+                data: diagramaKrasotaCalc,
+                backgroundColor: [
+                    'rgb(0, 0, 0, 0)',
+                    '#F301C9',
+                    'rgb(0, 0, 0, 0)',
+                    '#9702B2',
+                    'rgb(0, 0, 0, 0)',
+                    '#D201F3',
+                    'rgb(0, 0, 0, 0)',
+                    '#8512E7',
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataKrasota = {
-                datasets: [{
-                    label: 'My krasota Dataset',
-                    data: diagramaKrasotaCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartKrasota = new Chart('myChartKrasota', {
-                type: 'polarArea',
-                data: dataKrasota,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroyKrasota = Chart.getChart("myChartKrasota");
+        if (chartDestroyKrasota != undefined) {
+            chartDestroyKrasota.destroy();
+        } 
+
+        let myChartKrasota = new Chart('myChartKrasota', {
+            type: 'polarArea',
+            data: dataKrasota,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const krasota_wrapper = document.getElementById("krasota-block")
-            krasota_wrapper.innerHTML = ''
-            if (diagramaKrasotaCalc[1] > 0) {
-                krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/figure-icon.svg" alt="">
-            <h2>Фигура</h2>
-            <a class="spheres-block_text-button" onclick="gallery_krasota_figure()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaKrasotaCalc[3] > 0) {
-                krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/hair-icon.svg" alt="">
-            <h2>Волосыи</h2>
-            <a class="spheres-block_text-button" onclick="gallery_krasota_heir()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaKrasotaCalc[5] > 0) {
-                krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/face-icon.svg" alt="">
-            <h2>Лицо</h2>
-            <a class="spheres-block_text-button" onclick="gallery_krasota_face()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaKrasotaCalc[7] > 0) {
-                krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/fashion-icon.svg" alt="">
-            <h2>Мода и стиль</h2>
-            <a class="spheres-block_text-button" onclick="gallery_krasota_fashion()">Узнать подробнее</a>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 27,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
         }
+        })
+        const krasota_wrapper = document.getElementById("krasota-block")
+        krasota_wrapper.innerHTML = ''
+        if (diagramaKrasotaCalc[1] > 0) {
+            krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/figure-icon.svg" alt="">
+        <h2>Фигура</h2>
+        <a class="spheres-block_text-button" onclick="gallery_krasota_figure()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaKrasotaCalc[3] > 0) {
+            krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/hair-icon.svg" alt="">
+        <h2>Волосыи</h2>
+        <a class="spheres-block_text-button" onclick="gallery_krasota_heir()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaKrasotaCalc[5] > 0) {
+            krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/face-icon.svg" alt="">
+        <h2>Лицо</h2>
+        <a class="spheres-block_text-button" onclick="gallery_krasota_face()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaKrasotaCalc[7] > 0) {
+            krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/fashion-icon.svg" alt="">
+        <h2>Мода и стиль</h2>
+        <a class="spheres-block_text-button" onclick="gallery_krasota_fashion()">Узнать подробнее</a>
+        </div>`
+        }       
     })
 
     btnCheckWorks.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumWorks.length; ++i2) {
-            if (sumWorks[i2] <= 0) {
-                temp_if = true;
-            }
-        }
+        dataElements.forEach((item, index) => {
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
+            item.satisfactorily = sumWorks[index];
+            item.significance = mostWorksSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
 
-            //очищаешь его
+        });
 
-            //diagrama2
-            let dataSum_temp = sumWorks;
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
 
             let diagramaWorksCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -633,15 +1046,17 @@ window.addEventListener('load', function (e) {
                 let min_index = 0;
 
                 for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
+                    if (dataSum_temp[index] > minimum) {
                         minimum = dataSum_temp[index];
                         min_index = index;
                     }
                 }
 
                 diagramaWorksCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+                dataSum_temp[min_index] = 0;
+                if(diagramaWorksCalc[min_index] > 9) {
+                    diagramaWorksCalc[min_index] = 10
+                }
             }
 
             for (let i3 = 0; i3 < diagramaWorksCalc.length; ++i3) {
@@ -649,44 +1064,136 @@ window.addEventListener('load', function (e) {
                     dataSum_temp[i3] = diagramaWorksCalc[i3];
                 }
             }
+            let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+            for(let i = 0; i < diagramaWorksCalc.length; i++) {
+                diagramaWorksCalc[i] > 0 ? diagramaBg[i] = 10 : false
+            }
+
             const dataWorks = {
-                datasets: [{
-                    label: 'My Works Dataset',
+                labels: ["Творческая работа ", "Работа \n в сфере IT", "Финанси", "Организация \n и управление", "Товаров \n и услуг", "Здоровый \n образ жизни", "Собственний \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
+                datasets: [
+                {
                     data: diagramaWorksCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
                     backgroundColor: [
-                        '#D400F5',
-                        '#C48FFA',
-                        '#F400CD',
+                        '#B670F7',
+                        '#9702B2',
+                        '#D201F3',
+                        '#8512E7',               
+                        '#F301C9',
+                        '#9702B2',
+                        '#B670F7',
+                        '#D201F3',
                         '#8512E7',
-                        '#CB11AB',
-                        '#A651F9',
-                        '#C48FFA',
-                        '#D400F5',
-                        '#F400CD',
-                        '#8512E7',
-                    ]
-                }]
-            };
+                        '#F301C9',
+                    ],
+                    datalabels: {
+                        display: false,
+                    },
+                },
+                {
+                    helper: true,
+                    data: diagramaBg,
+                    borderWidth: 0,
+                    backgroundColor: [
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    ],
+                    datalabels: {
+                        display: false
+                    }
+                }
+                ]
+            } 
+
+            let chartDestroyWorks = Chart.getChart("myChartWorks");
+            if (chartDestroyWorks != undefined) {
+                chartDestroyWorks.destroy();
+            } 
 
             let myChartWorks = new Chart('myChartWorks', {
                 type: 'polarArea',
                 data: dataWorks,
                 options: {
                     events: ['none'],
-                    scale: {
+                layout: {
+                    padding: 20
+                },
+                scales: {
+                    x: {
                         ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
+                            padding: 60,
+                            color: "rgb(90, 8, 162, 0%)"
                         },
+                        grid: {
+                            borderColor: 'rgb(90, 8, 162, 0%)',
+                            display: false
+                        },
+                        angleLines: {
+                            display: false
+                        },
+                        pointLabels: {
+                            display: false
+                        }
                     },
-                    animation: {
-                        animateRotate: false
+                    y: {
+                        ticks: {
+                            padding: 60,
+                            color: "rgb(90, 8, 162, 0%)"
+                        },
+                        grid: {
+                            borderColor: 'rgb(90, 8, 162, 0%)',
+                            display: false
+                        },
+                        angleLines: {
+                            display: false
+                        },
+                        pointLabels: {
+                            display: false
+                        }
+                    },
+                    r: {
+                        angleLines: {
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        },
+                        pointLabels: {
+                            display: false
+                        }
                     }
                 },
+                scale: {
+                    min: 0,
+                    max: 10,
+                },
+                plugins: {
+                    legend: {
+                    display: false
+                },
+                    labels: {
+                        position: 'border',
+                        textMargin: 20,
+                        arc: true,
+                        precision: 2,
+                        fontStyle: 'bold',
+                        fontColor: '#000',
+                        position: 'outside',
+                        fontSize: 16,
+                        render: (args) => args.dataset.helper ? args.label : '',
+                        fontColor: (args) => legendLabelColors
+                    },
+                }
+            }
             })
             const works_wrapper = document.getElementById("works-block")
             works_wrapper.innerHTML = ''
@@ -724,7 +1231,7 @@ window.addEventListener('load', function (e) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
             <img src="assets/img/organization-management-icon.svg" alt="organization">
             <div>
-            <h2>Работа, связанная с организацией и управлением</h2>
+            <h2>Организация и управление</h2>
             <p class="spheres-wrap_paragraph">Менеджмент</p>
             <a class="spheres-works spheres-block_text-button" onclick="gallery_works_organization()">Узнать подробнее</a>
             </div>
@@ -734,7 +1241,7 @@ window.addEventListener('load', function (e) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
             <img src="assets/img/promotion-services-icon.svg" alt="promotion">
             <div>
-            <h2>Работа, связанная с продвижением товаров и услуг</h2>
+            <h2>Продвижение товаров и услуг</h2>
             <p class="spheres-wrap_paragraph">Маркетинг, реклама и т.д.</p>
             <a class="spheres-works spheres-block_text-button" onclick="gallery_works_promotion()">Узнать подробнее</a>
             </div>
@@ -767,7 +1274,7 @@ window.addEventListener('load', function (e) {
             if (diagramaWorksCalc[8] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-works_wrap spheres-block_wrap">
             <img src="assets/img/pedagogy-educcation-icon.svg" alt="pedagogy">
-            <h2>Работа, связанная с педагогикой и образованием</h2>
+            <h2>Педагогика и образование</h2>
             <a class="spheres-block_text-button" onclick="gallery_works_educcation()">Узнать подробнее</a>
             </div>`
             }
@@ -780,44 +1287,66 @@ window.addEventListener('load', function (e) {
             <a class="spheres-works spheres-block_text-button" onclick="gallery_works_travel()">Узнать подробнее</a>
             </div>
             </div>`
-            }
-        }
+            }    
     })
 
     btnCheckHealth.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumHealth.length; ++i2) {
-            if (sumHealth[i2] <= 0) {
-                temp_if = true;
-            }
-        }
+        dataElements.forEach((item, index) => {
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
+            item.satisfactorily = sumHealth[index];
+            item.significance = mostHealthSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
 
-            //очищаешь его
+        });
 
-            //diagrama2
-            let dataSum_temp = sumHealth;
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
 
-            let diagramaHealthCalc = [0, 0, 0, 0, 0, 0, 0, 0,];
+            let diagramaHealthCalc = [0, 0, 0, 0, 0, 0, 0, 0];
 
             for (let i = 0; i < 2; ++i) {
                 let minimum = dataSum_temp[0];
                 let min_index = 0;
 
                 for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
+                    if (dataSum_temp[index] > minimum) {
                         minimum = dataSum_temp[index];
                         min_index = index;
                     }
                 }
 
                 diagramaHealthCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+                dataSum_temp[min_index] = 0;
+                if(diagramaHealthCalc[min_index] > 9) {
+                    diagramaHealthCalc[min_index] = 10
+                }
             }
 
             for (let i3 = 0; i3 < diagramaHealthCalc.length; ++i3) {
@@ -825,42 +1354,132 @@ window.addEventListener('load', function (e) {
                     dataSum_temp[i3] = diagramaHealthCalc[i3];
                 }
             }
+            let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0]
+
+            for(let i = 0; i < diagramaHealthCalc.length; i++) {
+                diagramaHealthCalc[i] > 0 ? diagramaBg[i] = 10 : false
+            }
+            
             const dataHealth = {
-                datasets: [{
-                    label: 'My Health Dataset',
+                labels: ["Женское здоровье", "Пищеварение", "Зрение", "Спина и суставы", "Болевой синдром", "Гормоны", "Оздоровление", "Сердце и сосуды"],
+                datasets: [
+                {
                     data: diagramaHealthCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
                     backgroundColor: [
-                        '#8512E7',
-                        '#D400F5',
-                        '#C48FFA',
-                        '#F400CD',
-                        '#CB11AB',
-                        '#A651F9',
-                        '#C48FFA',
-                        '#D400F5',
-                    ]
-                }]
-            };
+                        '#B670F7',
+                        '#9702B2',
+                        '#D201F3',
+                        '#8512E7',               
+                        '#F301C9',
+                        '#9702B2',
+                        '#B670F7',
+                        '#D201F3',
+                    ],
+                    datalabels: {
+                        display: false,
+                    },
+                },
+                {
+                    helper: true,
+                    data: diagramaBg,
+                    borderWidth: 0,
+                    backgroundColor: [
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    'rgba(255, 255, 255, 100%)',
+                    ],
+                    datalabels: {
+                        display: false
+                    }
+                }
+                ]
+            } 
+
+            let chartDestroyHealt = Chart.getChart("myChartHealth");
+            if (chartDestroyHealt != undefined) {
+                chartDestroyHealt.destroy();
+            } 
 
             let myChartHealth = new Chart('myChartHealth', {
                 type: 'polarArea',
                 data: dataHealth,
                 options: {
                     events: ['none'],
-                    scale: {
+                layout: {
+                    padding: 20
+                },
+                scales: {
+                    x: {
                         ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
+                            padding: 60,
+                            color: "rgb(90, 8, 162, 0%)"
                         },
+                        grid: {
+                            borderColor: 'rgb(90, 8, 162, 0%)',
+                            display: false
+                        },
+                        angleLines: {
+                            display: false
+                        },
+                        pointLabels: {
+                            display: false
+                        }
                     },
-                    animation: {
-                        animateRotate: false
+                    y: {
+                        ticks: {
+                            padding: 60,
+                            color: "rgb(90, 8, 162, 0%)"
+                        },
+                        grid: {
+                            borderColor: 'rgb(90, 8, 162, 0%)',
+                            display: false
+                        },
+                        angleLines: {
+                            display: false
+                        },
+                        pointLabels: {
+                            display: false
+                        }
+                    },
+                    r: {
+                        angleLines: {
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        },
+                        pointLabels: {
+                            display: false
+                        }
                     }
                 },
+                scale: {
+                    min: 0,
+                    max: 10,
+                },
+                plugins: {
+                    legend: {
+                    display: false
+                },
+                    labels: {
+                        position: 'border',
+                        textMargin: 20,
+                        arc: true,
+                        precision: 2,
+                        fontStyle: 'bold',
+                        fontColor: '#000',
+                        position: 'outside',
+                        fontSize: 16,
+                        render: (args) => args.dataset.helper ? args.label : '',
+                        fontColor: (args) => legendLabelColors
+                    },
+                }
+            }
             })
             const health_wrapper = document.getElementById("health-block")
             health_wrapper.innerHTML = ''
@@ -923,672 +1542,1247 @@ window.addEventListener('load', function (e) {
             <a class="spheres-block_text-button" onclick="gallery_health_heartVesseles()">Узнать подробнее</a>
             </div>`
             }
-        }
+        
     })
 
     btnCheckFinance.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumFinance.length; ++i2) {
-            if (sumFinance[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumFinance[index];
+            item.significance = mostFinanceSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagramaFinanceCalc = [0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagramaFinanceCalc[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagramaFinanceCalc[min_index] > 9) {
+                diagramaFinanceCalc[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumFinance;
-
-            let diagramaFinanceCalc = [0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagramaFinanceCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagramaFinanceCalc.length; ++i3) {
+            if (diagramaFinanceCalc[i3] > 0) {
+                dataSum_temp[i3] = diagramaFinanceCalc[i3];
             }
+        }
 
-            for (let i3 = 0; i3 < diagramaFinanceCalc.length; ++i3) {
-                if (diagramaFinanceCalc[i3] > 0) {
-                    dataSum_temp[i3] = diagramaFinanceCalc[i3];
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0]
+
+        for(let i = 0; i < diagramaFinanceCalc.length; i++) {
+            diagramaFinanceCalc[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+
+        const dataFinance = {
+            labels: ["", "Привлечения финансов", "", "Финансовая грамотность", "", "Опыт инвестирования", "", "Опыт трейдинга"],
+            datasets: [
+            {
+                data: diagramaFinanceCalc,
+                backgroundColor: [
+                    'rgb(0, 0, 0, 0)',
+                    '#F301C9',
+                    'rgb(0, 0, 0, 0)',
+                    '#9702B2',
+                    'rgb(0, 0, 0, 0)',
+                    '#D201F3',
+                    'rgb(0, 0, 0, 0)',
+                    '#8512E7',
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataFinance = {
-                datasets: [{
-                    label: 'My finance Dataset',
-                    data: diagramaFinanceCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartKrasota = new Chart('myChartFinance', {
-                type: 'polarArea',
-                data: dataFinance,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroyFinance = Chart.getChart("myChartFinance");
+        if (chartDestroyFinance != undefined) {
+            chartDestroyFinance.destroy();
+        } 
+
+        let myChartFinance = new Chart('myChartFinance', {
+            type: 'polarArea',
+            data: dataFinance,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const finance_wrapper = document.getElementById("finance-block")
-            finance_wrapper.innerHTML = ''
-            if (diagramaFinanceCalc[1] > 0) {
-                finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/finance-attraction.svg" alt="">
-            <h2>Привлечение финансов</h2>
-            <a class="spheres-block_text-button" onclick="gallery_finance_attraction()">Узнать подробнее</a>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 27,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
-            if (diagramaFinanceCalc[3] > 0) {
-                finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/finance-literacy.svg" alt="">
-            <h2>Финансовая грамотность</h2>
-            <a class="spheres-block_text-button" onclick="gallery_finance_literacy()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaFinanceCalc[5] > 0) {
-                finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/finance-investment.svg" alt="">
-            <h2>инвестирования</h2>
-            <a class="spheres-block_text-button" onclick="gallery_finance_investment()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaFinanceCalc[7] > 0) {
-                finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/finance-trading.svg" alt="">
-            <h2>трейдинг</h2>
-            <a class="spheres-block_text-button" onclick="gallery_finance_trading()">Узнать подробнее</a>
-            </div>`
-            }
+        }
+        })
+        const finance_wrapper = document.getElementById("finance-block")
+        finance_wrapper.innerHTML = ''
+        if (diagramaFinanceCalc[1] > 0) {
+            finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/finance-attraction.svg" alt="">
+        <h2>Привлечение финансов</h2>
+        <a class="spheres-block_text-button" onclick="gallery_finance_attraction()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaFinanceCalc[3] > 0) {
+            finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/finance-literacy.svg" alt="">
+        <h2>Финансовая грамотность</h2>
+        <a class="spheres-block_text-button" onclick="gallery_finance_literacy()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaFinanceCalc[5] > 0) {
+            finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/finance-investment.svg" alt="">
+        <h2>инвестирования</h2>
+        <a class="spheres-block_text-button" onclick="gallery_finance_investment()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaFinanceCalc[7] > 0) {
+            finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/finance-trading.svg" alt="">
+        <h2>трейдинг</h2>
+        <a class="spheres-block_text-button" onclick="gallery_finance_trading()">Узнать подробнее</a>
+        </div>`
         }
     })
 
     btnCheckBusiness.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },   
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            }, 
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumBusiness.length; ++i2) {
-            if (sumBusiness[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumBusiness[index];
+            item.significance = mostBusinessSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagramaBusinessCalc = [0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagramaBusinessCalc[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagramaBusinessCalc[min_index] > 9) {
+                diagramaBusinessCalc[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumBusiness;
-
-            let diagramaBusinessCalc = [0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagramaBusinessCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagramaBusinessCalc.length; ++i3) {
+            if (diagramaBusinessCalc[i3] > 0) {
+                dataSum_temp[i3] = diagramaBusinessCalc[i3];
             }
+        }
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0]
 
-            for (let i3 = 0; i3 < diagramaBusinessCalc.length; ++i3) {
-                if (diagramaBusinessCalc[i3] > 0) {
-                    dataSum_temp[i3] = diagramaBusinessCalc[i3];
+        for(let i = 0; i < diagramaBusinessCalc.length; i++) {
+            diagramaBusinessCalc[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+
+        const dataBusiness = {
+            labels: ["", "бизнес-образования (MBA)", "", "Собственний бизнес", "Управления \n бизнесом", " Управление \n персоналом", "", "Работы с клиентами"],
+            datasets: [
+            {
+                data: diagramaBusinessCalc,
+                backgroundColor: [
+                    'rgb(0, 0, 0, 0)',
+                    '#F301C9',
+                    'rgb(0, 0, 0, 0)',
+                    '#9702B2',
+                    '#C48FFA',
+                    '#D201F3',
+                    'rgb(0, 0, 0, 0)',
+                    '#8512E7',
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataBusiness = {
-                datasets: [{
-                    label: 'My business Dataset',
-                    data: diagramaBusinessCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        '#8512E7',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartBusiness = new Chart('myChartBusines', {
-                type: 'polarArea',
-                data: dataBusiness,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroyBusines = Chart.getChart("myChartBusines");
+        if (chartDestroyBusines != undefined) {
+            chartDestroyBusines.destroy();
+        } 
+
+        let myChartBusiness = new Chart('myChartBusines', {
+            type: 'polarArea',
+            data: dataBusiness,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const business_wrapper = document.getElementById("business-block")
-            business_wrapper.innerHTML = ''
-            if (diagramaBusinessCalc[1] > 0) {
-                business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/business-availability.svg" alt="">
-            <h2>бизнес-образования (MBA)</h2>
-            <a class="spheres-block_text-button" onclick="gallery_business_availability()">Узнать подробнее</a>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 21,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
-            if (diagramaBusinessCalc[3] > 0) {
-                business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/business-experience.svg" alt="">
-            <h2>открытия собственного бизнеса</h2>
-            <a class="spheres-block_text-button" onclick="gallery_business_experience()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaBusinessCalc[4] > 0) {
-                business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/business-skills.svg" alt="">
-            <h2>управления бизнесом</h2>
-            <a class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaBusinessCalc[5] > 0) {
-                business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/business-recruitment.svg" alt="">
-            <h2>управление персоналом</h2>
-            <a class="spheres-block_text-button" onclick="gallery_business_recruitment()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaBusinessCalc[7] > 0) {
-                business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/business-service.svg" alt="">
-            <h2>работа с клиентами</h2>
-            <a class="spheres-block_text-button" onclick="gallery_business_service()">Узнать подробнее</a>
-            </div>`
-            }
+        }
+        })
+        const business_wrapper = document.getElementById("business-block")
+        business_wrapper.innerHTML = ''
+        if (diagramaBusinessCalc[1] > 0) {
+            business_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/business-availability.svg" alt="">
+        <h2>бизнес-образования (MBA)</h2>
+        <a class="spheres-block_text-button" onclick="gallery_business_availability()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaBusinessCalc[3] > 0) {
+            business_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/business-experience.svg" alt="">
+        <h2>открытия собственного бизнеса</h2>
+        <a class="spheres-block_text-button" onclick="gallery_business_experience()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaBusinessCalc[4] > 0) {
+            business_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/business-skills.svg" alt="">
+        <h2>управления бизнесом</h2>
+        <a class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaBusinessCalc[5] > 0) {
+            business_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/business-recruitment.svg" alt="">
+        <h2>управление персоналом</h2>
+        <a class="spheres-block_text-button" onclick="gallery_business_recruitment()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaBusinessCalc[7] > 0) {
+            business_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/business-service.svg" alt="">
+        <h2>работа с клиентами</h2>
+        <a class="spheres-block_text-button" onclick="gallery_business_service()">Узнать подробнее</a>
+        </div>`
         }
     })
 
     btnCheckSpiritual.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },   
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            }, 
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumSpiritual.length; ++i2) {
-            if (sumSpiritual[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumSpiritual[index];
+            item.significance = mostSpiritualSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagramaSpiritualCalc = [0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagramaSpiritualCalc[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagramaSpiritualCalc[min_index] > 9) {
+                diagramaSpiritualCalc[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumSpiritual;
-
-            let diagramaSpiritualCalc = [0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagramaSpiritualCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagramaSpiritualCalc.length; ++i3) {
+            if (diagramaSpiritualCalc[i3] > 0) {
+                dataSum_temp[i3] = diagramaSpiritualCalc[i3];
             }
+        }
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0]
 
-            for (let i3 = 0; i3 < diagramaSpiritualCalc.length; ++i3) {
-                if (diagramaSpiritualCalc[i3] > 0) {
-                    dataSum_temp[i3] = diagramaSpiritualCalc[i3];
+        for(let i = 0; i < diagramaSpiritualCalc.length; i++) {
+            diagramaSpiritualCalc[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+
+        const dataSpiritual = {
+            labels: ["", "Медитация", "", "Привлечение \n финансов", "Исполнение желаний", "Осознанность,", "", "Эзотерические знания"],
+            datasets: [
+            {
+                data: diagramaSpiritualCalc,
+                backgroundColor: [
+                    'rgb(0, 0, 0, 0)',
+                    '#F301C9',
+                    'rgb(0, 0, 0, 0)',
+                    '#9702B2',
+                    '#C48FFA',
+                    '#D201F3',
+                    'rgb(0, 0, 0, 0)',
+                    '#8512E7',
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataSpiritual = {
-                datasets: [{
-                    label: 'My spiritual Dataset',
-                    data: diagramaSpiritualCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        'rgb(0, 0, 0, 0)',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        '#8512E7',
-                        '#A651F9',
-                        'rgb(0, 0, 0, 0)',
-                        '#8512E7',
-                        'rgb(0, 0, 0, 0)',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartSpiritual = new Chart('myChartSpiritual', {
-                type: 'polarArea',
-                data: dataSpiritual,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroySpiritual = Chart.getChart("myChartSpiritual");
+        if (chartDestroySpiritual != undefined) {
+            chartDestroySpiritual.destroy();
+        } 
+
+        let myChartSpiritual = new Chart('myChartSpiritual', {
+            type: 'polarArea',
+            data: dataSpiritual,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const spiritual_wrapper = document.getElementById("spiritual-block")
-            spiritual_wrapper.innerHTML = ''
-            if (diagramaSpiritualCalc[1] > 0) {
-                spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/test-icon/spiritual-medicine.svg" alt="">
-            <div>
-            <h2>Медитация</h2>
-            <p class="spheres-wrap_paragraph">Самоконтроль, спокойствие</p>
-            <a class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_medicine()">Узнать подробнее</a>
-            </div>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 21,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
-            if (diagramaSpiritualCalc[3] > 0) {
-                spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/spiritual-finance.svg" alt="">
-            <h2>Привлечение финансов</h2>
-            <a class="spheres-block_text-button" onclick="gallery_spiritual_finance()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaSpiritualCalc[4] > 0) {
-                spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/spiritual-desires.svg" alt="">
-            <h2>Исполнение желаний</h2>
-            <a class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaSpiritualCalc[5] > 0) {
-                spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/spiritual-mindfulness.svg" alt="">
-            <h2>Осознанность</h2>
-            <a class="spheres-block_text-button" onclick="gallery_spiritual_mindfulness()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaSpiritualCalc[7] > 0) {
-                spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/test-icon/spiritual-knowledge.svg" alt="">
-            <div>
-            <h2>Эзотерические знания</h2>
-            <p class="spheres-wrap_paragraph">Трансерфинг, тета-хилинг,  сила рода, нумерология, таро и т.д</p>
-            <a class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_knowledge()">Узнать подробнее</a>
-            </div>
-            </div>`
-            }
+        }
+        })
+        const spiritual_wrapper = document.getElementById("spiritual-block")
+        spiritual_wrapper.innerHTML = ''
+        if (diagramaSpiritualCalc[1] > 0) {
+            spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
+        <img src="assets/img/test-icon/spiritual-medicine.svg" alt="">
+        <div>
+        <h2>Медитация</h2>
+        <p class="spheres-wrap_paragraph">Самоконтроль, спокойствие</p>
+        <a class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_medicine()">Узнать подробнее</a>
+        </div>
+        </div>`
+        }
+        if (diagramaSpiritualCalc[3] > 0) {
+            spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/spiritual-finance.svg" alt="">
+        <h2>Привлечение финансов</h2>
+        <a class="spheres-block_text-button" onclick="gallery_spiritual_finance()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaSpiritualCalc[4] > 0) {
+            spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/spiritual-desires.svg" alt="">
+        <h2>Исполнение желаний</h2>
+        <a class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaSpiritualCalc[5] > 0) {
+            spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/spiritual-mindfulness.svg" alt="">
+        <h2>Осознанность</h2>
+        <a class="spheres-block_text-button" onclick="gallery_spiritual_mindfulness()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaSpiritualCalc[7] > 0) {
+            spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
+        <img src="assets/img/test-icon/spiritual-knowledge.svg" alt="">
+        <div>
+        <h2>Эзотерические знания</h2>
+        <p class="spheres-wrap_paragraph">Трансерфинг, тета-хилинг,  сила рода, нумерология, таро и т.д</p>
+        <a class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_knowledge()">Узнать подробнее</a>
+        </div>
+        </div>`
         }
     })
 
     btnCheckPersonal.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumPersonal.length; ++i2) {
-            if (sumPersonal[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumPersonal[index];
+            item.significance = mostPersonalSum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagramaPersonalCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagramaPersonalCalc[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagramaPersonalCalc[min_index] > 9) {
+                diagramaPersonalCalc[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumPersonal;
-
-            let diagramaPersonalCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagramaPersonalCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagramaPersonalCalc.length; ++i3) {
+            if (diagramaPersonalCalc[i3] > 0) {
+                dataSum_temp[i3] = diagramaPersonalCalc[i3];
             }
+        }
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-            for (let i3 = 0; i3 < diagramaPersonalCalc.length; ++i3) {
-                if (diagramaPersonalCalc[i3] > 0) {
-                    dataSum_temp[i3] = diagramaPersonalCalc[i3];
+        for(let i = 0; i < diagramaPersonalCalc.length; i++) {
+            diagramaPersonalCalc[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+        
+        const dataPersonal = {
+            labels: ["Самомотивация", "Достижение целей", "Тайм-менеджмент", "Лидерство", "Навыки общения", "Личный бренд", "Женственность и \n сексуальность", "Культура и \n история", "Иностранные языки"],
+            datasets: [
+            {
+                data: diagramaPersonalCalc,
+                backgroundColor: [
+                    '#B670F7',
+                    '#9702B2',
+                    '#D201F3',
+                    '#8512E7',               
+                    '#F301C9',
+                    '#9702B2',
+                    '#B670F7',
+                    '#D201F3',
+                    '#8512E7',  
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataPersonal = {
-                datasets: [{
-                    label: 'My personal Dataset',
-                    data: diagramaPersonalCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        '#D400F5',
-                        '#C48FFA',
-                        '#F400CD',
-                        '#8512E7',
-                        '#CB11AB',
-                        '#A651F9',
-                        '#C48FFA',
-                        '#D400F5',
-                        '#F400CD',
-                        '#8512E7',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartWorks = new Chart('myChartPersonal', {
-                type: 'polarArea',
-                data: dataPersonal,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroyPersonal = Chart.getChart("myChartPersonal");
+        if (chartDestroyPersonal != undefined) {
+            chartDestroyPersonal.destroy();
+        } 
+        
+        let myChartPersonal = new Chart('myChartPersonal', {
+            type: 'polarArea',
+            data: dataPersonal,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const personal_wrapper = document.getElementById("personal-block")
-            personal_wrapper.innerHTML = ''
-            if (diagramaPersonalCalc[0] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-self_motivation.svg">
-            <h2 class="works-block_title">Самомотивация</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_self()">Узнать подробнее</a>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 20,
+                    arc: true,
+                    precision: 2,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
-            if (diagramaPersonalCalc[1] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-goal.svg">
-            <h2 class="works-block_title">Постановка и достижение целей</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_goal()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[2] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-menegment.svg">
-            <h2 class="works-block_title">Тайм-менеджмент</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_menegment()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[3] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-leadership.svg">
-            <h2 class="works-block_title">Лидерство</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_leadership()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[4] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-skills.svg">
-            <h2 class="works-block_title">Навыки общения</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_skills()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[5] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-brand.svg">
-            <h2 class="works-block_title">Личный бренд</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_brand()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[6] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-sexuality.svg">
-            <h2 class="works-block_title">Женственность и сексуальность</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_sexuality()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[7] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-history.svg">
-            <h2 class="works-block_title">Культура и история</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_history()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaPersonalCalc[8] > 0) {
-                personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/personal-languages.svg">
-            <h2 class="works-block_title">Владение иностранными языками</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_languages()">Узнать подробнее</a>
-            </div>`
-            }
+        }
+        })
+        const personal_wrapper = document.getElementById("personal-block")
+        personal_wrapper.innerHTML = ''
+        if (diagramaPersonalCalc[0] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-self_motivation.svg">
+        <h2 class="works-block_title">Самомотивация</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_self()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[1] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-goal.svg">
+        <h2 class="works-block_title">Постановка и достижение целей</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_goal()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[2] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-menegment.svg">
+        <h2 class="works-block_title">Тайм-менеджмент</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_menegment()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[3] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-leadership.svg">
+        <h2 class="works-block_title">Лидерство</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_leadership()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[4] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-skills.svg">
+        <h2 class="works-block_title">Навыки общения</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_skills()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[5] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-brand.svg">
+        <h2 class="works-block_title">Личный бренд</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_brand()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[6] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-sexuality.svg">
+        <h2 class="works-block_title">Женственность и сексуальность</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_sexuality()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[7] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-history.svg">
+        <h2 class="works-block_title">Культура и история</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_history()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaPersonalCalc[8] > 0) {
+            personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/personal-languages.svg">
+        <h2 class="works-block_title">Владение иностранными языками</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_languages()">Узнать подробнее</a>
+        </div>`
         }
     })
 
     btnCheckHobby.addEventListener('click', (e) => {
-        let temp_if = false;
+        let dataElements = [
+            {
+                value: 0,
+            },   
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            }, 
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+            {
+                value: 0,
+            },
+        ];
 
-        for (let i2 = 0; i2 < sumHobby.length; ++i2) {
-            if (sumHobby[i2] <= 0) {
-                temp_if = true;
+        dataElements.forEach((item, index) => {
+
+            item.satisfactorily = sumHobby[index];
+            item.significance = mostHobbySum[index];
+            item.value = (10 - item.satisfactorily) * item.significance;
+
+        });
+
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        let dataSum_temp = dataElements;
+
+        let diagramaHobbyCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        for (let i = 0; i < 2; ++i) {
+            let minimum = dataSum_temp[0];
+            let min_index = 0;
+
+            for (let index = 0; index < dataSum_temp.length; ++index) {
+                if (dataSum_temp[index] > minimum) {
+                    minimum = dataSum_temp[index];
+                    min_index = index;
+                }
+            }
+
+            diagramaHobbyCalc[min_index] = dataSum_temp[min_index];
+            dataSum_temp[min_index] = 0;
+            if(diagramaHobbyCalc[min_index] > 9) {
+                diagramaHobbyCalc[min_index] = 10
             }
         }
 
-        if (temp_if) {
-            alert('надо заполнить все сферы');
-        } else {
-
-            //очищаешь его
-
-            //diagrama2
-            let dataSum_temp = sumHobby;
-
-            let diagramaHobbyCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-            for (let i = 0; i < 2; ++i) {
-                let minimum = dataSum_temp[0];
-                let min_index = 0;
-
-                for (let index = 0; index < dataSum_temp.length; ++index) {
-                    if (dataSum_temp[index] < minimum) {
-                        minimum = dataSum_temp[index];
-                        min_index = index;
-                    }
-                }
-
-                diagramaHobbyCalc[min_index] = dataSum_temp[min_index];
-                dataSum_temp[min_index] = 100;
-
+        for (let i3 = 0; i3 < diagramaHobbyCalc.length; ++i3) {
+            if (diagramaHobbyCalc[i3] > 0) {
+                dataSum_temp[i3] = diagramaHobbyCalc[i3];
             }
+        }
+        let diagramaBg = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-            for (let i3 = 0; i3 < diagramaHobbyCalc.length; ++i3) {
-                if (diagramaHobbyCalc[i3] > 0) {
-                    dataSum_temp[i3] = diagramaHobbyCalc[i3];
+        for(let i = 0; i < diagramaHobbyCalc.length; i++) {
+            diagramaHobbyCalc[i] > 0 ? diagramaBg[i] = 10 : false
+        }
+
+        const dataHobby = {
+            labels: ["Рукоделие", "Кулинария", "Рисование", "Собственний бизнес", "Фото и видео", "Музыка", "Дом и сад", "Танцы", "Вождение и \n тюнинг", "Дрессировка", "Пошив одежды", "Декор и \n флористика"],
+            datasets: [
+            {
+                data: diagramaHobbyCalc,
+                backgroundColor: [
+                    '#D400F5',
+                    '#C48FFA',
+                    '#F400CD',
+                    '#8512E7',
+                    '#CB11AB',
+                    '#A651F9',
+                    '#C48FFA',
+                    '#D400F5',
+                    '#F400CD',
+                    '#8512E7',
+                    '#A651F9',
+                ],
+                datalabels: {
+                    display: false,
+                },
+            },
+            {
+                helper: true,
+                data: diagramaBg,
+                borderWidth: 0,
+                backgroundColor: [
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                'rgba(255, 255, 255, 100%)',
+                ],
+                datalabels: {
+                    display: false
                 }
             }
-            const dataHobby = {
-                datasets: [{
-                    label: 'My hobby Dataset',
-                    data: diagramaHobbyCalc,
-                    borderWidth: 1,
-                    borderColor: 'rgb(0, 0, 0, 0)',
-                    backgroundColor: [
-                        '#D400F5',
-                        '#C48FFA',
-                        '#F400CD',
-                        '#8512E7',
-                        '#CB11AB',
-                        '#A651F9',
-                        '#C48FFA',
-                        '#D400F5',
-                        '#F400CD',
-                        '#8512E7',
-                    ]
-                }]
-            };
+            ]
+        } 
 
-            let myChartHobby = new Chart('myChartHobby', {
-                type: 'polarArea',
-                data: dataHobby,
-                options: {
-                    events: ['none'],
-                    scale: {
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 10,
-                            stepSize: 1
-                        },
+        let chartDestroyHobby = Chart.getChart("myChartHobby");
+        if (chartDestroyHobby != undefined) {
+            chartDestroyHobby.destroy();
+        } 
+
+        let myChartHobby = new Chart('myChartHobby', {
+            type: 'polarArea',
+            data: dataHobby,
+            options: {
+                events: ['none'],
+            layout: {
+                padding: 20
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
                     },
-                    animation: {
-                        animateRotate: false
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
                     }
                 },
-            })
-            const hobby_wrapper = document.getElementById("hobby-block")
-            hobby_wrapper.innerHTML = ''
-            if (diagramaHobbyCalc[0] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-needlework.svg">
-            <h2 class="works-block_title">Рукоделие</h2>
-            <a class="spheres-block_text-button" onclick="gallery_hobby_needlework()">Узнать подробнее</a>
-            </div>`
+                y: {
+                    ticks: {
+                        padding: 60,
+                        color: "rgb(90, 8, 162, 0%)"
+                    },
+                    grid: {
+                        borderColor: 'rgb(90, 8, 162, 0%)',
+                        display: false
+                    },
+                    angleLines: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                },
+                r: {
+                    angleLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    pointLabels: {
+                        display: false
+                    }
+                }
+            },
+            scale: {
+                min: 0,
+                max: 10,
+            },
+            plugins: {
+                legend: {
+                display: false
+            },
+                labels: {
+                    position: 'border',
+                    textMargin: 21,
+                    arc: true,
+                    fontStyle: 'bold',
+                    fontColor: '#000',
+                    position: 'outside',
+                    fontSize: 16,
+                    render: (args) => args.dataset.helper ? args.label : '',
+                    fontColor: (args) => legendLabelColors
+                },
             }
-            if (diagramaHobbyCalc[1] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-cooking.svg">
-            <h2 class="works-block_title">Кулинария</h2>
-            <a class="spheres-block_text-button" onclick="gallery_hobby_cooking()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[2] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-painting.svg">
-            <h2 class="works-block_title">Рисование</h2>
-            <a class="spheres-block_text-button" onclick="gallery_hobby_painting()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[3] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-photo.svg">
-            <h2 class="works-block_title">Фото и видео</h2>
-            <a class="spheres-block_text-button" onclick="gallery_hobby_photo()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[4] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-music.svg">
-            <h2 class="works-block_title">Музыка</h2>
-            <a class="spheres-block_text-button" onclick="gallery_hobby_music()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[5] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-house.svg">
-            <h2 class="works-block_title">Дом и сад</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_house()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[6] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-dancing.svg">
-            <h2 class="works-block_title">Танцы</h2>
-            <a class="spheres-block_text-button" onclick="gallery_hobby_dancing()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[7] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-driving.svg">
-            <h2 class="works-block_title">Вождение и тюнинг</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_driving()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[8] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-training.svg">
-            <h2 class="works-block_title">Дрессировка</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_training()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[9] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-modeling.svg">
-            <h2 class="works-block_title">Моделирование и пошив одежды</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_modeling()">Узнать подробнее</a>
-            </div>`
-            }
-            if (diagramaHobbyCalc[10] > 0) {
-                hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hobby-decor.svg">
-            <h2 class="works-block_title">Декор и флористика</h2>
-            <a class="spheres-block_text-button" onclick="gallery_personal_hobby_decor()">Узнать подробнее</a>
-            </div>`
-            }
+        }
+        })
+        const hobby_wrapper = document.getElementById("hobby-block")
+        hobby_wrapper.innerHTML = ''
+        if (diagramaHobbyCalc[0] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-needlework.svg">
+        <h2 class="works-block_title">Рукоделие</h2>
+        <a class="spheres-block_text-button" onclick="gallery_hobby_needlework()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[1] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-cooking.svg">
+        <h2 class="works-block_title">Кулинария</h2>
+        <a class="spheres-block_text-button" onclick="gallery_hobby_cooking()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[2] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-painting.svg">
+        <h2 class="works-block_title">Рисование</h2>
+        <a class="spheres-block_text-button" onclick="gallery_hobby_painting()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[3] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-photo.svg">
+        <h2 class="works-block_title">Фото и видео</h2>
+        <a class="spheres-block_text-button" onclick="gallery_hobby_photo()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[4] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-music.svg">
+        <h2 class="works-block_title">Музыка</h2>
+        <a class="spheres-block_text-button" onclick="gallery_hobby_music()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[5] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-house.svg">
+        <h2 class="works-block_title">Дом и сад</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_hobby_house()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[6] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-dancing.svg">
+        <h2 class="works-block_title">Танцы</h2>
+        <a class="spheres-block_text-button" onclick="gallery_hobby_dancing()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[7] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-driving.svg">
+        <h2 class="works-block_title">Вождение и тюнинг</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_hobby_driving()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[8] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-training.svg">
+        <h2 class="works-block_title">Дрессировка</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_hobby_training()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[9] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-modeling.svg">
+        <h2 class="works-block_title">Моделирование и пошив одежды</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_hobby_modeling()">Узнать подробнее</a>
+        </div>`
+        }
+        if (diagramaHobbyCalc[10] > 0) {
+            hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
+        <img src="assets/img/test-icon/hobby-decor.svg">
+        <h2 class="works-block_title">Декор и флористика</h2>
+        <a class="spheres-block_text-button" onclick="gallery_personal_hobby_decor()">Узнать подробнее</a>
+        </div>`
         }
     })
 
@@ -1769,6 +2963,159 @@ window.addEventListener('load', function (e) {
 
             countHobby[index].setAttribute("data-count", num)
             countHobby[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementKrasotaMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 5
+            }
+            if (index == 3) {
+                index2 = 7
+            }
+            let num = addSumSec(mostKrasotaSum, index2);
+            
+            mostKrasotaCount[index].setAttribute("data-count", num)
+            mostKrasotaCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementWorksMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = addSumSec(mostWorksSum, index);
+
+            mostWorksCount[index].setAttribute("data-count", num)
+            mostWorksCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementHealthMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = addSumSec(mostHealthSum, index);
+
+            mostHealthCount[index].setAttribute("data-count", num)
+            mostHealthCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementFinanceMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 5
+            }
+            if (index == 3) {
+                index2 = 7
+            }
+            let num = addSumSec(mostFinanceSum, index2);
+            
+            mostFinanceCount[index].setAttribute("data-count", num)
+            mostFinanceCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementRelationshipMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 5
+            }
+            if (index == 3) {
+                index2 = 7
+            }
+            let num = addSumSec(mostRelationshipSum, index2);
+            
+            mostRelationshipCount[index].setAttribute("data-count", num)
+            mostRelationshipCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementBusinessMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 4
+            }
+            if (index == 3) {
+                index2 = 5
+            }
+            if (index == 4) {
+                index2 = 7
+            }
+            let num = addSumSec(mostSpiritualSum, index2);
+
+            mostBusinessCount[index].setAttribute("data-count", num)
+            mostBusinessCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementSpiritualMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 4
+            }
+            if (index == 3) {
+                index2 = 5
+            }
+            if (index == 4) {
+                index2 = 7
+            }
+            let num = addSumSec(mostSpiritualSum, index2);
+
+            inters.push(num)
+            mostSpiritualCount[index].setAttribute("data-count", num)
+            mostSpiritualCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementPersonalMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = addSumSec(mostPersonalSum, index);
+
+            mostPersonalCount[index].setAttribute("data-count", num)
+            mostPersonalCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    incrementHobbyMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = addSumSec(mostHobbySum, index);
+
+            mostHobbyCount[index].setAttribute("data-count", num)
+            mostHobbyCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
         })
     });
 
@@ -1957,6 +3304,167 @@ window.addEventListener('load', function (e) {
             inters.push(num)
             countHobby[index].setAttribute("data-count", num)
             countHobby[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsKrasotaMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 5
+            }
+            if (index == 3) {
+                index2 = 7
+            }
+            let num = removeSum(mostKrasotaSum, index2);
+
+            inters.push(num)
+            mostKrasotaCount[index].setAttribute("data-count", num)
+            mostKrasotaCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsWorksMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = removeSum(mostWorksSum, index);
+
+            inters.push(num)
+            mostWorksCount[index].setAttribute("data-count", num)
+            mostWorksCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsHealthMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = removeSum(mostHealthSum, index);
+
+            inters.push(num)
+            mostHealthCount[index].setAttribute("data-count", num)
+            mostHealthCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsFinanceMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 5
+            }
+            if (index == 3) {
+                index2 = 7
+            }
+            let num = removeSum(mostFinanceSum, index2);
+            console.log(mostFinanceSum);
+            inters.push(num)
+            mostFinanceCount[index].setAttribute("data-count", num)
+            mostFinanceCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsRelationshipMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 5
+            }
+            if (index == 3) {
+                index2 = 7
+            }
+            let num = removeSum(mostRelationshipSum, index2);
+
+            inters.push(num)
+            mostRelationshipCount[index].setAttribute("data-count", num)
+            mostRelationshipCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsBusinessMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 4
+            }
+            if (index == 3) {
+                index2 = 5
+            }
+            if (index == 4) {
+                index2 = 7
+            }
+            let num = removeSum(mostBusinessSum, index2);
+
+            inters.push(num)
+            mostBusinessCount[index].setAttribute("data-count", num)
+            mostBusinessCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsSpiritualMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let index2 = 0
+            if (index == 0) {
+                index2 = 1
+            }
+            if (index == 1) {
+                index2 = 3
+            }
+            if (index == 2) {
+                index2 = 4
+            }
+            if (index == 3) {
+                index2 = 5
+            }
+            if (index == 4) {
+                index2 = 7
+            }
+            let num = removeSum(mostSpiritualSum, index2);
+
+            inters.push(num)
+            mostSpiritualCount[index].setAttribute("data-count", num)
+            mostSpiritualCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsPersonalMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = removeSum(mostPersonalSum, index);
+
+            inters.push(num)
+            mostPersonalCount[index].setAttribute("data-count", num)
+            mostPersonalCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
+        })
+    });
+
+    decrementsHobbyMost.forEach(function (val, index) {
+        val.addEventListener('click', function () {
+            let num = removeSum(mostHobbySum, index);
+
+            inters.push(num)
+            mostHobbyCount[index].setAttribute("data-count", num)
+            mostHobbyCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
         })
     });
 

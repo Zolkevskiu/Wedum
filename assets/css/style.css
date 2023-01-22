@@ -532,14 +532,14 @@ body {
   gap: 0px 20px;
 }
 
-.increment, .mostIncrements, .increment-sec, .increment-relationship, .increment-krasota, .increment-works, .increment-health, .increment-finance, .increment-business, .increment-spiritual, .increment-personal, .increment-hobby, .decrement, .mostDecrement, .decrement-sec, .decrement-relationship, .decrement-krasota, .decrement-works, .decrement-health, .decrement-finance, .decrement-business, .decrement-spiritual, .decrement-personal, .decrement-hobby {
+.count-most-decrement, .count-most-increment, .increment, .mostIncrements, .increment-sec, .increment-relationship, .increment-krasota, .increment-works, .increment-health, .increment-finance, .increment-business, .increment-spiritual, .increment-personal, .increment-hobby, .decrement, .mostDecrement, .decrement-sec, .decrement-relationship, .decrement-krasota, .decrement-works, .decrement-health, .decrement-finance, .decrement-business, .decrement-spiritual, .decrement-personal, .decrement-hobby {
   background: none;
   outline: none;
   border: none;
   cursor: pointer;
 }
 
-.decrement-sec img, .decrement img, .decrement-relationship img, .decrement-krasota img, .mostDecrement img, .decrement-works img, .decrement-health img, .decrement-finance img, .decrement-business img, .decrement-spiritual img, .decrement-personal img, .decrement-hobby img {
+.count-most-decrement img, .decrement-sec img, .decrement img, .decrement-relationship img, .decrement-krasota img, .mostDecrement img, .decrement-works img, .decrement-health img, .decrement-finance img, .decrement-business img, .decrement-spiritual img, .decrement-personal img, .decrement-hobby img {
   transform: rotate(180deg);
 }
 
@@ -684,7 +684,7 @@ body {
 }
 
 .gl-window {
-  width: 800px;
+  width: 451px;
   position: absolute;
   margin-top: 30px;
 }
@@ -696,64 +696,83 @@ body {
 }
 
 .gl-window-hobby {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-personal {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-spiritual {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-business {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-krasota {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-relationship {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-finance {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-health {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window-works {
-  width: 800px;
   position: absolute;
-  margin-top: 30px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window_most {
   position: absolute;
-  right: 50px;
-  margin-left: 450px;
-  margin-top: 100px;
+  right: 160px;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 546px;
 }
 
 .gl-window_most .img-wrap {
@@ -766,68 +785,67 @@ body {
   margin-left: 153.5px;
 }
 
+.diagram-circle {
+  position: absolute;
+  margin-top: -491px;
+  margin-left: 111px;
+  z-index: 3;
+  width: 374px;
+}
+
 #myChart {
-  margin-left: -145px;
-  margin-top: 70px;
+  margin-left: 62px;
+  margin-top: 81px;
+}
+
+#myChartMost {
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartRelationship {
-  position: absolute;
-  right: -391px;
-  margin-top: 55px;
-  rotate: -20deg;
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartKrasota {
-  position: absolute;
-  right: -391px;
-  margin-top: 55px;
-  transform: rotate(-20deg);
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartWorks {
-  position: absolute;
-  right: -391px;
-  margin-top: 150px;
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartHealth {
-  position: absolute;
-  right: -429px;
-  margin-top: 73px;
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartFinance {
-  position: absolute;
-  right: -391px;
-  margin-top: 55px;
-  transform: rotate(-20deg);
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartBusines {
-  position: absolute;
-  right: -429px;
-  margin-top: 73px;
-  transform: rotate(-20deg);
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartSpiritual {
-  position: absolute;
-  right: -429px;
-  margin-top: 73px;
-  transform: rotate(-20deg);
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartPersonal {
-  position: absolute;
-  right: -391px;
-  margin-top: 80px;
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 #myChartHobby {
-  position: absolute;
-  right: -391px;
-  margin-top: 80px;
+  margin-left: -45.5px;
+  margin-top: -549px;
 }
 
 .test-result_block {
