@@ -392,17 +392,24 @@
     width: 100%;
     height: 261px;
     background: #F6F3FF;
-    margin-top: 20px;
+    margin-top: 72px;
     display: flex;
     padding-top: 60px;
     justify-content: center;
   }
+  
+  .step-block-krasota {
+    margin-top: 20px;
+  }
+
   .step-health-block {
     margin-top: 65px;
   }
   .step-block_col {
     display: flex;
     width: 480px;
+    position: relative;
+    left: -15px;
   }
   .step-block_col h1 {
     font-style: normal;
@@ -466,6 +473,7 @@
     margin-top: 5px;
     font-size: 16px;
     font-style: normal;
+    font-family: "Roboto Light";
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
@@ -482,7 +490,7 @@
   }
   
   .test-window .btnCheck {
-    width: 300px;
+    width: 247px;
     height: 50px;
     display: block;
     margin: auto;
@@ -629,7 +637,7 @@
     font-family: "Roboto Light";
     font-size: 18px;
     position: relative;
-    left: -90px;
+    left: -120px;
     border: none;
     cursor: pointer;
     transition: 0.3s;
@@ -855,8 +863,9 @@
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
+    font-family: "Roboto Light";
     font-size: 18px;
     line-height: 130%;
     margin-top: 30px;
@@ -1037,7 +1046,7 @@
   }
   
   .relationship-block {
-    height: 1000px;
+    height: 1060px;
     background: #fff;
     border-radius: 10px;
     margin-top: 25px;
@@ -1054,9 +1063,6 @@
   }
   .health-block {
     height: 1080px;
-  }
-  .krasota-blocktext_wrap {
-    height: 390px;
   }
   .works-block {
     height: 940px;
@@ -1084,7 +1090,7 @@
     height: 275px;
   }
   .krasota-blocktext_wrap {
-    height: 380px;
+    height: 400px;
   }
   .health-blocktext_wrap {
     height: 440px;
@@ -1540,16 +1546,7 @@
     line-height: 130%;
     color: #E1A1FF;
   }
-  
-  @media (max-width: 1300px) {
-    .gl-window_most {
-      margin-left: 350px;
-    }
-  }
   @media (max-width: 1200px) {
-    .gl-window_most {
-      right: -100px;
-    }
     .header-wrap, .wrapper {
       padding: 0 15px;
     }
@@ -1568,6 +1565,9 @@
       max-width: 400px;
       position: relative;
       left: 50px;
+    }
+    .gl-window-all {
+      right: 65px;
     }
   }
   @media (max-width: 1100px) {
@@ -1627,9 +1627,10 @@
   }
   @media (max-width: 1000px) {
     .img-wrap {
-      margin-top: 12px;
-      margin-left: -5.5px;
-    }
+      margin-top: 9px;
+      margin-left: 59.5px;
+      width: 534px;
+  }
     #test-window-works {
       height: 1020px;
     }
@@ -1682,22 +1683,13 @@
       position: absolute;
     }
     .gl-window-krasota  {
-      width: 800px;
-      left: 50%;
-      transform: translateX(-50%);
-      position: absolute;
+      // width: 800px;
+      // left: 50%;
+      // transform: translateX(-50%);
+      // position: absolute;
     }
     .img-business_wrap {
       margin-left: 243.5px;
-    }
-    #myChartBusines {
-      right: -78px;
-    }
-    #myChartKrasota {
-      margin-left: 80px;
-      left: 50%;
-      margin-top: 87px;
-      transform: translateX(-50%) rotate(-20deg);
     }
     .img-krasota_wrap {
       margin-top: 51px;
@@ -1825,18 +1817,9 @@
       margin-top: 72px;
       margin-left: -125px;
     }
-    #myChartRelationship {
-      right: -106px;
-    }
     .gl-window_most {
       margin-left: -70px;
       margin-top: 220px;
-    }
-    #myChart {
-      margin-left: -7px;
-    }
-    #myChartMost {
-      margin-left: 149px;
     }
     .result-block_sub-title {
       position: absolute;
@@ -1851,7 +1834,7 @@
     .spheres-block {
       margin-top: 24px;
       flex-direction: column;
-      height: 1050px;
+      height: 1130px;
     }
     .spheres-img {
       height: 359px;
@@ -1861,7 +1844,7 @@
     }
     .spheres-block_wrap {
       position: relative;
-      top: 520px;
+      top: 600px;
     }
     .spheres-block_text {
       margin-top: 0;
@@ -1870,7 +1853,7 @@
       max-width: 385px;
       width: 100%;
       margin-top: 20px;
-      height: 1003px;
+      height: 1100px;
     }
     .relationship-block {
       margin-top: 10px;
@@ -1894,6 +1877,7 @@
     }
     .relationship-title_wrap {
       flex-direction: column;
+      margin-top: 27px;
     }
     .relationship-title_wrap .relationship-title {
       flex-direction: column;
@@ -2004,11 +1988,6 @@
       margin-left: -3px;
       margin-top: -101px;
     }
-    #myChartWorks {
-      right: 0;
-      top: 0px;
-      margin-top: -40px;
-    }
     #works-block {
       margin-top: 600px;
     }
@@ -2037,11 +2016,8 @@
     .img-health_wrap {
       margin-left: 177.5px;
     }
-    #myChartHealth {
-      right: -50px;
-    }
     .spheres-health-block {
-      height: 900px;
+      height: 975px;
     }
     .spheres-health-block_text {
       height: 940px;
@@ -2062,11 +2038,8 @@
     .img-finance_wrap {
       margin-left: 236px;
     }
-    #myChartFinance {
-      right: -70px;
-    }
     .spheres-finance-block {
-      height: 890px;
+      height: 970px;
     }
     .krasota-blocktext_wrap {
       height: 680px;
@@ -2113,11 +2086,211 @@
     .img-personal_wrap {
       margin-left: 243.5px;
     }
-    #myChartPersonal {
-      right: -89px;
-    }
     .test-window-hobby {
       height: 1110px;
+    }
+    .gl-window-all {
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: 240px;
+      margin-top: 140px;
+      width: 505px;
+    }
+    #myChartMost {
+      z-index: 3;
+      margin-left: -95px;
+      margin-top: 54px;
+    }
+    #myChartKrasota {
+      z-index: 3;
+      margin-left: -41px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .diagram-border {
+      width: 614px;
+      position: absolute;
+    }
+    .diagram-circle {
+      position: absolute;
+      margin-top: 112px;
+      margin-left: 4px;
+      z-index: 4;
+      width: 383px;
+    }
+    .spheres-krasota-block .spheres-block_sub-title_sec {
+      margin-top: 630px;
+    }
+    .spheres-krasota-block {
+      height: 1016px;
+    }
+    .gl-window-krasota {
+      margin-left: -28px;
+      margin-top: 60px;
+      width: 561px;
+      .diagram-circle {
+        margin-top: 112px;
+        margin-left: 117px;
+      }
+    }
+    .gl-window-works {
+      width: 504px;
+      margin-top: 105px;
+      .diagram-circle {
+        margin-top: 112px;
+        margin-left: 1px;
+      }
+    }
+    #myChartWorks {
+      margin-left: -95.5px;
+      margin-top: 53px;
+      z-index: 2;
+    }
+    .gl-window-health {
+      margin-left: -28px;
+      margin-top: 60px;
+      width: 561px;
+      .diagram-circle {
+        margin-top: 112px;
+        margin-left: 117px;
+      }
+    }
+    #myChartHealth {
+      z-index: 3;
+      margin-left: -41px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-health-block .spheres-block_sub-title_sec {
+      margin-top: 600px;
+    }
+    .gl-window-finance {
+      margin-left: -28px;
+      margin-top: 60px;
+      width: 561px;
+      .diagram-circle {
+        margin-top: 112px;
+        margin-left: 117px;
+      }
+    }
+    #myChartFinance {
+      z-index: 3;
+      margin-left: -41px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-finance-block .spheres-block_sub-title_sec {
+      margin-top: 612px;
+    }
+    .gl-window-relationship {
+      translate: 0;
+      margin-left: -28px;
+      margin-top: 60px;
+      width: 503px;
+      .diagram-circle {
+        margin-top: 113px;
+        margin-left: -4px;
+      }
+    }
+    #myChartRelationship {
+      z-index: 3;
+      margin-left: -100px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-block-relationship .spheres-block_sub-title_sec {
+      margin-top: 610px;
+    }
+    .spheres-block-relationship {
+      height: 1000px;
+    }
+    .gl-window-business {
+      translate: 0;
+      margin-left: -30px;
+      margin-top: 60px;
+      width: 559px;
+      .diagram-circle {
+        margin-top: 113px;
+        margin-left: 116px;
+      }
+    }
+    #myChartBusines {
+      z-index: 3;
+      margin-left: -43px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-block-business .spheres-block_sub-title_sec {
+      margin-top: 610px;
+    }
+    .spheres-block-business {
+      height: 1000px;
+    }
+    .gl-window-spiritual {
+      translate: 0;
+      margin-left: -30px;
+      margin-top: 60px;
+      width: 559px;
+      .diagram-circle {
+        margin-top: 113px;
+        margin-left: 116px;
+      }
+    }
+    #myChartSpiritual {
+      z-index: 3;
+      margin-left: -43px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-block-spiritual .spheres-block_sub-title_sec {
+      margin-top: 610px;
+    }
+    .spheres-block-spiritual {
+      height: 1000px;
+    }
+    .gl-window-personal {
+      translate: 0;
+      margin-left: -30px;
+      margin-top: 60px;
+      width: 559px;
+      .diagram-circle {
+        margin-top: 113px;
+        margin-left: 116px;
+      }
+    }
+    #myChartPersonal {
+      z-index: 3;
+      margin-left: -43px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-block-personal .spheres-block_sub-title_sec {
+      margin-top: 610px;
+    }
+    .spheres-block-personal {
+      height: 1000px;
+    }
+    .gl-window-hobby {
+      translate: 0;
+      margin-left: -30px;
+      margin-top: 60px;
+      width: 559px;
+      .diagram-circle {
+        margin-top: 113px;
+        margin-left: 116px;
+      }
+    }
+    #myChartHobby {
+      z-index: 3;
+      margin-left: -43px;
+      margin-top: 54px;
+      position: relative;
+    }
+    .spheres-block-hobby .spheres-block_sub-title_sec {
+      margin-top: 610px;
+    }
+    .spheres-block-hobby {
+      height: 1000px;
     }
   }
   @media (max-width: 550px) {

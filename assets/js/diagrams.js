@@ -1793,7 +1793,7 @@ window.addEventListener('load', function (e) {
             },
             {
                 value: 0,
-            },
+            }, 
             {
                 value: 0,
             },
@@ -2907,13 +2907,13 @@ window.addEventListener('load', function (e) {
                 index2 = 3
             }
             if (index == 2) {
-                index2 = 5
+                index2 = 4
             }
             if (index == 3) {
-                index2 = 7
+                index2 = 5
             }
             if (index == 4) {
-                index2 = 4
+                index2 = 7
             }
             let num = addSum(sumBusiness, index2);
 
@@ -3068,7 +3068,7 @@ window.addEventListener('load', function (e) {
             if (index == 4) {
                 index2 = 7
             }
-            let num = addSumSec(mostSpiritualSum, index2);
+            let num = addSumSec(mostBusinessSum, index2);
 
             mostBusinessCount[index].setAttribute("data-count", num)
             mostBusinessCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
@@ -3100,7 +3100,7 @@ window.addEventListener('load', function (e) {
             mostSpiritualCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
         })
     });
-
+    
     incrementPersonalMost.forEach(function (val, index) {
         val.addEventListener('click', function () {
             let num = addSumSec(mostPersonalSum, index);
@@ -3245,13 +3245,13 @@ window.addEventListener('load', function (e) {
                 index2 = 3
             }
             if (index == 2) {
-                index2 = 5
+                index2 = 4
             }
             if (index == 3) {
-                index2 = 7
+                index2 = 5
             }
             if (index == 4) {
-                index2 = 4
+                index2 = 7
             }
             let num = removeSum(sumBusiness, index2);
 
