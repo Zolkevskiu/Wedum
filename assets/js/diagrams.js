@@ -6,15 +6,15 @@ window.addEventListener('load', function (e) {
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let dataSum = [
-        7,
-        6,
-        7,
-        7,
-        5,
-        6,
-        9,
-        6,
-        8
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
     ];
     // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
