@@ -101,3 +101,40 @@ function diagram_button_hobbies() {
     diagram_test_block[7].style.display = 'none'
     diagram_test_block[8].style.display = 'block'
 }
+
+document.getElementById("works-result_show").addEventListener("click", ()=> {
+    document.getElementById("works-result_show-block").style.display = "block";
+});
+
+document.getElementById("krasota-result_show").addEventListener("click", ()=> {
+    document.getElementById("krasota-result_show-block").style.display = "block";
+});
+
+
+document.getElementById("health-result_show").addEventListener("click", ()=> {
+    document.getElementById("health-result_show-block").style.display = "block";
+});
+
+document.getElementById("finance-result_show").addEventListener("click", ()=> {
+    document.getElementById("finance-result_show-block").style.display = "block";
+});
+
+document.getElementById("relationship-result_show").addEventListener("click", ()=> {
+    document.getElementById("relationship-result_show-block").style.display = "block";
+});
+
+document.getElementById("business-result_show").addEventListener("click", ()=> {
+    document.getElementById("business-result_show-block").style.display = "block";
+});
+
+document.getElementById("spiritual-result_show").addEventListener("click", ()=> {
+    document.getElementById("spiritual-result_show-block").style.display = "block";
+});
+
+document.getElementById("personal-result_show").addEventListener("click", ()=> {
+    document.getElementById("personal-result_show-block").style.display = "block";
+});
+
+document.getElementById("hobby-result_show").addEventListener("click", ()=> {
+    document.getElementById("hobby-result_show-block").style.display = "block";
+});

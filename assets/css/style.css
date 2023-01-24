@@ -429,6 +429,14 @@ body {
   margin-top: 20px;
 }
 
+.step-block-hobby {
+  margin-top: 20px;
+}
+
+.step-block-works {
+  margin-top: 20px;
+}
+
 .step-health-block {
   margin-top: 65px;
 }
@@ -1111,10 +1119,6 @@ body {
   margin-top: 10px;
 }
 
-.relationship-test_result {
-  display: none;
-}
-
 .diagram-test_result {
   display: none;
 }
@@ -1147,6 +1151,10 @@ body {
   height: 940px;
 }
 
+.hobby-block {
+  height: 980px;
+}
+
 .relationship-blocktext_wrap {
   max-width: 1096px;
   width: 97%;
@@ -1156,10 +1164,6 @@ body {
   border-radius: 10px;
   display: flex;
   padding: 40px 0 0 40px;
-}
-
-.hobby-blocktext_wrap {
-  height: 305px;
 }
 
 .personal-blocktext_wrap {
@@ -1205,6 +1209,13 @@ body {
 .relationship-blocktext_wrap div p {
   font-family: "Roboto Light";
   font-weight: bold;
+}
+
+.hobby-blocktext_wrap {
+  height: 305px;
+}
+.hobby-blocktext_wrap div {
+  width: 638px;
 }
 
 .works-blocktext_wrap {
@@ -1519,6 +1530,111 @@ body {
   height: 900px;
 }
 
+.btnCheck-krasota {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#krasota-result_show-block {
+  display: none;
+}
+
+#spheres-krasota_show {
+  display: none;
+}
+
+.btnCheck-works {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#works-result_show-block {
+  display: none;
+}
+
+#spheres-works_show {
+  display: none;
+}
+
+.btnCheck-health {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#health-result_show-block {
+  display: none;
+}
+
+#spheres-health_show {
+  display: none;
+}
+
+.btnCheck-finance {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#finance-result_show-block {
+  display: none;
+}
+
+#spheres-finance_show {
+  display: none;
+}
+
+.btnCheck-business {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#business-result_show-block {
+  display: none;
+}
+
+#spheres-business_show {
+  display: none;
+}
+
+.btnCheck-spiritual {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#spiritual-result_show-block {
+  display: none;
+}
+
+#spheres-spiritual_show {
+  display: none;
+}
+
+.btnCheck-hobby {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hobby-result_show-block {
+  display: none;
+}
+
+#spheres-hobby_show {
+  display: none;
+}
+
 .relationship-title_wrap {
   display: flex;
   align-items: center;
@@ -1652,6 +1768,21 @@ body {
   font-size: 18px;
   line-height: 130%;
   color: #E1A1FF;
+}
+
+.btnCheck-relationship {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#relationship-result_show-block {
+  display: none;
+}
+
+#spheres-relationship_show {
+  display: none;
 }
 
 @media (max-width: 1200px) {

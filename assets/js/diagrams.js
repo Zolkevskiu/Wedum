@@ -6,15 +6,15 @@ window.addEventListener('load', function (e) {
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let dataSum = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
     ];
     // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -485,68 +485,69 @@ window.addEventListener('load', function (e) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/krasota.svg" alt="">
                 <h2>Красота</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_krasota()">Узнать подробнее</a>
+                <a href="#krasota-test_block" class="spheres-block_text-button" onclick="diagram_button_krasota()">Узнать подробнее</a>
                 </div>`
         }
         if (diagrama2[1] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/work-icon.svg" alt="">
                 <h2>Карьера и работа</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_works()">Узнать подробнее</a>
+                <a href="#works-test_block" class="spheres-block_text-button" onclick="diagram_button_works()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[2] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/live-icon.svg" alt="">
                 <h2>Здоровье</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_live()">Узнать подробнее</a>
+                <a href="#live-test_block" class="spheres-block_text-button" onclick="diagram_button_live()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[3] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/finance-icon.svg" alt="">
                 <h2>Финансы</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_finance()">Узнать подробнее</a>
+                <a href="#finance-test_block" class="spheres-block_text-button" onclick="diagram_button_finance()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[4] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/Relationship-icon.svg" alt="">
                 <h2>Отношения</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_relationship()">Узнать подробнее</a>
+                <a href="#relationship-test_block" class="spheres-block_text-button" onclick="diagram_button_relationship()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[5] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/Business-icon.svg" alt="">
                 <h2>Бизнес</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_business()">Узнать подробнее</a>
+                <a href="#business-test_block" class="spheres-block_text-button" onclick="diagram_button_business()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[6] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/spiritual-growth-icon.svg" alt="">
                 <h2>Духовный рост</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_spiritual_growth()">Узнать подробнее</a>
+                <a href="#spiritual-test_block" class="spheres-block_text-button" onclick="diagram_button_spiritual_growth()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[7] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/Personal-growth-icon.svg" alt="">
                 <h2>Личностный рост</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_personal_growth()">Узнать подробнее</a>
+                <a href="#personal-test_block" class="spheres-block_text-button" onclick="diagram_button_personal_growth()">Узнать подробнее</a>
             </div>`
         }
         if (diagrama2[8] > 0) {
             spheres_wrapper.innerHTML += `<div class="spheres-block_wrap">
                 <img src="assets/img/Creativity-hobbies-icon.svg" alt="">
                 <h2>Творчество и хобби</h2>
-                <a class="spheres-block_text-button" onclick="diagram_button_hobbies()">Узнать подробнее</a>
+                <a href="#hobbies-test_block" class="spheres-block_text-button" onclick="diagram_button_hobbies()">Узнать подробнее</a>
             </div>`
         }
 }})
 
     btnCheckRelationship.addEventListener('click', (e) => {
+        document.getElementById("spheres-relationship_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -771,6 +772,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckKrasota.addEventListener('click', (e) => {
+        document.getElementById("spheres-krasota_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -995,6 +997,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckWorks.addEventListener('click', (e) => {
+        document.getElementById("spheres-works_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -1071,7 +1074,7 @@ window.addEventListener('load', function (e) {
             }
 
             const dataWorks = {
-                labels: ["Творческая работа ", "Работа \n в сфере IT", "Финанси", "Организация \n и управление", "Товаров \n и услуг", "Здоровый \n образ жизни", "Собственний \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
+                labels: ["Творческая работа ", "Работа \n в сфере IT", " Работа \n с финансами", "Организация \n и управление", "Продвижение товаров \n и услуг", "Здоровый \n образ жизни", "Собственний \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
                 datasets: [
                 {
                     data: diagramaWorksCalc,
@@ -1291,6 +1294,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckHealth.addEventListener('click', (e) => {
+        document.getElementById("spheres-health_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -1546,6 +1550,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckFinance.addEventListener('click', (e) => {
+        document.getElementById("spheres-finance_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -1775,6 +1780,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckBusiness.addEventListener('click', (e) => {
+        document.getElementById("spheres-business_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -2005,6 +2011,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckSpiritual.addEventListener('click', (e) => {
+        document.getElementById("spheres-spiritual_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -2241,6 +2248,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckPersonal.addEventListener('click', (e) => {
+        document.getElementById("spheres-personal_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
@@ -2501,6 +2509,7 @@ window.addEventListener('load', function (e) {
     })
 
     btnCheckHobby.addEventListener('click', (e) => {
+        document.getElementById("spheres-hobby_show").style.display = "flex"
         let dataElements = [
             {
                 value: 0,
