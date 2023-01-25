@@ -43,6 +43,8 @@
     height: 100%;
     background: #FAF9FA;
     scroll-behavior: smooth;
+    scroll-margin: 0;
+    scroll-padding: 0;
   }
   
   body {
@@ -410,6 +412,18 @@
   .step-health-block {
     margin-top: 65px;
   }
+  .step-block_finance {
+    margin-top: 20px;
+  }
+  .step-relationship_block {
+    margin-top: 20px;
+  }
+  .step-block_business {
+    margin-top: 20px;
+  }
+  .step-block_spiritual {
+    margin-top: 20px;
+  }
   .step-block_col {
     display: flex;
     width: 480px;
@@ -726,7 +740,7 @@
     position: absolute;
     right: 160px;
     margin-left: 50px;
-    margin-top: 10px;
+    margin-top: 120px;
     width: 546px;
   }
   .gl-window_most {
@@ -908,6 +922,7 @@
   }
   .spheres-health-block {
     margin-top: 40px;
+    margin-bottom: -20px;
   }
   .spheres-block_text {
     margin-top: 60px;
@@ -949,6 +964,7 @@
   .spheres-works-block {
     height: 820px;
     margin-top: 30px;
+    margin-bottom: -25px;
   }
   
   .spheres-img {
@@ -1047,11 +1063,14 @@
   }
   
   .relationship-block {
-    height: 1060px;
+    height: 995px;
     background: #fff;
     border-radius: 10px;
     margin-top: 25px;
     padding-top: 61px;
+  }
+  .krasota-block {
+    height: 1040px;
   }
   .personal-block {
     height: 1120px;
@@ -1064,6 +1083,9 @@
   }
   .health-block {
     height: 1080px;
+  }
+  .business-block {
+    height: 930px;
   }
   .works-block {
     height: 940px;
@@ -1110,7 +1132,7 @@
     font-family: "Roboto Light";
   }
   .relationship-blocktext_wrap div {
-    max-width: 643px;
+    max-width: 628px;
     width: 100%;
   }
   .relationship-blocktext_wrap div p {
@@ -1397,6 +1419,8 @@
   }
   .spiritual-gallery-test_wrap {
     overflow: hidden;
+    margin-bottom: -25px;
+    margin-top: 30px;
   }
 
   .personal-gallery-test_wrap {
@@ -1412,9 +1436,16 @@
   }
 
   .works-gallery-test_wrap {
+    margin-bottom: -25px;
+    margin-top: 40px;
     height: 1820px;
     overflow: hidden;
     display: none;
+  }
+
+  .health-gallery-test_wrap {
+    margin-bottom: -25px;
+    margin-top: 40px;
   }
   
   .relationship-block_sec {
@@ -1515,6 +1546,21 @@
     display: none;
   }
 
+  .btnCheck-personal {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #personal-result_show-block {
+    display: none;
+  }
+
+  #spheres-personal_show {
+    display: none;
+  }
+
   .btnCheck-hobby {
     text-decoration: none;
     display: flex;
@@ -1530,13 +1576,28 @@
     display: none;
   }
 
+  .btnCheck-relationship {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #relationship-result_show-block {
+    display: none;
+  }
+
+  #spheres-relationship_show {
+    display: none;
+  }
+
   .relationship-title_wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1100px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 30px;
     padding-bottom: 10px;
   }
   .relationship-title_wrap .relationship-title {
@@ -1566,6 +1627,18 @@
     color: #252525;
   }
   
+  .catalog-block_works {
+    margin-top: 40px;
+  }
+
+  .catalog-spiritual_block {
+    margin-top: 40px;
+  }
+
+  .catalog-block_health {
+    margin-top: 40px;
+  }
+
   .catalog-wrapper {
     max-width: 875px;
     width: 100%;
@@ -1659,21 +1732,6 @@
     line-height: 130%;
     color: #E1A1FF;
   }
-  .btnCheck-relationship {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #relationship-result_show-block {
-    display: none;
-  }
-
-  #spheres-relationship_show {
-    display: none;
-  }
-
   @media (max-width: 1200px) {
     .header-wrap, .wrapper {
       padding: 0 15px;
