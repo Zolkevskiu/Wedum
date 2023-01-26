@@ -3383,105 +3383,105 @@ function gallery_business_experience() {
   swiperFunc()  
 }
 
-function gallery_business_skills() {
+function gallery_business_manipulation() {
   document.getElementById('business-gallery_block').style.display = "block"
   let business_male = document.createElement('div')
   business_male.innerHTML += `
   <section class="gallery gallery-swiper relationship-gallery_test">
-                        <div class="relationship-title_wrap"><h1 class="relationship-title">Курсы по теме <span>управления бизнесом</span></h1> <a href="#">Смотреть все</a></div>                    
-                        <div class="wrapper swiper">
-                            <div class="swiper">
-                            <div class="swiper-wrapper gallery_cont"> 
-                                <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img1.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>Бесплатно</h1>
-                                    <p>«Магия взгляда. Как влюбить в себя любого мужчину»</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img2.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>9800 ₽</h1>
-                                    <p>Сексуальный интеллект</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img3.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>Бесплатно</h1>
-                                    <p>Мастер-класс «Я такая одна: удобная или уникальная?</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img4.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>Бесплатно</h1>
-                                    <p>Руководство «Как выйти замуж за Любимого»</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img5.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>Бесплатно</h1>
-                                    <p>Руководство «Как выйти замуж за Любимого»</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img1.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>Бесплатно</h1>
-                                    <p>«Магия взгляда. Как влюбить в себя любого мужчину»</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                                  <div class="swiper-slide">
-                                    <img src="assets/img/swiper/swiper-img1.png" alt="" class="swiper-img">
-                                    <div class="swiper-love_icon">
-                                        <div><img src="assets/img/love-icon.svg" alt=""></div>
-                                        <div><img src="assets/img/grafic-icon.svg" alt=""></div>
-                                    </div>
-                                    <div class="swiper-alert_wrap">Отношения с мужчинами</div>
-                                    <h1>Бесплатно</h1>
-                                    <p>«Магия взгляда. Как влюбить в себя любого мужчину»</p>
-                                    <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
-                                    <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
-                                  </div>
-                            </div>	
-                            <div class="swiper-button-next"></div>
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-pagination"></div>     
-                            </div>
-                        </div>
+    <div class="relationship-title_wrap"><h1 class="relationship-title">Курсы по теме <span>управления бизнесом</span></h1> <a href="#">Смотреть все</a></div>                    
+    <div class="wrapper swiper">
+        <div class="swiper">
+        <div class="swiper-wrapper gallery_cont"> 
+            <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img1.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>Бесплатно</h1>
+                <p>«Магия взгляда. Как влюбить в себя любого мужчину»</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img2.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>9800 ₽</h1>
+                <p>Сексуальный интеллект</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img3.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>Бесплатно</h1>
+                <p>Мастер-класс «Я такая одна: удобная или уникальная?</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img4.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>Бесплатно</h1>
+                <p>Руководство «Как выйти замуж за Любимого»</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img5.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>Бесплатно</h1>
+                <p>Руководство «Как выйти замуж за Любимого»</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img1.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>Бесплатно</h1>
+                <p>«Магия взгляда. Как влюбить в себя любого мужчину»</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/img/swiper/swiper-img1.png" alt="" class="swiper-img">
+                <div class="swiper-love_icon">
+                    <div><img src="assets/img/love-icon.svg" alt=""></div>
+                    <div><img src="assets/img/grafic-icon.svg" alt=""></div>
+                </div>
+                <div class="swiper-alert_wrap">Отношения с мужчинами</div>
+                <h1>Бесплатно</h1>
+                <p>«Магия взгляда. Как влюбить в себя любого мужчину»</p>
+                <p class="author-text">Авторы: <a href="#">Родник Лилия</a></p>
+                <div class="swiper-star_wrap"><span>4,7</span><img src="assets/img/4.7-star.png" alt=""><span class="swiper-star_span-sec">459</span></div>
+              </div>
+        </div>	
+        <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>     
+        </div>
+    </div>
   </section>`
   business_gallery_test_wrap.prepend(business_male)
   swiperFunc()  

@@ -216,8 +216,19 @@ window.addEventListener('load', function (e) {
         return sum[index];
     }
     //add listeners
+    // let testNum = 1
+    // let myMediaQuery = window.matchMedia('(max-width: 550px)');
+    //     function widthChangeCallback(myMediaQuery) {
+    //     if(myMediaQuery.matches) {
+    //         console.log('1');
+    //         testNum = 1
+    //     } else {
+    //         console.log('2');
+    //         testNum = 50
+    //     }
+    //     }
+    //     myMediaQuery.addEventListener('change', widthChangeCallback);
     btnCheck.addEventListener('click', (e) => {
-        
         let temp_if = false;
 
         for (let i2 = 0; i2 < dataSum.length; ++i2) {
@@ -338,7 +349,6 @@ window.addEventListener('load', function (e) {
             dataSum_temp[min_index] = 0;
             if(diagrama2[min_index] > 9) {
                 diagrama2[min_index] = 10
-
             }
 
         }
@@ -360,6 +370,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagrama2,
+                borderWidth: 0,
                 backgroundColor: [
                     '#F301C9',
                     '#9702B2',
@@ -402,7 +413,6 @@ window.addEventListener('load', function (e) {
         if (chartDestroyMost != undefined) {
             chartDestroyMost.destroy();
         } 
-
         let myChartMost = new Chart('myChartMost', {
             type: 'polarArea',
             data: dataSetsMost,
@@ -623,6 +633,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagrama3,
+                borderWidth: 0,
                 backgroundColor: [
                     'rgb(0, 0, 0, 0)',
                     '#F301C9',
@@ -848,6 +859,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagramaKrasotaCalc,
+                borderWidth: 0,
                 backgroundColor: [
                     'rgb(0, 0, 0, 0)',
                     '#F301C9',
@@ -1074,10 +1086,11 @@ window.addEventListener('load', function (e) {
             }
 
             const dataWorks = {
-                labels: ["Творческая работа ", "Работа \n в сфере IT", " Работа \n с финансами", "Организация \n и управление", "Продвижение товаров \n и услуг", "Здоровый \n образ жизни", "Собственний \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
+                labels: ["Творческая работа ", "Работа \n в сфере IT", " Работа \n с финансами", "Организация \n и управление", "Продвижение товаров \n и услуг", "Здоровый \n образ жизни", "Собственный \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
                 datasets: [
                 {
                     data: diagramaWorksCalc,
+                    borderWidth: 0,
                     backgroundColor: [
                         '#B670F7',
                         '#9702B2',
@@ -1369,6 +1382,7 @@ window.addEventListener('load', function (e) {
                 datasets: [
                 {
                     data: diagramaHealthCalc,
+                    borderWidth: 0,
                     backgroundColor: [
                         '#B670F7',
                         '#9702B2',
@@ -1632,6 +1646,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagramaFinanceCalc,
+                borderWidth: 0,
                 backgroundColor: [
                     'rgb(0, 0, 0, 0)',
                     '#F301C9',
@@ -1855,6 +1870,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagramaBusinessCalc,
+                borderWidth: 0,
                 backgroundColor: [
                     'rgb(0, 0, 0, 0)',
                     '#F301C9',
@@ -1991,7 +2007,7 @@ window.addEventListener('load', function (e) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
         <img src="assets/img/test-icon/business-skills.svg" alt="">
         <h2>управления бизнесом</h2>
-        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
+        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_manipulation()">Узнать подробнее</a>
         </div>`
         }
         if (diagramaBusinessCalc[5] > 0) {
@@ -2086,6 +2102,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagramaSpiritualCalc,
+                borderWidth: 0,
                 backgroundColor: [
                     'rgb(0, 0, 0, 0)',
                     '#F301C9',
@@ -2323,6 +2340,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagramaPersonalCalc,
+                borderWidth: 0,
                 backgroundColor: [
                     '#B670F7',
                     '#9702B2',
@@ -2593,6 +2611,7 @@ window.addEventListener('load', function (e) {
             datasets: [
             {
                 data: diagramaHobbyCalc,
+                borderWidth: 0,
                 backgroundColor: [
                     '#D400F5',
                     '#C48FFA',
