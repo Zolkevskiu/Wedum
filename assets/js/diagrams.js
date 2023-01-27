@@ -462,14 +462,13 @@ window.addEventListener('load', function (e) {
                 display: false
             },
                 labels: {
-                    
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 27 : 20,
+                    textMargin: window.innerWidth > 550 ? 16 : 12,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
+                    fontSize: window.innerWidth > 550 ? 16 : window.innerWidth > 520 ? 12 : window.innerWidth > 450 ? 8 : 8,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -725,7 +724,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 27 : 20,
+                    textMargin: window.innerWidth > 550 ? 13 : 9,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
@@ -951,7 +950,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 27 : 20,
+                    textMargin: window.innerWidth > 550 ? 16 : 12,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
@@ -1073,7 +1072,7 @@ window.addEventListener('load', function (e) {
             }
 
             const dataWorks = {
-                labels: ["Творческая работа ", "Работа \n в сфере IT", " Работа \n с финансами", "Организация \n и управление", "Продвижение товаров \n и услуг", "Здоровый \n образ жизни", "Собственный \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
+                labels: ["Творческая работа ", "Работа \n в сфере IT", " Работа \n с финансами", "Организация \n и управление", "Продвижение \n товаров и услуг", "Здоровый \n образ жизни", "Собственный \n бизнес", "Красота", "Педагогика \n и образование", "Путешествие"],
                 datasets: [
                 {
                     data: diagramaWorksCalc,
@@ -1186,12 +1185,12 @@ window.addEventListener('load', function (e) {
                     labels: {
                         position: 'border',
                         textMargin: 20,
-                        textMargin: window.innerWidth > 550 ? 20 : 16,
+                        textMargin: window.innerWidth > 550 ? 11 : 7,
                         arc: true,
                         fontStyle: 'bold',
                         fontColor: '#000',
                         position: 'outside',
-                        fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
+                        fontSize: window.innerWidth > 550 ? 17 : window.innerWidth > 520 ? 13 : window.innerWidth > 450 ? 9 : 9,
                         render: (args) => args.dataset.helper ? args.label : '',
                         fontColor: (args) => legendLabelColors
                     },
@@ -1473,7 +1472,7 @@ window.addEventListener('load', function (e) {
                 },
                     labels: {
                         position: 'border',
-                        textMargin: window.innerWidth > 550 ? 20 : 16,
+                        textMargin: window.innerWidth > 550 ? 18 : 14,
                         arc: true,
                         fontStyle: 'bold',
                         fontColor: '#000',
@@ -1736,7 +1735,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 27 : 20,
+                    textMargin: window.innerWidth > 550 ? 16 : 12,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
@@ -1961,7 +1960,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 21 : 16,
+                    textMargin: window.innerWidth > 550 ? 9 : 5,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
@@ -2193,7 +2192,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 21 : 16,
+                    textMargin: window.innerWidth > 550 ? 15 : 11,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
@@ -2432,7 +2431,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 20 : 15,
+                    textMargin: window.innerWidth > 550 ? 11 : 7,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
@@ -2706,7 +2705,7 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: window.innerWidth > 550 ? 21 : 16,
+                    textMargin: window.innerWidth > 550 ? 13 : 9,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
