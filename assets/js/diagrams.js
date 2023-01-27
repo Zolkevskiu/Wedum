@@ -216,18 +216,6 @@ window.addEventListener('load', function (e) {
         return sum[index];
     }
     //add listeners
-    // let testNum = 1
-    // let myMediaQuery = window.matchMedia('(max-width: 550px)');
-    //     function widthChangeCallback(myMediaQuery) {
-    //     if(myMediaQuery.matches) {
-    //         console.log('1');
-    //         testNum = 1
-    //     } else {
-    //         console.log('2');
-    //         testNum = 50
-    //     }
-    //     }
-    //     myMediaQuery.addEventListener('change', widthChangeCallback);
     btnCheck.addEventListener('click', (e) => {
         let temp_if = false;
 
@@ -281,7 +269,6 @@ window.addEventListener('load', function (e) {
         })
 
         //diagrama2
-
         let dataElements = [
             {
                 value: 0,
@@ -475,20 +462,20 @@ window.addEventListener('load', function (e) {
                 display: false
             },
                 labels: {
+                    
                     position: 'border',
-                    textMargin: 27,
+                    textMargin: window.innerWidth > 550 ? 27 : 20,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
             }
         }
         })
-
         const spheres_wrapper = document.getElementById("spheres-wrapper")
         spheres_wrapper.innerHTML = ''
         if (diagrama2[0] > 0) {
@@ -554,7 +541,7 @@ window.addEventListener('load', function (e) {
                 <a href="#hobbies-test_block" class="spheres-block_text-button" onclick="diagram_button_hobbies()">Узнать подробнее</a>
             </div>`
         }
-}})
+    }})
 
     btnCheckRelationship.addEventListener('click', (e) => {
         document.getElementById("spheres-relationship_show").style.display = "flex"
@@ -738,12 +725,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 21,
+                    textMargin: window.innerWidth > 550 ? 27 : 20,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -964,12 +951,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 27,
+                    textMargin: window.innerWidth > 550 ? 27 : 20,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -1199,12 +1186,12 @@ window.addEventListener('load', function (e) {
                     labels: {
                         position: 'border',
                         textMargin: 20,
+                        textMargin: window.innerWidth > 550 ? 20 : 16,
                         arc: true,
-                        precision: 2,
                         fontStyle: 'bold',
                         fontColor: '#000',
                         position: 'outside',
-                        fontSize: 16,
+                        fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                         render: (args) => args.dataset.helper ? args.label : '',
                         fontColor: (args) => legendLabelColors
                     },
@@ -1486,13 +1473,12 @@ window.addEventListener('load', function (e) {
                 },
                     labels: {
                         position: 'border',
-                        textMargin: 20,
+                        textMargin: window.innerWidth > 550 ? 20 : 16,
                         arc: true,
-                        precision: 2,
                         fontStyle: 'bold',
                         fontColor: '#000',
                         position: 'outside',
-                        fontSize: 16,
+                        fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                         render: (args) => args.dataset.helper ? args.label : '',
                         fontColor: (args) => legendLabelColors
                     },
@@ -1750,12 +1736,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 27,
+                    textMargin: window.innerWidth > 550 ? 27 : 20,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -1975,12 +1961,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 21,
+                    textMargin: window.innerWidth > 550 ? 21 : 16,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -2207,12 +2193,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 21,
+                    textMargin: window.innerWidth > 550 ? 21 : 16,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -2446,13 +2432,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 20,
+                    textMargin: window.innerWidth > 550 ? 20 : 15,
                     arc: true,
-                    precision: 2,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
@@ -2721,12 +2706,12 @@ window.addEventListener('load', function (e) {
             },
                 labels: {
                     position: 'border',
-                    textMargin: 21,
+                    textMargin: window.innerWidth > 550 ? 21 : 16,
                     arc: true,
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: 16,
+                    fontSize: window.innerWidth > 550 ? 18 : window.innerWidth > 520 ? 14 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
