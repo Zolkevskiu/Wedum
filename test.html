@@ -5,175 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background: #F6F3FF;
-        }
-        .chart-container {
-            position: relative;
-            width: 650px;
-            margin: 0 auto;
-            margin-top: 100px;
-        }
-        .dg {
-            position: absolute;
-            /* margin-left: -46px;
-            width: 690px;
-            margin-top: -115px; */
-            margin-left: 26px;
-            width: 690px;
-            margin-top: -67px;
-            z-index: -1;
-
-        }
-        .round {
-            position: absolute;
-            /* margin-left: 84px;
-            width: 432px;
-            margin-top: 9px; */
-            margin-left: 157px;
-            width: 434px;
-            margin-top: 57px;
-            z-index: 1;
-        }
-    </style>
 </head>
 <body>
-    <div class="chart-container">
-        <img src="round.svg" alt="" class="round">
-        <img src="diagram.svg" alt="" class="dg">
-    <canvas id="myChart"></canvas>
-    </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-<script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
-<script>
-Chart.register( ChartDataLabels );
-
-// Chart.defaults.color = "rgb(90, 8, 162, 0%)";
-const legendLabelColors = ["#B670F7"];
-let sum = [5, 0, 0, 6, 0, 0, 0, 8, 0]
-let sumbg = [10, 0, 0, 10, 0, 0, 0, 10, 0]
-const dataSets = {
-    labels: ["Красота", "Карьера и работа", "Здоровье", "Финансы", "Отношения", "Бизнес", "Духовный рост", "Личностный рост", "Творчество и хобби"],
-    datasets: [
-    {
-        data: sum,
-        borderWidth: 0,
-        backgroundColor: [
-            'rgb(182, 112, 247, 70%)',
-            '#A557E0',
-            'rgb(165, 87, 224, 70%)',
-            'rgb(90, 8, 162, 70%)',
-            '#4C0A86',
-            'rgb(90, 8, 162, 70%)',
-            '#6D00DD',
-            'rgb(212, 0, 245, 70%)',
-            'rgb(212, 0, 245, 70%)',
-        ],
-        datalabels: {
-            display: false,
-        },
-    },
-    {
-        helper: true,
-        data: sumbg,
-        borderWidth: 0,
-        backgroundColor: [
-        'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-            'rgba(255, 255, 255, 100%)',
-        ],
-        datalabels: {
-            display: false
-        }
-    }
-    ]
-};
-
-let myChart = new Chart('myChart', {
-    type: 'polarArea',
-    data: dataSets,
-    options: {
-        events: ['none'],
-    layout: {
-        padding: 20
-    },
-    scales: {
-        x: {
-            ticks: {
-                padding: 60,
-                color: "rgb(90, 8, 162, 0%)"
-            },
-            grid: {
-                borderColor: 'rgb(90, 8, 162, 0%)',
-                display: false
-            },
-            angleLines: {
-                display: false
-            },
-            pointLabels: {
-                display: false
-            }
-        },
-        y: {
-            ticks: {
-                padding: 60,
-                color: "rgb(90, 8, 162, 0%)"
-            },
-            grid: {
-                borderColor: 'rgb(90, 8, 162, 0%)',
-                display: false
-            },
-            angleLines: {
-                display: false
-            },
-            pointLabels: {
-                display: false
-            }
-        },
-        r: {
-            angleLines: {
-                display: false
-            },
-            ticks: {
-                display: false
-            },
-            pointLabels: {
-                display: false
-            }
-        }
-    },
-    scale: {
-        min: 0,
-        max: 10,
-    },
-    plugins: {
-        legend: {
-        display: false
-    },
-        labels: {
-            position: 'border',
-            textMargin: 30,
-            arc: true,
-            fontStyle: 'bold',
-            fontColor: '#000',
-            position: 'outside',
-            fontSize: 16,
-            render: (args) => args.dataset.helper ? args.label : '',
-            fontColor: (args) => legendLabelColors
-        },
-    }
-}
-})
-</script>
+    <button class="button_list" onclick="button_first()">first</button>
+    <button class="button_list" onclick="button_second()">second</button>
+     <button class="button_list" onclick="button_third()">thrird</button>
+    <ul class="wrap">
+        <li>1-first</li>
+        <li>2-second</li>
+        <li>3-thrird</li>
+    </ul>
+    <script>
+        const wrap = document.querySelector(".wrap")
+        const list = document.querySelectorAll("li")
+        const button_first = () => { wrap.prepend(list[0]) }
+        const button_second = () => { wrap.prepend(list[1]) }
+        const button_third = () => { wrap.prepend(list[2]) }
+    </script>
 </body>
 </html>

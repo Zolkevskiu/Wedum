@@ -1,7 +1,8 @@
 window.addEventListener('load', function (e) {
     Chart.register( ChartDataLabels );
-    // Chart.defaults.color = "rgb(90, 8, 162, 0%)";
-    const legendLabelColors = ["#B670F7"];
+
+    const legendLabelColors = ["#A43FD4"];
+    
     let data = [];
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -315,7 +316,6 @@ window.addEventListener('load', function (e) {
             
         });
 
-        // dataElements = dataElements.map(item => (10 - item.satisfactorily));
         dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
         let dataSum_temp = dataElements;
 
@@ -468,7 +468,7 @@ window.addEventListener('load', function (e) {
                     fontStyle: 'bold',
                     fontColor: '#000',
                     position: 'outside',
-                    fontSize: window.innerWidth > 550 ? 16 : window.innerWidth > 520 ? 12 : window.innerWidth > 450 ? 8 : 8,
+                    fontSize: window.innerWidth > 550 ? 16 : window.innerWidth > 520 ? 12 : window.innerWidth > 450 ? 10 : 10,
                     render: (args) => args.dataset.helper ? args.label : '',
                     fontColor: (args) => legendLabelColors
                 },
