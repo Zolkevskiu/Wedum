@@ -1,21 +1,20 @@
 window.addEventListener('load', function (e) {
     Chart.register( ChartDataLabels );
-
     const legendLabelColors = ["#A43FD4"];
     
     let data = [];
     let inters = [];
-    let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let mostCountSum = [3, 2, 3, 1, 3, 1, 2, 1, 2];
     let dataSum = [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        8,
+        2,
+        9,
+        2,
+        7,
+        2,
+        2,
+        2,
+        3
     ];
     // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -308,15 +307,20 @@ window.addEventListener('load', function (e) {
             },
         ];
 
+        // for (let i = 0; i<4;++i) {
+        //     if(dataSum[i] < 4 && mostCountSum[i] > 2) {
+        //         mostCountSum[i] + 10
+        //         console.log(mostCountSum[i] + 10);
+        //     }
+        // }
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = dataSum[index];
             item.significance = mostCountSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
-            
-        });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+            item.value = (10 - item.satisfactorily) * item.significance;   
+        });
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* (item.significance > 2  ? item.significance + 15 : item.significance)));
+        console.log(dataElements);
         let dataSum_temp = dataElements;
 
         let diagrama2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
