@@ -4,30 +4,30 @@ window.addEventListener('load', function (e) {
     
     let data = [];
     let inters = [];
-    // let mostCountSum = [3, 2, 3, 1, 3, 1, 2, 1, 2];
-    // let dataSum = [
-    //     8,
-    //     2,
-    //     9,
-    //     2,
-    //     7,
-    //     2,
-    //     2,
-    //     2,
-    //     3
-    // ];
-    let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let mostCountSum = [3, 2, 3, 1, 3, 1, 2, 1, 2];
     let dataSum = [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
+        8,
+        2,
+        9,
+        2,
+        7,
+        2,
+        2,
+        2,
+        3
     ];
+    // let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    // let dataSum = [
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1,
+    //     1
+    // ];
     // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -317,21 +317,21 @@ window.addEventListener('load', function (e) {
             {
                 value: 0,
             },
-        ];
+        ];        
 
-        // for (let i = 0; i<4;++i) {
-        //     if(dataSum[i] < 4 && mostCountSum[i] > 2) {
-        //         mostCountSum[i] + 10
-        //         console.log(mostCountSum[i] + 10);
-        //     }
-        // }
+        console.log(dataSum);
         dataElements.forEach((item, index) => {
             item.satisfactorily = dataSum[index];
             item.significance = mostCountSum[index];
 
             item.value = (10 - item.satisfactorily) * item.significance;   
         });
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* (item.significance > 2  ? item.significance + 15 : item.significance)));
+        // mostCountSum[1] = 1
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance + 30 : item.significance >1 ? item.significance + 2 : item.significance < 2 ? item.significance + 1 : false)));
+        // dataElements = dataElements.map(item => ((10 - item.satisfactorily) * item.significance))
+
+
+
         console.log(dataElements);
         let dataSum_temp = dataElements;
 
