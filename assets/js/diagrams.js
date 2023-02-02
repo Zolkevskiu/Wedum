@@ -985,7 +985,7 @@ window.addEventListener('load', function (e) {
         if (diagramaKrasotaCalc[3] > 0) {
             krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
         <img src="assets/img/hair-icon.svg" alt="">
-        <h2>Волосыи</h2>
+        <h2>Волосы</h2>
         <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_heir()">Узнать подробнее</a>
         </div>`
         }
@@ -2089,7 +2089,7 @@ window.addEventListener('load', function (e) {
         }
 
         const dataSpiritual = {
-            labels: ["", "Медитация", "", "Привлечение \n финансов", "Исполнение желаний", "Осознанность,", "", "Эзотерические знания"],
+            labels: ["", "Медитация", "", "Привлечение \n финансов", "Исполнение желаний", "Осознанность", "", "Эзотерические знания"],
             datasets: [
             {
                 data: diagramaSpiritualCalc,
@@ -2282,6 +2282,9 @@ window.addEventListener('load', function (e) {
             {
                 value: 0,
             },
+            {
+                value: 0,
+            }
         ];
 
         dataElements.forEach((item, index) => {
@@ -2595,7 +2598,7 @@ window.addEventListener('load', function (e) {
         }
 
         const dataHobby = {
-            labels: ["Рукоделие", "Кулинария", "Рисование", "Собственний бизнес", "Фото и видео", "Музыка", "Дом и сад", "Танцы", "Вождение и \n тюнинг", "Дрессировка", "Пошив одежды", "Декор и \n флористика"],
+            labels: ["Рукоделие", "Кулинария", "Рисование", "Фото и видео", "Музыка", "Дом и сад", "Танцы", "Вождение и \n тюнинг", "Дрессировка", "Пошив одежды", "Декор и \n флористика"],
             datasets: [
             {
                 data: diagramaHobbyCalc,

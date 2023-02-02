@@ -556,6 +556,28 @@ body {
   position: relative;
   justify-content: space-between;
 }
+.counter-item:nth-child(2)::before {
+  content: "Шаг 1";
+  position: absolute;
+  display: block;
+  right: 55px;
+  color: #C4C4C4;
+  font-family: "Roboto Light";
+  font-weight: 400;
+  font-size: 14px;
+  top: -25px;
+}
+.counter-item:nth-child(2)::after {
+  content: "Шаг 2";
+  position: absolute;
+  display: block;
+  right: 0px;
+  color: #C4C4C4;
+  font-family: "Roboto Light";
+  font-weight: 400;
+  font-size: 14px;
+  top: -25px;
+}
 .counter-item:first-child::before {
   content: "Шаг 1";
   position: absolute;
@@ -1382,21 +1404,21 @@ body {
   max-width: 212px;
   width: 100%;
   height: 53px;
-  border: 2px solid #A43FD4;
+  border: none;
   border-radius: 10px;
   display: flex;
+  background: #A43FD4;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #A43FD4;
+  color: #fff;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .additional-test_text-button:hover {
-  border: 2px solid #F300CC;
   background: #F300CC;
-  color: #fff;
+  border: none;
 }
 
 .swiper-pagination-bullet-active {
@@ -2019,13 +2041,19 @@ body {
   }
 }
 @media (max-width: 1000px) {
+  .counter-item:nth-child(2)::before {
+    display: none;
+  }
+  .counter-item:nth-child(2)::after {
+    display: none;
+  }
   .img-wrap {
     margin-top: 9px;
     margin-left: 59.5px;
     width: 534px;
   }
   #test-window-works {
-    height: 1020px;
+    height: 1045px;
   }
   .img-relationship_wrap {
     left: 50%;
@@ -2318,8 +2346,8 @@ body {
     top: -10px;
   }
   .test-window-sec {
-    height: 468px;
-    padding-top: 5px;
+    height: 488px;
+    padding-top: 25px;
   }
   .footer {
     margin-top: 230px;
@@ -2443,7 +2471,7 @@ body {
     margin-top: 35px;
   }
   .test-window-helath {
-    height: 835px;
+    height: 860px;
   }
   .img-health_wrap {
     margin-left: 177.5px;
@@ -2486,7 +2514,7 @@ body {
     height: 1300px;
   }
   .test-window_business {
-    height: 580px;
+    height: 600px;
   }
   .spheres-block-spiritual .spheres-block_sub-title_sec {
     margin-top: 584px;
@@ -2498,7 +2526,7 @@ body {
     height: 981px;
   }
   .test-window-spiritual {
-    height: 561px;
+    height: 585px;
   }
   .spiritual-blocktext_wrap {
     height: 468px;
@@ -2513,13 +2541,13 @@ body {
     height: 1628px;
   }
   .test-window-personal {
-    height: 927px;
+    height: 950px;
   }
   .img-personal_wrap {
     margin-left: 243.5px;
   }
   .test-window-hobby {
-    height: 1110px;
+    height: 1135px;
   }
   .gl-window-all {
     left: 50%;
@@ -2738,6 +2766,37 @@ body {
   }
 }
 @media (max-width: 550px) {
+  .counter-item {
+    height: 72px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    margin: 10px auto;
+    position: relative;
+    justify-content: space-between;
+  }
+  .counter-item:first-child::before {
+    content: "Шаг 1";
+    position: absolute;
+    display: block;
+    right: 66px;
+    color: #C4C4C4;
+    font-family: "Roboto Light";
+    font-weight: 400;
+    font-size: 14px;
+    top: -25px;
+  }
+  .counter-item:first-child::after {
+    content: "Шаг 2";
+    position: absolute;
+    display: block;
+    right: 13px;
+    color: #C4C4C4;
+    font-family: "Roboto Light";
+    font-weight: 400;
+    font-size: 14px;
+    top: -25px;
+  }
   .gl-window {
     margin-left: -26px;
   }
@@ -2940,40 +2999,40 @@ body {
     height: 1220px;
   }
   .test-window-helath {
-    height: 835px;
+    height: 865px;
   }
   .test-window-helath .counter-item {
     margin: 10px 0;
   }
   .test-finance-window {
-    height: 470px;
+    height: 490px;
   }
   .test-finance-window .counter-item {
     margin: 10px 15px;
   }
   .test-window-relationship {
-    height: 470px;
+    height: 490px;
   }
   .test-window-relationship .counter-item {
     margin: 10px 0;
   }
   .test-window_business {
-    height: 680px;
+    height: 700px;
   }
   .test-window-spiritual {
-    height: 560px;
+    height: 585px;
   }
   .test-window-spiritual .counter-item {
     margin: 10px 0;
   }
   .test-window-personal {
-    height: 928px;
+    height: 950px;
   }
   .test-window-personal .counter-item {
     margin: 10px 0;
   }
   .test-window-hobby {
-    height: 1110px;
+    height: 1135px;
   }
   .test-window-hobby .counter-item {
     margin: 10px 0;
@@ -3054,9 +3113,9 @@ body {
     margin-top: 12px;
   }
   .gl-window-health {
-    width: 385px;
+    width: 395px;
     margin-top: 76px;
-    margin-left: -10px;
+    margin-left: -7px;
   }
   .gl-window-health .diagram-border {
     width: 407px;
@@ -3067,7 +3126,7 @@ body {
     margin-top: 72px;
     margin-left: 79px;
     z-index: 4;
-    width: 257px;
+    width: 255px;
   }
   #myChartHealth {
     margin-left: -82px;
@@ -3229,7 +3288,7 @@ body {
     margin-left: 15px;
   }
   .test-finance-window {
-    height: 470px;
+    height: 490px;
   }
   .test-finance-window .counter-item {
     margin: 10px 0;
@@ -3376,6 +3435,7 @@ body {
     font-size: 16px;
   }
   .counter-wrap div p {
+    font-family: "Roboto medium";
     font-size: 12px;
     line-height: 15px;
   }
@@ -3383,7 +3443,7 @@ body {
     margin: 10px 0;
   }
   #test-window-works {
-    height: 1020px;
+    height: 1050px;
   }
   #works-block {
     margin-top: 470px;
@@ -3412,7 +3472,8 @@ body {
     height: 1470px;
   }
   .gl-window-works {
-    margin-top: 150px;
+    margin-top: 190px;
+    margin-left: 192px;
   }
   .works-block {
     height: 1395px;
@@ -3484,7 +3545,7 @@ body {
     margin: 20px 0;
   }
   #test-window-works {
-    height: 1220px;
+    height: 1250px;
   }
   .spheres-health-block {
     height: 870px;
@@ -3577,6 +3638,13 @@ body {
   .spiritual-block {
     margin-top: 45px;
   }
+  .spiritual-block {
+    margin-top: 40px;
+    margin-left: 10px;
+  }
+  .spheres-block-spiritual {
+    height: 850px;
+  }
 }
 @media (max-width: 400px) {
   .spheres-block_wrap {
@@ -3629,7 +3697,7 @@ body {
     height: 645px;
   }
   .spheres-health-block {
-    height: 780px;
+    height: 875px;
   }
   .spheres-block-relationship {
     height: 840px;
@@ -3638,7 +3706,7 @@ body {
     height: 854px;
   }
   .spheres-block-spiritual {
-    height: 818px;
+    height: 845px;
   }
   .spheres-block-hobby {
     height: 843px;
@@ -3648,6 +3716,18 @@ body {
   }
 }
 @media (max-width: 385px) {
+  .gl-window-first {
+    width: 326px;
+  }
+  .img-wrap {
+    margin-top: 31.5px;
+    margin-left: 61px;
+    width: 362px;
+  }
+  #myChart {
+    margin-left: 62px;
+    margin-top: 79px;
+  }
   .spheres-health-block_title {
     margin-left: 0;
   }
@@ -3727,7 +3807,7 @@ body {
     margin: 10px 0;
   }
   .test-krasota-window {
-    height: 470px;
+    height: 485px;
   }
   .krasota-block {
     height: 1576px;
@@ -3758,6 +3838,14 @@ body {
   }
   .hobby-gallery-test_wrap {
     height: 1138px;
+  }
+  .spiritual-blocktext_wrap {
+    height: 468px;
+    align-items: flex-start;
+    padding: 15px 15px;
+  }
+  .spiritual-block {
+    height: 1326px;
   }
 }
 @media (max-width: 344px) {
