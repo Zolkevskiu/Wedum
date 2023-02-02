@@ -4,30 +4,30 @@ window.addEventListener('load', function (e) {
     
     let data = [];
     let inters = [];
-    let mostCountSum = [3, 2, 3, 1, 3, 1, 2, 1, 2];
-    let dataSum = [
-        8,
-        2,
-        9,
-        2,
-        7,
-        2,
-        2,
-        2,
-        3
-    ];
-    // let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    // let mostCountSum = [3, 2, 3, 1, 3, 1, 2, 1, 2];
     // let dataSum = [
-    //     1,
-    //     1,
-    //     1,
-    //     1,
-    //     1,
-    //     1,
-    //     1,
-    //     1,
-    //     1
+    //     8,
+    //     2,
+    //     9,
+    //     2,
+    //     7,
+    //     2,
+    //     2,
+    //     2,
+    //     3
     // ];
+    let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let dataSum = [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+    ];
     // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
