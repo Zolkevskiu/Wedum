@@ -810,11 +810,10 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumKrasota[index];
             item.significance = mostKrasotaSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
         dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
@@ -1042,14 +1041,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumWorks[index];
             item.significance = mostWorksSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 + item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
             let diagramaWorksCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];

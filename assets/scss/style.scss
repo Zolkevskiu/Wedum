@@ -339,7 +339,7 @@
     position: absolute;
     right: 8%;
     margin-left: 80px;
-    animation: live-img_aimn 6s linear infinite;
+    animation: live-img_aimn 9s linear infinite;
   }
   
   @keyframes live-img_aimn {
@@ -509,7 +509,32 @@
     width: 100%;
     display: flex;
     margin: 10px auto;
+    position: relative;
     justify-content: space-between;
+    &:first-child {
+      &::before {
+        content: 'Шаг 1';
+        position: absolute;
+        display: block;
+        right: 55px;
+        color: #C4C4C4;
+        font-family: "Roboto Light";
+        font-weight: 400;
+        font-size: 14px;
+        top: -25px;
+      }
+      &::after {
+        content: 'Шаг 2';
+        position: absolute;
+        display: block;
+        right: 0px;
+        color: #C4C4C4;
+        font-family: "Roboto Light";
+        font-weight: 400;
+        font-size: 14px;
+        top: -25px;
+      }
+    }
   }
   
   .test-window .btnCheck {
