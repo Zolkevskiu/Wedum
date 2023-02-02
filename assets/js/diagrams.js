@@ -325,11 +325,8 @@ window.addEventListener('load', function (e) {
 
             item.value = (10 - item.satisfactorily) * item.significance;   
         });
-        // mostCountSum[1] = 1
         dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         // dataElements = dataElements.map(item => ((10 - item.satisfactorily) * item.significance))
-
-
 
         console.log(dataElements);
         let dataSum_temp = dataElements;
@@ -590,11 +587,11 @@ window.addEventListener('load', function (e) {
 
             item.satisfactorily = sumRelationship[index];
             item.significance = mostRelationshipSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagrama3 = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -820,7 +817,7 @@ window.addEventListener('load', function (e) {
 
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagramaKrasotaCalc = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -1337,14 +1334,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumHealth[index];
             item.significance = mostHealthSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
             let diagramaHealthCalc = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -1599,14 +1595,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumFinance[index];
             item.significance = mostFinanceSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagramaFinanceCalc = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -1824,14 +1819,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumBusiness[index];
             item.significance = mostBusinessSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagramaBusinessCalc = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -2056,14 +2050,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumSpiritual[index];
             item.significance = mostSpiritualSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagramaSpiritualCalc = [0, 0, 0, 0, 0, 0, 0, 0];
@@ -2294,14 +2287,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumPersonal[index];
             item.significance = mostPersonalSum[index];
-            item.value = (10 - item.satisfactorily) * item.significance;
 
+            item.value = (10 - item.satisfactorily) * item.significance;
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagramaPersonalCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -2564,14 +2556,13 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumHobby[index];
             item.significance = mostHobbySum[index];
+            
             item.value = (10 - item.satisfactorily) * item.significance;
-
         });
 
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily )* item.significance));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         let dataSum_temp = dataElements;
 
         let diagramaHobbyCalc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
