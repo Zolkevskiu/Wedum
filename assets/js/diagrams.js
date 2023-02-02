@@ -319,7 +319,6 @@ window.addEventListener('load', function (e) {
             },
         ];        
 
-        console.log(dataSum);
         dataElements.forEach((item, index) => {
             item.satisfactorily = dataSum[index];
             item.significance = mostCountSum[index];
@@ -327,7 +326,7 @@ window.addEventListener('load', function (e) {
             item.value = (10 - item.satisfactorily) * item.significance;   
         });
         // mostCountSum[1] = 1
-        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance + 30 : item.significance >1 ? item.significance + 2 : item.significance < 2 ? item.significance + 1 : false)));
+        dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         // dataElements = dataElements.map(item => ((10 - item.satisfactorily) * item.significance))
 
 
