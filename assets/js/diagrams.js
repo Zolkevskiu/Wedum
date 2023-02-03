@@ -678,34 +678,41 @@ window.addEventListener('load', function (e) {
         }
         })
         const relationship_wrapper = document.getElementById("relationship-block")
+        const relationship_block = document.getElementById('relationship-gallery_block')
+        const relationship_swipers = document.querySelectorAll(".relationship-swiper")
+
         relationship_wrapper.innerHTML = ''
         if (diagrama3[1] > 0) {
             relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/relationship-men-icon.svg" alt="">
-        <h2>Отношения с мужчиной</h2>
-        <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_male()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/relationship-men-icon.svg" alt="">
+            <h2>Отношения с мужчиной</h2>
+            <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_male()">Узнать подробнее</a>
+            </div>`
+            relationship_block.prepend(relationship_swipers[0])
         }
         if (diagrama3[3] > 0) {
             relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/relationship-chaild-icon.svg" alt="">
-        <h2>Отношения с детьми</h2>
-        <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_child()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/relationship-chaild-icon.svg" alt="">
+            <h2>Отношения с детьми</h2>
+            <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_child()">Узнать подробнее</a>
+            </div>`
+            relationship_block.prepend(relationship_swipers[1])
         }
         if (diagrama3[5] > 0) {
             relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/relationship-parents-icon.svg" alt="">
-        <h2>Отношения с родителями</h2>
-        <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_parents()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/relationship-parents-icon.svg" alt="">
+            <h2>Отношения с родителями</h2>
+            <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_parents()">Узнать подробнее</a>
+            </div>`
+            relationship_block.prepend(relationship_swipers[2])
         }
         if (diagrama3[7] > 0) {
             relationship_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/relationship-colegs-icon.svg" alt="">
-        <h2>Отношения с коллегами</h2>
-        <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_partners()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/relationship-colegs-icon.svg" alt="">
+            <h2>Отношения с коллегами</h2>
+            <a href="#relationship-gallery_block" class="spheres-block_text-button" onclick="gallery_relationship_partners()">Узнать подробнее</a>
+            </div>`
+            relationship_block.prepend(relationship_swipers[3])
         }
     })
 
@@ -902,35 +909,42 @@ window.addEventListener('load', function (e) {
             }
         }
         })
+        const krasota_swiper = document.querySelectorAll(".krasota-swiper")
+        const krasota_block = document.getElementById('krasota-gallery_block')
         const krasota_wrapper = document.getElementById("krasota-block")
+
         krasota_wrapper.innerHTML = ''
         if (diagramaKrasotaCalc[1] > 0) {
             krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/figure-icon.svg" alt="">
-        <h2>Фигура</h2>
-        <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_figure()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/figure-icon.svg" alt="">
+            <h2>Фигура</h2>
+            <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_figure()">Узнать подробнее</a>
+            </div>`
+            krasota_block.prepend(krasota_swiper[0])
         }
         if (diagramaKrasotaCalc[3] > 0) {
             krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/hair-icon.svg" alt="">
-        <h2>Волосы</h2>
-        <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_heir()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/hair-icon.svg" alt="">
+            <h2>Волосы</h2>
+            <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_heir()">Узнать подробнее</a>
+            </div>`
+            krasota_block.prepend(krasota_swiper[1])
         }
         if (diagramaKrasotaCalc[5] > 0) {
             krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/face-icon.svg" alt="">
-        <h2>Лицо</h2>
-        <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_face()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/face-icon.svg" alt="">
+            <h2>Лицо</h2>
+            <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_face()">Узнать подробнее</a>
+            </div>`
+            krasota_block.prepend(krasota_swiper[2])
         }
         if (diagramaKrasotaCalc[7] > 0) {
             krasota_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/fashion-icon.svg" alt="">
-        <h2>Мода и стиль</h2>
-        <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_fashion()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/fashion-icon.svg" alt="">
+            <h2>Мода и стиль</h2>
+            <a href="#krasota-gallery_block" class="spheres-block_text-button" onclick="gallery_krasota_fashion()">Узнать подробнее</a>
+            </div>`
+            krasota_block.prepend(krasota_swiper[3])
         }       
     })
 
@@ -1136,98 +1150,111 @@ window.addEventListener('load', function (e) {
                 }
             }
             })
+            const works_block = document.getElementById('works-gallery_block')
+            const works_swipers = document.querySelectorAll(".works-swiper")
             const works_wrapper = document.getElementById("works-block")
+
             works_wrapper.innerHTML = ''
             if (diagramaWorksCalc[0] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/creative-icon.svg" alt="creative">
-            <div>
-            <h2 class="works-block_title">Творческая работа</h2>
-            <p class="spheres-wrap_paragraph">Дизайн, журналистика, блогинг и т.д.</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_creative()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/creative-icon.svg" alt="creative">
+                <div>
+                <h2 class="works-block_title">Творческая работа</h2>
+                <p class="spheres-wrap_paragraph">Дизайн, журналистика, блогинг и т.д.</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_creative()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[0]) 
             }
             if (diagramaWorksCalc[1] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/work-It-icon.svg" alt="">
-            <div>
-            <h2>Работа в сфере IT</h2>
-            <p class="spheres-wrap_paragraph">IT разработка, аналитика</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_workIt()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/work-It-icon.svg" alt="">
+                <div>
+                <h2>Работа в сфере IT</h2>
+                <p class="spheres-wrap_paragraph">IT разработка, аналитика</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_workIt()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[1]) 
             }
             if (diagramaWorksCalc[2] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/finance-work-icon.svg" alt="finance">
-            <div>
-            <h2>Работа, связанная с финансами</h2>
-            <p class="spheres-wrap_paragraph">Финансы, бухгалтерский учет</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_finance()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/finance-work-icon.svg" alt="finance">
+                <div>
+                <h2>Работа, связанная с финансами</h2>
+                <p class="spheres-wrap_paragraph">Финансы, бухгалтерский учет</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_finance()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[2]) 
             }
             if (diagramaWorksCalc[3] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/organization-management-icon.svg" alt="organization">
-            <div>
-            <h2>Организация и управление</h2>
-            <p class="spheres-wrap_paragraph">Менеджмент</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_organization()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/organization-management-icon.svg" alt="organization">
+                <div>
+                <h2>Организация и управление</h2>
+                <p class="spheres-wrap_paragraph">Менеджмент</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_organization()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[3]) 
             }
             if (diagramaWorksCalc[4] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/promotion-services-icon.svg" alt="promotion">
-            <div>
-            <h2>Продвижение товаров и услуг</h2>
-            <p class="spheres-wrap_paragraph">Маркетинг, реклама и т.д.</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_promotion()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/promotion-services-icon.svg" alt="promotion">
+                <div>
+                <h2>Продвижение товаров и услуг</h2>
+                <p class="spheres-wrap_paragraph">Маркетинг, реклама и т.д.</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_promotion()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[4]) 
             }
             if (diagramaWorksCalc[5] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/psychology-lifestyle-icon.svg" alt="lifestyle">
-            <div>
-            <h2>Психология и здоровый образ жизни</h2>
-            <p class="spheres-wrap_paragraph">Психология, нутрициология и т.д.</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_psychology()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/psychology-lifestyle-icon.svg" alt="lifestyle">
+                <div>
+                <h2>Психология и здоровый образ жизни</h2>
+                <p class="spheres-wrap_paragraph">Психология, нутрициология и т.д.</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_psychology()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[5]) 
             }
             if (diagramaWorksCalc[6] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-works_wrap spheres-block_wrap">
-            <img src="assets/img/starting-business-icon.svg" alt="business">
-            <h2>Открытие собственного бизнеса</h2>
-            <a href="#works-gallery_block" class="spheres-block_text-button" onclick="gallery_works_business()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/starting-business-icon.svg" alt="business">
+                <h2>Открытие собственного бизнеса</h2>
+                <a href="#works-gallery_block" class="spheres-block_text-button" onclick="gallery_works_business()">Узнать подробнее</a>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[6]) 
             }
             if (diagramaWorksCalc[7] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-works_wrap spheres-block_wrap">
-            <img src="assets/img/work-in-beauty-icon.svg" alt="beauty">
-            <h2>Работа в сфере красоты</h2>
-            <a href="#works-gallery_block" class="spheres-block_text-button" onclick="gallery_works_beauty()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/work-in-beauty-icon.svg" alt="beauty">
+                <h2>Работа в сфере красоты</h2>
+                <a href="#works-gallery_block" class="spheres-block_text-button" onclick="gallery_works_beauty()">Узнать подробнее</a>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[7]) 
             }
             if (diagramaWorksCalc[8] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-works_wrap spheres-block_wrap">
-            <img src="assets/img/pedagogy-educcation-icon.svg" alt="pedagogy">
-            <h2>Педагогика и образование</h2>
-            <a href="#works-gallery_block" class="spheres-block_text-button" onclick="gallery_works_educcation()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/pedagogy-educcation-icon.svg" alt="pedagogy">
+                <h2>Педагогика и образование</h2>
+                <a href="#works-gallery_block" class="spheres-block_text-button" onclick="gallery_works_educcation()">Узнать подробнее</a>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[8]) 
             }
             if (diagramaWorksCalc[9] > 0) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/travel-jobs-icon.svg" alt="travel">
-            <div>
-            <h2>Работа в сфере путешествий</h2>
-            <p class="spheres-wrap_paragraph">Туаргент</p>
-            <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_travel()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/travel-jobs-icon.svg" alt="travel">
+                <div>
+                <h2>Работа в сфере путешествий</h2>
+                <p class="spheres-wrap_paragraph">Туаргент</p>
+                <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_travel()">Узнать подробнее</a>
+                </div>
+                </div>`
+                works_gallery_test_wrap.prepend(works_swipers[9]) 
             }    
     })
 
@@ -1423,65 +1450,76 @@ window.addEventListener('load', function (e) {
             }
             })
             const health_wrapper = document.getElementById("health-block")
+            const health_block = document.getElementById('health-gallery_block')
+            const health_swipers = document.querySelectorAll('.health-swiper')
+
             health_wrapper.innerHTML = ''
             if (diagramaHealthCalc[0] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/women-health.svg">
-            <h2 class="works-block_title">Женское здоровье</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_women()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/women-health.svg">
+                <h2 class="works-block_title">Женское здоровье</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_women()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[0])
             }
             if (diagramaHealthCalc[1] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/Digestion.svg">
-            <h2 class="works-block_title">Пищеварение</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_digestion()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/Digestion.svg">
+                <h2 class="works-block_title">Пищеварение</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_digestion()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[1])
             }
             if (diagramaHealthCalc[2] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/vision.svg">
-            <h2 class="works-block_title">Зрение</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_vision()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/vision.svg">
+                <h2 class="works-block_title">Зрение</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_vision()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[2])
             }
             if (diagramaHealthCalc[3] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/backJoints.svg">
-            <h2 class="works-block_title">Спина и суставы</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_backJoints()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/backJoints.svg">
+                <h2 class="works-block_title">Спина и суставы</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_backJoints()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[3])
             }
             if (diagramaHealthCalc[4] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/painSyndrome.svg">
-            <h2 class="works-block_title">Болевой синдром</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_painSyndrome()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/painSyndrome.svg">
+                <h2 class="works-block_title">Болевой синдром</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_painSyndrome()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[4])
             }
             if (diagramaHealthCalc[5] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/hormones.svg">
-            <h2 class="works-block_title">Гормоны</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_hormones()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/hormones.svg">
+                <h2 class="works-block_title">Гормоны</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_hormones()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[5])
             }
             if (diagramaHealthCalc[6] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-            <img src="assets/img/test-icon/wellness.svg">
-            <div>
-            <h2 class="works-block_title">Оздоровление</h2>
-            <p class="spheres-wrap_paragraph">Очищение организма, психосоматика, дыхание, массаж</p>
-            <a href="#health-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_health_wellness()">Узнать подробнее</a>
-            </div>
-            </div>`
+                <img src="assets/img/test-icon/wellness.svg">
+                <div>
+                <h2 class="works-block_title">Оздоровление</h2>
+                <p class="spheres-wrap_paragraph">Очищение организма, психосоматика, дыхание, массаж</p>
+                <a href="#health-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_health_wellness()">Узнать подробнее</a>
+                </div>
+                </div>`
+                health_block.prepend(health_swipers[6])
             }
             if (diagramaHealthCalc[7] > 0) {
                 health_wrapper.innerHTML += `<div class="spheres-block_wrap">
-            <img src="assets/img/test-icon/heartVesseles.svg">
-            <h2 class="works-block_title">Сердце и сосуды</h2>
-            <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_heartVesseles()">Узнать подробнее</a>
-            </div>`
+                <img src="assets/img/test-icon/heartVesseles.svg">
+                <h2 class="works-block_title">Сердце и сосуды</h2>
+                <a href="#health-gallery_block" class="spheres-block_text-button" onclick="gallery_health_heartVesseles()">Узнать подробнее</a>
+                </div>`
+                health_block.prepend(health_swipers[7])
             }
         
     })
@@ -1685,34 +1723,41 @@ window.addEventListener('load', function (e) {
         }
         })
         const finance_wrapper = document.getElementById("finance-block")
+        const finance_block = document.getElementById('finance-gallery_block')
+        const finance_swipers = document.querySelectorAll(".finance-swiper")
+
         finance_wrapper.innerHTML = ''
         if (diagramaFinanceCalc[1] > 0) {
             finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/finance-attraction.svg" alt="">
-        <h2>Привлечение финансов</h2>
-        <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_attraction()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/finance-attraction.svg" alt="">
+            <h2>Привлечение финансов</h2>
+            <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_attraction()">Узнать подробнее</a>
+            </div>`
+            finance_block.prepend(finance_swipers[0])  
         }
         if (diagramaFinanceCalc[3] > 0) {
             finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/finance-literacy.svg" alt="">
-        <h2>Финансовая грамотность</h2>
-        <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_literacy()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/finance-literacy.svg" alt="">
+            <h2>Финансовая грамотность</h2>
+            <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_literacy()">Узнать подробнее</a>
+            </div>`
+            finance_block.prepend(finance_swipers[1])  
         }
         if (diagramaFinanceCalc[5] > 0) {
             finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/finance-investment.svg" alt="">
-        <h2>инвестирования</h2>
-        <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_investment()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/finance-investment.svg" alt="">
+            <h2>инвестирования</h2>
+            <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_investment()">Узнать подробнее</a>
+            </div>`
+            finance_block.prepend(finance_swipers[2])  
         }
         if (diagramaFinanceCalc[7] > 0) {
             finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/finance-trading.svg" alt="">
-        <h2>трейдинг</h2>
-        <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_trading()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/finance-trading.svg" alt="">
+            <h2>трейдинг</h2>
+            <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_trading()">Узнать подробнее</a>
+            </div>`
+            finance_block.prepend(finance_swipers[3])  
         }
     })
 
@@ -1909,41 +1954,49 @@ window.addEventListener('load', function (e) {
         }
         })
         const business_wrapper = document.getElementById("business-block")
+        const business_block = document.getElementById('business-gallery_block')
+        const business_swipers = document.querySelectorAll(".business-swiper")
+
         business_wrapper.innerHTML = ''
         if (diagramaBusinessCalc[1] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/business-availability.svg" alt="">
-        <h2>бизнес-образования (MBA)</h2>
-        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_availability()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/business-availability.svg" alt="">
+            <h2>бизнес-образования (MBA)</h2>
+            <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_availability()">Узнать подробнее</a>
+            </div>`
+            business_block.prepend(business_swipers[0])
         }
         if (diagramaBusinessCalc[3] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/business-experience.svg" alt="">
-        <h2>открытия собственного бизнеса</h2>
-        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_experience()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/business-experience.svg" alt="">
+            <h2>открытия собственного бизнеса</h2>
+            <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_experience()">Узнать подробнее</a>
+            </div>`
+            business_block.prepend(business_swipers[1])
         }
         if (diagramaBusinessCalc[4] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/business-skills.svg" alt="">
-        <h2>управления бизнесом</h2>
-        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_manipulation()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/business-skills.svg" alt="">
+            <h2>управления бизнесом</h2>
+            <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_manipulation()">Узнать подробнее</a>
+            </div>`
+            business_block.prepend(business_swipers[2])
         }
         if (diagramaBusinessCalc[5] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/business-recruitment.svg" alt="">
-        <h2>управление персоналом</h2>
-        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_recruitment()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/business-recruitment.svg" alt="">
+            <h2>управление персоналом</h2>
+            <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_recruitment()">Узнать подробнее</a>
+            </div>`
+            business_block.prepend(business_swipers[3])
         }
         if (diagramaBusinessCalc[7] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/business-service.svg" alt="">
-        <h2>работа с клиентами</h2>
-        <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_service()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/business-service.svg" alt="">
+            <h2>работа с клиентами</h2>
+            <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_service()">Узнать подробнее</a>
+            </div>`
+            business_block.prepend(business_swipers[4])
         }
     })
 
@@ -2140,47 +2193,55 @@ window.addEventListener('load', function (e) {
         }
         })
         const spiritual_wrapper = document.getElementById("spiritual-block")
+        const spiritual_block = document.getElementById('spiritual-gallery_block')
+        const spiritual_swipers = document.querySelectorAll(".spiritual-swiper")
+
         spiritual_wrapper.innerHTML = ''
         if (diagramaSpiritualCalc[1] > 0) {
             spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-        <img src="assets/img/test-icon/spiritual-medicine.svg" alt="">
-        <div>
-        <h2>Медитация</h2>
-        <p class="spheres-wrap_paragraph">Самоконтроль, спокойствие</p>
-        <a href="#spiritual-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_medicine()">Узнать подробнее</a>
-        </div>
-        </div>`
+            <img src="assets/img/test-icon/spiritual-medicine.svg" alt="">
+            <div>
+            <h2>Медитация</h2>
+            <p class="spheres-wrap_paragraph">Самоконтроль, спокойствие</p>
+            <a href="#spiritual-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_medicine()">Узнать подробнее</a>
+            </div>
+            </div>`
+            spiritual_block.prepend(spiritual_swipers[0])
         }
         if (diagramaSpiritualCalc[3] > 0) {
             spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/spiritual-finance.svg" alt="">
-        <h2>Привлечение финансов</h2>
-        <a href="#spiritual-gallery_block" class="spheres-block_text-button" onclick="gallery_spiritual_finance()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/spiritual-finance.svg" alt="">
+            <h2>Привлечение финансов</h2>
+            <a href="#spiritual-gallery_block" class="spheres-block_text-button" onclick="gallery_spiritual_finance()">Узнать подробнее</a>
+            </div>`
+            spiritual_block.prepend(spiritual_swipers[1])
         }
         if (diagramaSpiritualCalc[4] > 0) {
             spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/spiritual-desires.svg" alt="">
-        <h2>Исполнение желаний</h2>
-        <a href="#spiritual-gallery_block" class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/spiritual-desires.svg" alt="">
+            <h2>Исполнение желаний</h2>
+            <a href="#spiritual-gallery_block" class="spheres-block_text-button" onclick="gallery_business_skills()">Узнать подробнее</a>
+            </div>`
+            spiritual_block.prepend(spiritual_swipers[2])
         }
         if (diagramaSpiritualCalc[5] > 0) {
             spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/spiritual-mindfulness.svg" alt="">
-        <h2>Осознанность</h2>
-        <a href="#spiritual-gallery_block" class="spheres-block_text-button" onclick="gallery_spiritual_mindfulness()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/spiritual-mindfulness.svg" alt="">
+            <h2>Осознанность</h2>
+            <a href="#spiritual-gallery_block" class="spheres-block_text-button" onclick="gallery_spiritual_mindfulness()">Узнать подробнее</a>
+            </div>`
+            spiritual_block.prepend(spiritual_swipers[3])
         }
         if (diagramaSpiritualCalc[7] > 0) {
             spiritual_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
-        <img src="assets/img/test-icon/spiritual-knowledge.svg" alt="">
-        <div>
-        <h2>Эзотерические знания</h2>
-        <p class="spheres-wrap_paragraph">Трансерфинг, тета-хилинг,  сила рода, нумерология, таро и т.д</p>
-        <a href="#spiritual-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_knowledge()">Узнать подробнее</a>
-        </div>
-        </div>`
+            <img src="assets/img/test-icon/spiritual-knowledge.svg" alt="">
+            <div>
+            <h2>Эзотерические знания</h2>
+            <p class="spheres-wrap_paragraph">Трансерфинг, тета-хилинг,  сила рода, нумерология, таро и т.д</p>
+            <a href="#spiritual-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_spiritual_knowledge()">Узнать подробнее</a>
+            </div>
+            </div>`
+            spiritual_block.prepend(spiritual_swipers[4])
         }
     })
 
@@ -2381,69 +2442,81 @@ window.addEventListener('load', function (e) {
         }
         })
         const personal_wrapper = document.getElementById("personal-block")
+        const personal_block = document.getElementById('personal-gallery_block')
+        const personal_swipers = document.querySelectorAll(".personal-swiper")
+
         personal_wrapper.innerHTML = ''
         if (diagramaPersonalCalc[0] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-self_motivation.svg">
-        <h2 class="works-block_title">Самомотивация</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_self()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-self_motivation.svg">
+            <h2 class="works-block_title">Самомотивация</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_self()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[0])
         }
         if (diagramaPersonalCalc[1] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-goal.svg">
-        <h2 class="works-block_title">Постановка и достижение целей</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_goal()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-goal.svg">
+            <h2 class="works-block_title">Постановка и достижение целей</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_goal()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[1])
         }
         if (diagramaPersonalCalc[2] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-menegment.svg">
-        <h2 class="works-block_title">Тайм-менеджмент</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_menegment()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-menegment.svg">
+            <h2 class="works-block_title">Тайм-менеджмент</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_menegment()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[2])
         }
         if (diagramaPersonalCalc[3] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-leadership.svg">
-        <h2 class="works-block_title">Лидерство</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_leadership()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-leadership.svg">
+            <h2 class="works-block_title">Лидерство</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_leadership()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[3])
         }
         if (diagramaPersonalCalc[4] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-skills.svg">
-        <h2 class="works-block_title">Навыки общения</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_skills()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-skills.svg">
+            <h2 class="works-block_title">Навыки общения</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_skills()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[4])
         }
         if (diagramaPersonalCalc[5] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-brand.svg">
-        <h2 class="works-block_title">Личный бренд</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_brand()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-brand.svg">
+            <h2 class="works-block_title">Личный бренд</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_brand()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[5])
         }
         if (diagramaPersonalCalc[6] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-sexuality.svg">
-        <h2 class="works-block_title">Женственность и сексуальность</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_sexuality()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-sexuality.svg">
+            <h2 class="works-block_title">Женственность и сексуальность</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_sexuality()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[6])
         }
         if (diagramaPersonalCalc[7] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-history.svg">
-        <h2 class="works-block_title">Культура и история</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_history()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-history.svg">
+            <h2 class="works-block_title">Культура и история</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_history()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[7])
         }
         if (diagramaPersonalCalc[8] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/personal-languages.svg">
-        <h2 class="works-block_title">Иностранныи языки</h2>
-        <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_languages()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/personal-languages.svg">
+            <h2 class="works-block_title">Иностранныи языки</h2>
+            <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_languages()">Узнать подробнее</a>
+            </div>`
+            personal_block.prepend(personal_swipers[8])
         }
     })
 
@@ -2654,83 +2727,97 @@ window.addEventListener('load', function (e) {
         }
         })
         const hobby_wrapper = document.getElementById("hobby-block")
+        const hobby_block = document.getElementById('hobby-gallery_block')
+        const hobby_swipers = document.querySelectorAll(".hobby-swiper")
+
         hobby_wrapper.innerHTML = ''
         if (diagramaHobbyCalc[0] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-needlework.svg">
-        <h2 class="works-block_title">Рукоделие</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_needlework()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-needlework.svg">
+            <h2 class="works-block_title">Рукоделие</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_needlework()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[0])
         }
         if (diagramaHobbyCalc[1] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-cooking.svg">
-        <h2 class="works-block_title">Кулинария</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_cooking()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-cooking.svg">
+            <h2 class="works-block_title">Кулинария</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_cooking()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[1])
         }
         if (diagramaHobbyCalc[2] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-painting.svg">
-        <h2 class="works-block_title">Рисование</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_painting()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-painting.svg">
+            <h2 class="works-block_title">Рисование</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_painting()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[2])
         }
         if (diagramaHobbyCalc[3] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-photo.svg">
-        <h2 class="works-block_title">Фото и видео</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_photo()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-photo.svg">
+            <h2 class="works-block_title">Фото и видео</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_photo()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[3])
         }
         if (diagramaHobbyCalc[4] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-music.svg">
-        <h2 class="works-block_title">Музыка</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_music()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-music.svg">
+            <h2 class="works-block_title">Музыка</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_music()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[4])
         }
         if (diagramaHobbyCalc[5] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-house.svg">
-        <h2 class="works-block_title">Дом и сад</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_house()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-house.svg">
+            <h2 class="works-block_title">Дом и сад</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_house()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[5])
         }
         if (diagramaHobbyCalc[6] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-dancing.svg">
-        <h2 class="works-block_title">Танцы</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_dancing()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-dancing.svg">
+            <h2 class="works-block_title">Танцы</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_hobby_dancing()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[6])
         }
         if (diagramaHobbyCalc[7] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-driving.svg">
-        <h2 class="works-block_title">Вождение и тюнинг</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_driving()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-driving.svg">
+            <h2 class="works-block_title">Вождение и тюнинг</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_driving()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[7])
         }
         if (diagramaHobbyCalc[8] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-training.svg">
-        <h2 class="works-block_title">Дрессировка</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_training()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-training.svg">
+            <h2 class="works-block_title">Дрессировка</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_training()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[8])
         }
         if (diagramaHobbyCalc[9] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-modeling.svg">
-        <h2 class="works-block_title">Моделирование и пошив одежды</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_modeling()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-modeling.svg">
+            <h2 class="works-block_title">Моделирование и пошив одежды</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_modeling()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[9])
         }
         if (diagramaHobbyCalc[10] > 0) {
             hobby_wrapper.innerHTML += `<div class="spheres-block_wrap">
-        <img src="assets/img/test-icon/hobby-decor.svg">
-        <h2 class="works-block_title">Декор и флористика</h2>
-        <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_decor()">Узнать подробнее</a>
-        </div>`
+            <img src="assets/img/test-icon/hobby-decor.svg">
+            <h2 class="works-block_title">Декор и флористика</h2>
+            <a href="#hobby-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_hobby_decor()">Узнать подробнее</a>
+            </div>`
+            hobby_block.prepend(hobby_swipers[10])
         }
     })
 

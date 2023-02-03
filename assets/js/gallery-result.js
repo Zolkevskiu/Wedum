@@ -298,55 +298,55 @@ const hobby_swipers = document.querySelectorAll(".hobby-swiper")
 
 function gallery_hobby_needlework() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[0])
+  hobby_block.prepend(hobby_swipers[0])
 }
 
 function gallery_hobby_cooking() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[1])
+  hobby_block.prepend(hobby_swipers[1])
 }
 
 function gallery_hobby_painting() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[2])
+  hobby_block.prepend(hobby_swipers[2])
 }
 
 function gallery_hobby_photo() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[3])
+  hobby_block.prepend(hobby_swipers[3])
 }
 
 function gallery_hobby_music() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[4])
+  hobby_block.prepend(hobby_swipers[4])
 }
 
 function gallery_personal_hobby_house() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[5])
+  hobby_block.prepend(hobby_swipers[5])
 }
 
 function gallery_hobby_dancing() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[6])
+  hobby_block.prepend(hobby_swipers[6])
 }
 
 function gallery_personal_hobby_driving() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[7])
+  hobby_block.prepend(hobby_swipers[7])
 }
 
 function gallery_personal_hobby_training() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[8])
+  hobby_block.prepend(hobby_swipers[8])
 }
 
 function gallery_personal_hobby_modeling() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[9])
+  hobby_block.prepend(hobby_swipers[9])
 }
 
 function gallery_personal_hobby_decor() {
   hobby_block.style.display = "block"
-  hobby_gallery_test_wrap.prepend(hobby_swipers[10])
+  hobby_block.prepend(hobby_swipers[10])
 }
