@@ -4,18 +4,6 @@ window.addEventListener('load', function (e) {
     
     let data = [];
     let inters = [];
-    // let mostCountSum = [3, 2, 3, 1, 3, 1, 2, 1, 2];
-    // let dataSum = [
-    //     8,
-    //     2,
-    //     9,
-    //     2,
-    //     7,
-    //     2,
-    //     2,
-    //     2,
-    //     3
-    // ];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let dataSum = [
         1,
@@ -28,49 +16,12 @@ window.addEventListener('load', function (e) {
         1,
         1
     ];
-    // let sumKrasota = [0, 1, 0, 2, 0, 4, 0, 1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
-    let sumWorks = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0];
-    let mostWorksSum = [
-        0, 
-        0, 
-        0, 
-        0, 
-        0, 
-        0, 
-        0, 
-        0, 
-        0, 
-        0];
-    let sumHealth = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0];
-    let mostHealthSum = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0];
+    let sumWorks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let mostWorksSum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let sumHealth = [0,0,0,0,0,0,0,0];
+    let mostHealthSum = [0,0,0,0,0,0,0,0];
     let sumFinance = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostFinanceSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumRelationship = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -79,31 +30,9 @@ window.addEventListener('load', function (e) {
     let mostBusinessSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumSpiritual = [11, 0, 11, 0, 0, 0, 11, 0];
     let mostSpiritualSum = [0, 0, 0, 0, 0, 0, 0, 0];
-    let sumPersonal = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-    ];
+    let sumPersonal = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let mostPersonalSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let sumHobby = [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-    ];
+    let sumHobby = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let mostHobbySum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     const dataSets = {
         datasets: [{
@@ -2329,7 +2258,7 @@ window.addEventListener('load', function (e) {
         }
         
         const dataPersonal = {
-            labels: ["Самомотивация", "Достижение целей", "Тайм-менеджмент", "Лидерство", "Навыки общения", "Личный бренд", "Женственность и \n сексуальность", "Культура и \n история", "Иностранные языки"],
+            labels: ["Самомотивация", "Достижение целей", "Тайм-менеджмент", "Лидерство", "Навыки общения", "Личный бренд", "Женственность и \n сексуальность", "Культура и \n история", "Иностранные \n языки"],
             datasets: [
             {
                 data: diagramaPersonalCalc,
@@ -2512,7 +2441,7 @@ window.addEventListener('load', function (e) {
         if (diagramaPersonalCalc[8] > 0) {
             personal_wrapper.innerHTML += `<div class="spheres-block_wrap">
         <img src="assets/img/test-icon/personal-languages.svg">
-        <h2 class="works-block_title">Владение иностранными языками</h2>
+        <h2 class="works-block_title">Иностранныи языки</h2>
         <a href="#personal-gallery_block" class="spheres-block_text-button" onclick="gallery_personal_languages()">Узнать подробнее</a>
         </div>`
         }
