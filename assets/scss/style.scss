@@ -1566,8 +1566,8 @@
   .relationship-block_sec {
     overflow: hidden;
     display: none;
-    padding-top: 30px;
-    height: 900px;
+    padding-top: 20px;
+    height: 465px;
   }
   
   .btnCheck-krasota {
@@ -2262,19 +2262,19 @@
       display: none;
     }
     .relationship-block_sec {
-      height: 1088px;
+      height: 584px;
     }
     .finance-gallery-test_wrap {
-      height: 1055px;
+      height: 530px;
     }
     .krasota-gallery-test_wrap {
-      height: 1038px;
+      height: 540px;
     }
     .works-gallery-test_wrap {
       height: 581px;
     }
     .health-gallery-test_wrap {
-      height: 1035px;
+      height: 537px;
     }
     .catalog-block {
       margin-top: 10px;
@@ -2662,6 +2662,9 @@
     }
     .spheres-block-hobby {
       height: 1000px;
+    }
+    .business-gallery-test_wrap {
+      height: 525px;
     }
   }
   @media (max-width: 550px) {
@@ -3225,7 +3228,7 @@
       height: 854px;
     }
     .spiritual-gallery-test_wrap {
-      height: 1070px;
+      height: 535px;
     }
     .spheres-block-personal {
       height: 836px;
@@ -3283,10 +3286,10 @@
       margin-left: 15px;
     }
     .relationship-block_sec {
-      height: 1077px;
+      height: 610px;
     }
     .krasota-gallery-test_wrap {
-      height: 1100px;
+      height: 560px;
     }
     .footer {
       margin-top: 280px;
@@ -3362,13 +3365,16 @@
       height: 1655px;
     }
     .business-gallery-test_wrap {
-      height: 1184px;
+      height: 525px;
     }
     .spiritual-gallery-test_wrap {
-      height: 1145px;
+      height: 565px;
     }
     .works-gallery-test_wrap {
       height: 610px;
+    }
+    .health-gallery-test_wrap {
+      height: 565px;
     }
   }
   @media (max-width: 420px) {
@@ -3402,13 +3408,13 @@
       margin-top: 370px;
     }
     .relationship-block_sec {
-      height: 1170px;
+      height: 610px;
     }
     .health-gallery-test_wrap {
-      height: 1100px;
+      height: 560px;
     }
     .krasota-gallery-test_wrap {
-      height: 1100px;
+      height: 560px;
     }
     .relationship-blocktext_wrap h1 {
       margin-left: 0;
@@ -3539,7 +3545,7 @@
       height: 854px;
     }
     .business-gallery-test_wrap {
-      height: 1245px;
+      height: 570px;
     }
     .spiritual-block {
       margin-top: 45px;
@@ -3553,6 +3559,15 @@
     }
     .works-gallery-test_wrap {
       height: 606px;
+    }
+    .finance-gallery-test_wrap {
+      height: 565px;
+    }
+    .spiritual-gallery-test_wrap {
+      height: 605px;
+    }
+    .personal-gallery-test_wrap {
+      height: 565px;
     }
   }
   @media (max-width: 400px) {
@@ -3621,7 +3636,10 @@
       height: 843px;
     }
     .hobby-gallery-test_wrap {
-      height: 1138px;
+      height: 565px;
+    }
+    .business-gallery-test_wrap {
+      height: 610px;
     }
   }
   @media (max-width: 385px) {
@@ -3689,10 +3707,10 @@
       height: 1400px;
     }
     .relationship-block_sec {
-      height: 1170px;
+      height: 610px;
     }
     .health-gallery-test_wrap {
-      height: 1100px;
+      height: 555px;
     }
     .works-blocktext_wrap {
       height: 630px;
@@ -3743,10 +3761,10 @@
       height: 1590px;
     }
     .business-gallery-test_wrap {
-      height: 1290px;
+      height: 610px;
     }
     .hobby-gallery-test_wrap {
-      height: 1138px;
+      height: 565px;
     }
     .spiritual-blocktext_wrap {
       height: 468px;
@@ -3758,6 +3776,12 @@
     }
     .works-gallery-test_wrap {
       height: 610px;
+    }
+    .krasota-gallery-test_wrap {
+      height: 560px;
+    }
+    .personal-gallery-test_wrap {
+      height: 565px;
     }
   }
   @media (max-width: 344px) {
@@ -3776,7 +3800,7 @@
       height: 1550px;
     }
     .relationship-block_sec {
-      height: 1170px;
+      height: 610px;
     }
     .test-result_block {
       height: 1450px;
@@ -3817,6 +3841,15 @@
     .works-gallery-test_wrap {
       height: 610px;
     }
+    .health-gallery-test_wrap {
+      height: 560px;
+    }
+    .spiritual-gallery-test_wrap {
+      height: 605px;
+    }
+    .hobby-gallery-test_wrap {
+      height: 565px;
+    }
   }
   @media (max-width: 330px) {
     .relationship-blocktext_wrap {
@@ -3826,7 +3859,7 @@
       height: 1605px;
     }
     .relationship-block_sec {
-      height: 1170px;
+      height: 610px;
     }
     .rate-block_text {
       margin-top: 25px;
@@ -3878,6 +3911,18 @@
     }
     .works-gallery-test_wrap {
       height: 610px;
+    }
+    .krasota-gallery-test_wrap {
+      height: 564px;
+    }
+    .health-gallery-test_wrap {
+      height: 560px;
+    }
+    .spiritual-gallery-test_wrap {
+      height: 605px;
+    }
+    .hobby-gallery-test_wrap {
+      height: 565px;
     }
   }
   @media (max-width: 320px) {
@@ -3931,5 +3976,17 @@
     }
     .works-gallery-test_wrap {
       height: 610px;
+    }
+    .relationship-block_sec {
+      height: 610px;
+    }
+    .health-gallery-test_wrap {
+      height: 565px;
+    }
+    .business-gallery-test_wrap {
+      height: 610px;
+    }
+    .hobby-gallery-test_wrap {
+      height: 565px;
     }
   }
