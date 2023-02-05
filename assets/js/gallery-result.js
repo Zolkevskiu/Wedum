@@ -1,19 +1,10 @@
-const krasota_gallery_test_wrap = document.querySelector(".krasota-gallery-test_wrap")
+
 const works_gallery_test_wrap = document.querySelector(".works-gallery-test_wrap")
-const health_gallery_test_wrap = document.querySelector(".health-gallery-test_wrap")
-const finance_gallery_test_wrap = document.querySelector(".finance-gallery-test_wrap")
 const gallery_test_wrap = document.querySelector(".relationship-gallery-test_wrap")
-const business_gallery_test_wrap = document.querySelector(".business-gallery-test_wrap")
-const spiritual_gallery_test_wrap = document.querySelector(".spiritual-gallery-test_wrap")
-const personal_gallery_test_wrap = document.querySelector(".personal-gallery-test_wrap")
-const hobby_gallery_test_wrap = document.querySelector(".hobby-gallery-test_wrap")
-// const gallery_swiper = document.querySelectorAll(".relationship-gallery_test")
+
 
 document.getElementById('spheres-button').style.display = 'flex'
-
-document.getElementById('spheres-button').addEventListener("click", ()=> {
-  document.getElementById('spheres-block').style.display = 'flex'
-})
+document.getElementById('spheres-button').addEventListener("click", ()=> { document.getElementById('spheres-block').style.display = 'flex' })
 
 //krasota blocks
 const krasota_swiper = document.querySelectorAll(".krasota-swiper")

@@ -1,27 +1,18 @@
 window.addEventListener('load', function (e) {
+    
     Chart.register( ChartDataLabels );
     const legendLabelColors = ["#A43FD4"];
-    
+
     let data = [];
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let dataSum = [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1
-    ];
+    let dataSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumWorks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let mostWorksSum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let sumHealth = [0,0,0,0,0,0,0,0];
-    let mostHealthSum = [0,0,0,0,0,0,0,0];
+    let sumHealth = [0, 0, 0, 0, 0, 0, 0, 0];
+    let mostHealthSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumFinance = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostFinanceSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumRelationship = [11, 0, 11, 0, 11, 0, 11, 0];
@@ -56,6 +47,7 @@ window.addEventListener('load', function (e) {
             },
         }]
     };
+
     // Test functions
     // const counterItem = document.querySelectorAll(".counter-item");
     const counters = document.querySelector(".counters");
@@ -156,6 +148,7 @@ window.addEventListener('load', function (e) {
         }
         return sum[index];
     }
+    
     //add listeners
     btnCheck.addEventListener('click', (e) => {
         let temp_if = false;
@@ -257,7 +250,6 @@ window.addEventListener('load', function (e) {
         dataElements = dataElements.map(item => ((10 - item.satisfactorily ) * (item.significance >2 ? item.significance = 200 : item.significance >1 ? item.significance = 20 : item.significance < 2 ? item.significance + 1 : false)));
         // dataElements = dataElements.map(item => ((10 - item.satisfactorily) * item.significance))
 
-        console.log(dataElements);
         let dataSum_temp = dataElements;
 
         let diagrama2 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -3502,5 +3494,4 @@ window.addEventListener('load', function (e) {
             mostHobbyCount[index].innerHTML = `<span data-count=${num}>${num}</span>`;
         })
     });
-
 })

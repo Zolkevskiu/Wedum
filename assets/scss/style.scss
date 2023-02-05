@@ -1552,7 +1552,8 @@
   .works-gallery-test_wrap {
     margin-bottom: -25px;
     margin-top: 40px;
-    height: 1750px;
+    height: 420px;
+    padding-top: 0;
     overflow: hidden;
     display: none;
   }
@@ -1803,7 +1804,7 @@
     justify-content: center;
     padding-top: 61px;
     position: relative;
-    top: 1700px;
+    top: 1420px;
   }
   
   .footer-wrap {
@@ -2270,7 +2271,7 @@
       height: 1038px;
     }
     .works-gallery-test_wrap {
-      height: 2170px;
+      height: 581px;
     }
     .health-gallery-test_wrap {
       height: 1035px;
@@ -3366,6 +3367,9 @@
     .spiritual-gallery-test_wrap {
       height: 1145px;
     }
+    .works-gallery-test_wrap {
+      height: 610px;
+    }
   }
   @media (max-width: 420px) {
     .relationship-block {
@@ -3546,6 +3550,9 @@
     }
     .spheres-block-spiritual {
       height: 850px;
+    }
+    .works-gallery-test_wrap {
+      height: 606px;
     }
   }
   @media (max-width: 400px) {
@@ -3749,6 +3756,9 @@
     .spiritual-block {
     height: 1326px;
     }
+    .works-gallery-test_wrap {
+      height: 610px;
+    }
   }
   @media (max-width: 344px) {
     .health-blocktext_wrap {
@@ -3803,6 +3813,9 @@
     }
     .hobby-block {
       height: 1639px;
+    }
+    .works-gallery-test_wrap {
+      height: 610px;
     }
   }
   @media (max-width: 330px) {
@@ -3863,6 +3876,9 @@
     .krasota-blocktext_wrap {
       height: 775px;
     }
+    .works-gallery-test_wrap {
+      height: 610px;
+    }
   }
   @media (max-width: 320px) {
     .relationship-block {
@@ -3912,5 +3928,8 @@
     }
     .krasota-blocktext_wrap {
       height: 791px;
+    }
+    .works-gallery-test_wrap {
+      height: 610px;
     }
   }
