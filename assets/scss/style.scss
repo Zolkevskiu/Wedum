@@ -1721,16 +1721,6 @@
   .relationship-title_wrap .relationship-title {
     margin-top: 0;
   }
-  // .diagram-border {
-  //   width: 614px;
-  //   position: absolute;
-  // }
-  // .diagram-circle {
-  //   margin-top: -517px;
-  //   margin-left: 122px;
-  //   z-index: 4;
-  //   width: 390px;
-  // }
   .relationship-title_wrap a {
     text-decoration: none;
     width: 116px;
@@ -2671,6 +2661,14 @@
     }
     .business-gallery-test_wrap {
       height: 580px;
+    }
+    .works-gallery-test_wrap {
+      .works-swiper {
+        margin-top: -55px;
+      }
+      .relationship-title_wrap {
+        margin-top: 95px;
+      }
     }
   }
   @media (max-width: 550px) {

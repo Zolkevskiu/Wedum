@@ -2775,6 +2775,12 @@ body {
   .business-gallery-test_wrap {
     height: 580px;
   }
+  .works-gallery-test_wrap .works-swiper {
+    margin-top: -55px;
+  }
+  .works-gallery-test_wrap .relationship-title_wrap {
+    margin-top: 95px;
+  }
 }
 @media (max-width: 550px) {
   .counter-item {
