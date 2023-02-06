@@ -1,12 +1,11 @@
 window.addEventListener('load', function (e) {
-    
     Chart.register( ChartDataLabels );
     const legendLabelColors = ["#A43FD4"];
 
     let data = [];
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let dataSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let dataSum = [1,1,1,1,1,1,1,1,1];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumWorks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -48,7 +47,7 @@ window.addEventListener('load', function (e) {
         }]
     };
 
-    // Test functions
+    // consts increments, decrements & counts
     // const counterItem = document.querySelectorAll(".counter-item");
     const counters = document.querySelector(".counters");
     const increments = document.querySelectorAll(".increment");
@@ -127,7 +126,7 @@ window.addEventListener('load', function (e) {
     const btnCheckPersonal = document.querySelector(".btnCheck-personal");
     const btnCheckHobby = document.querySelector(".btnCheck-hobby");
 
-    //functions
+    //functions calc
     function addSum(sum, index) {
         if (sum[index] != 10) {
             sum[index]++;
@@ -205,37 +204,29 @@ window.addEventListener('load', function (e) {
         //diagrama2
         let dataElements = [
             {
-                value: 0,
+                value: 0, 
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
-
             {
                 value: 0,
             },
@@ -505,7 +496,6 @@ window.addEventListener('load', function (e) {
         ];
 
         dataElements.forEach((item, index) => {
-
             item.satisfactorily = sumRelationship[index];
             item.significance = mostRelationshipSum[index];
 
@@ -1738,7 +1728,7 @@ window.addEventListener('load', function (e) {
         if (diagramaFinanceCalc[5] > 0) {
             finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/finance-investment.svg" alt="">
-            <h2>инвестирования</h2>
+            <h2>Инвестирования</h2>
             <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_investment()">Узнать подробнее</a>
             </div>`
             finance_block.prepend(finance_swipers[2])  
@@ -1746,7 +1736,7 @@ window.addEventListener('load', function (e) {
         if (diagramaFinanceCalc[7] > 0) {
             finance_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/finance-trading.svg" alt="">
-            <h2>трейдинг</h2>
+            <h2>Трейдинг</h2>
             <a href="#finance-gallery_block" class="spheres-block_text-button" onclick="gallery_finance_trading()">Узнать подробнее</a>
             </div>`
             finance_block.prepend(finance_swipers[3])  
@@ -1824,7 +1814,7 @@ window.addEventListener('load', function (e) {
         }
 
         const dataBusiness = {
-            labels: ["", "бизнес-образования (MBA)", "", "Собственний бизнес", "Управления \n бизнесом", " Управление \n персоналом", "", "Работы с клиентами"],
+            labels: ["", "Бизнес-образования (MBA)", "", "Собственний бизнес", "Управления \n бизнесом", " Управление \n персоналом", "", "Работы с клиентами"],
             datasets: [
             {
                 data: diagramaBusinessCalc,
@@ -1953,7 +1943,7 @@ window.addEventListener('load', function (e) {
         if (diagramaBusinessCalc[1] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/business-availability.svg" alt="">
-            <h2>бизнес-образования (MBA)</h2>
+            <h2>Бизнес-образования (MBA)</h2>
             <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_availability()">Узнать подробнее</a>
             </div>`
             business_block.prepend(business_swipers[0])
@@ -1961,7 +1951,7 @@ window.addEventListener('load', function (e) {
         if (diagramaBusinessCalc[3] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/business-experience.svg" alt="">
-            <h2>открытия собственного бизнеса</h2>
+            <h2>Открытия собственного бизнеса</h2>
             <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_experience()">Узнать подробнее</a>
             </div>`
             business_block.prepend(business_swipers[1])
@@ -1969,7 +1959,7 @@ window.addEventListener('load', function (e) {
         if (diagramaBusinessCalc[4] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/business-skills.svg" alt="">
-            <h2>управления бизнесом</h2>
+            <h2>Управления бизнесом</h2>
             <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_manipulation()">Узнать подробнее</a>
             </div>`
             business_block.prepend(business_swipers[2])
@@ -1977,7 +1967,7 @@ window.addEventListener('load', function (e) {
         if (diagramaBusinessCalc[5] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/business-recruitment.svg" alt="">
-            <h2>управление персоналом</h2>
+            <h2>Управление персоналом</h2>
             <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_recruitment()">Узнать подробнее</a>
             </div>`
             business_block.prepend(business_swipers[3])
@@ -1985,7 +1975,7 @@ window.addEventListener('load', function (e) {
         if (diagramaBusinessCalc[7] > 0) {
             business_wrapper.innerHTML += `<div class="spheres-block_wrap">
             <img src="assets/img/test-icon/business-service.svg" alt="">
-            <h2>работа с клиентами</h2>
+            <h2>Работа с клиентами</h2>
             <a href="#business-gallery_block" class="spheres-block_text-button" onclick="gallery_business_service()">Узнать подробнее</a>
             </div>`
             business_block.prepend(business_swipers[4])
