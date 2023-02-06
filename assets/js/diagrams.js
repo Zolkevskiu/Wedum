@@ -5,7 +5,7 @@ window.addEventListener('load', function (e) {
     let data = [];
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let dataSum = [1,1,1,1,1,1,1,1,1];
+    let dataSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumWorks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -1196,7 +1196,7 @@ window.addEventListener('load', function (e) {
                 works_wrapper.innerHTML += `<div class="spheres-block_wrap spheres-block_wrap-paragraph">
                 <img src="assets/img/psychology-lifestyle-icon.svg" alt="lifestyle">
                 <div>
-                <h2>Психология и здоровый образ жизни</h2>
+                <h2>Здоровый образ жизни</h2>
                 <p class="spheres-wrap_paragraph">Психология, нутрициология и т.д.</p>
                 <a href="#works-gallery_block" class="spheres-works spheres-block_text-button" onclick="gallery_works_psychology()">Узнать подробнее</a>
                 </div>
