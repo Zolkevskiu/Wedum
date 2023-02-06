@@ -2776,10 +2776,10 @@ body {
     height: 580px;
   }
   .works-gallery-test_wrap .works-swiper {
-    margin-top: -55px;
+    margin-top: -60px;
   }
   .works-gallery-test_wrap .relationship-title_wrap {
-    margin-top: 95px;
+    margin-top: 105px;
   }
 }
 @media (max-width: 550px) {
