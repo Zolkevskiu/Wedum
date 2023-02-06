@@ -2470,7 +2470,7 @@ body {
     height: 790px;
   }
   .health-block {
-    height: 1550px;
+    height: 1540px;
   }
   .step-health-block {
     margin-top: 35px;
@@ -2482,10 +2482,13 @@ body {
     margin-left: 177.5px;
   }
   .spheres-health-block {
-    height: 975px;
+    height: 1050px;
+  }
+  #health-block .spheres-block_wrap-paragraph {
+    margin-bottom: 86px;
   }
   .spheres-health-block_text {
-    height: 940px;
+    height: 1050px;
   }
   .finance-blocktext_wrap {
     height: 605px;
@@ -3007,7 +3010,7 @@ body {
     height: 1250px;
   }
   .test-window-helath {
-    height: 865px;
+    height: 855px;
   }
   .test-window-helath .counter-item {
     margin: 10px 0;
@@ -3044,6 +3047,12 @@ body {
   }
   .test-window-hobby .counter-item {
     margin: 10px 0;
+  }
+  .spheres-health-block {
+    height: 1035px;
+  }
+  .spheres-health-block .spheres-block_sub-title_sec {
+    margin-top: 580px;
   }
 }
 @media (max-width: 520px) {
@@ -3395,7 +3404,7 @@ body {
     height: 1420px;
   }
   .health-block {
-    height: 1580px;
+    height: 1540px;
   }
   .relationship-test_block {
     height: 1480px;
@@ -3550,7 +3559,7 @@ body {
     margin-left: 0;
   }
   .result-block_text p {
-    margin-top: 665px;
+    margin-top: 640px;
   }
   .test-result_block {
     height: 1330px;
@@ -3700,6 +3709,13 @@ body {
   .step-block-works {
     height: 500px;
   }
+  #spiritual-block {
+    margin-top: 42px;
+    margin-left: 10px;
+  }
+  .health-block {
+    height: 1535px;
+  }
 }
 @media (max-width: 400px) {
   .spheres-block_wrap {
@@ -3805,6 +3821,7 @@ body {
   }
   .step-block {
     padding: 60px 20px;
+    height: 445px;
   }
   .counter-item h1 {
     font-size: 14px;
@@ -3857,9 +3874,6 @@ body {
   }
   .health-blocktext_wrap {
     height: 840px;
-  }
-  .health-block {
-    height: 1657px;
   }
   .finance-block {
     height: 1475px;
@@ -3920,13 +3934,16 @@ body {
   .personal-gallery-test_wrap {
     height: 565px;
   }
+  .health-block {
+    height: 1606px;
+  }
 }
 @media (max-width: 344px) {
   .health-blocktext_wrap {
     height: 895px;
   }
   .health-block {
-    height: 1705px;
+    height: 1680px;
   }
   .catalog-block .catalog-wrapper {
     padding: 0 15px;
@@ -3952,7 +3969,7 @@ body {
     margin-left: 5px;
   }
   .health-block {
-    height: 1735px;
+    height: 1715px;
   }
   .health-blocktext_wrap {
     height: 925px;
@@ -4014,7 +4031,7 @@ body {
     height: 945px;
   }
   .health-block {
-    height: 1755px;
+    height: 1730px;
   }
   .finance-blocktext_wrap {
     height: 645px;
@@ -4061,6 +4078,9 @@ body {
   .hobby-gallery-test_wrap {
     height: 565px;
   }
+  .step-block {
+    height: 460px;
+  }
 }
 @media (max-width: 320px) {
   .relationship-block {
@@ -4079,7 +4099,7 @@ body {
     height: 965px;
   }
   .health-block {
-    height: 1780px;
+    height: 1755px;
   }
   .finance-blocktext_wrap {
     height: 665px;
@@ -4125,5 +4145,8 @@ body {
   }
   .hobby-gallery-test_wrap {
     height: 565px;
+  }
+  .step-block {
+    height: 470px;
   }
 }
