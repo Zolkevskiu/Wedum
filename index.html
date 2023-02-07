@@ -10346,7 +10346,7 @@
             <h2>Сохранить результат</h2>
             <p>Внимание! Будет сохранена часть теста с результатами,  отображенная на данный момент на странице.</p>
             <div class="modal-button_container">
-                <button class="button-cancel">Отмена</button>
+                <button class="button-cancel" onclick="close_modal()">Отмена</button>
                 <button class="button-accept">Сохранить</button>
             </div>
         </div>
@@ -10373,7 +10373,7 @@
         const close_modal = () => {
             modal_bg.style.display = "none"
         }
-
+        
         window.onclick = (event) => {
             event.target == modal_bg ? modal_bg.style.display = "none" : false
         }

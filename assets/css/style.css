@@ -85,7 +85,9 @@ body {
   flex-direction: column;
   background: #FFFFFF;
   border-radius: 10px;
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
+  margin: 0 25px;
   height: 227px;
 }
 .modal-block h2 {
@@ -95,7 +97,8 @@ body {
   color: #252525;
 }
 .modal-block p {
-  width: 480px;
+  max-width: 480px;
+  width: 100%;
   margin-top: 20px;
   font-weight: 400;
   font-size: 18px;
@@ -104,7 +107,8 @@ body {
 }
 .modal-block .modal-button_container {
   display: flex;
-  margin-top: 20px;
+  position: relative;
+  top: 20px;
 }
 .modal-block .modal-button_container .button-cancel {
   font-size: 18px;
@@ -2905,6 +2909,14 @@ body {
   }
 }
 @media (max-width: 550px) {
+  .modal-block {
+    height: 260px;
+    width: 95%;
+  }
+  .modal-block P {
+    max-width: 400px;
+    text-align: center;
+  }
   .save-result_block {
     flex-direction: column;
     justify-content: center;
@@ -3495,6 +3507,12 @@ body {
   }
 }
 @media (max-width: 500px) {
+  .modal-close_icon {
+    display: none;
+  }
+  .modal-block P {
+    max-width: 95%;
+  }
   .rate-block img {
     width: 95%;
   }
@@ -3653,6 +3671,9 @@ body {
   }
 }
 @media (max-width: 420px) {
+  .modal-block P {
+    max-width: 90%;
+  }
   .step-block-works .step-block_col:first-child .step-block_col-text h3 {
     width: 300px;
   }
@@ -3860,6 +3881,15 @@ body {
   }
 }
 @media (max-width: 400px) {
+  .modal-block .modal-button_container .button-cancel {
+    width: 100px;
+    font-size: 16px;
+  }
+  .modal-block .modal-button_container .button-accept {
+    margin-left: 10px;
+    width: 130px;
+    font-size: 16px;
+  }
   .spheres-block_wrap {
     top: 449px;
   }
