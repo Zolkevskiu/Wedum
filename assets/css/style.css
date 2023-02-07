@@ -2159,6 +2159,15 @@ body {
   }
 }
 @media (max-width: 1000px) {
+  .save-result_block {
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+  }
+  .save-result_block .save-result_button {
+    margin-left: 0;
+    margin-top: 30px;
+  }
   .counter-item:nth-child(2)::before {
     display: none;
   }
@@ -2896,6 +2905,11 @@ body {
   }
 }
 @media (max-width: 550px) {
+  .save-result_block {
+    flex-direction: column;
+    justify-content: center;
+    height: 240px;
+  }
   .counter-item {
     height: 72px;
     max-width: 500px;
@@ -3930,6 +3944,9 @@ body {
   }
 }
 @media (max-width: 385px) {
+  .save-result_block {
+    height: 280px;
+  }
   .gl-window-first {
     width: 326px;
   }
