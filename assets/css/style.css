@@ -267,10 +267,11 @@ body {
 
 .road-ul_href {
   margin-top: 20px;
+  overflow: hidden;
 }
 
 .road-ul_href-wrap {
-  overflow: hidden;
+  width: 422px;
 }
 
 .road-ul_href .road-href {
