@@ -278,6 +278,7 @@ body {
   line-height: 130%;
   color: #C4C4C4;
   padding: 0 10px;
+  overflow: hidden;
 }
 
 .road-ul_href .road-href:nth-child(2)::before {
@@ -321,7 +322,7 @@ body {
   margin-left: 150px;
 }
 
-.rate-block p {
+.rate-block h1 {
   font-weight: 300;
   font-size: 35px;
   line-height: 130%;
@@ -3444,7 +3445,7 @@ body {
     position: relative;
     top: -70px;
   }
-  .rate-block p {
+  .rate-block h1 {
     font-size: 32px;
   }
   .rate-block h2 {
