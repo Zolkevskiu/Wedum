@@ -251,11 +251,8 @@
   
   .road-ul_href {
     margin-top: 20px;
-    overflow: hidden;
   }
-  .road-ul_href-wrap {
-    width: 422px;
-  }
+
   .road-ul_href .road-href {
     position: relative;
     text-decoration: none;
@@ -3410,6 +3407,15 @@
     .step-block {
       height: 430px;
     }
+    .road-ul_href .road-href {
+      font-size: 14px;
+    }
+    .road-ul_href .road-href:nth-child(3)::before {
+      margin-left: 185px;
+    }
+    .road-ul_href .road-href:nth-child(2)::before {
+      margin-left: 73px;
+    }
   }
   @media (max-width: 420px) {
     .step-block-works .step-block_col:first-child .step-block_col-text h1 {
@@ -3690,6 +3696,18 @@
     }
     .business-gallery-test_wrap {
       height: 610px;
+    }
+    .road-ul_href .road-href {
+      font-size: 12px;
+    }
+    .road-ul_href .road-href:nth-child(3)::before {
+      margin-left: 144px;
+    }
+    .road-ul_href .road-href:nth-child(2)::before {
+      margin-left: 57px;
+    }
+    .road-ul_href .road-href {
+      padding: 0 5px;
     }
   }
   @media (max-width: 385px) {
