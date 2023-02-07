@@ -469,6 +469,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckRelationship.addEventListener('click', (e) => {
         document.getElementById("spheres-relationship_show").style.display = "flex"
+        document.querySelector('.save-result_block-relationship').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -701,6 +702,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckKrasota.addEventListener('click', (e) => {
         document.getElementById("spheres-krasota_show").style.display = "flex"
+        document.querySelector('.save-result_block-krasota').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -933,6 +935,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckWorks.addEventListener('click', (e) => {
         document.getElementById("spheres-works_show").style.display = "flex"
+        document.querySelector('.save-result_block-works').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -1243,6 +1246,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckHealth.addEventListener('click', (e) => {
         document.getElementById("spheres-health_show").style.display = "flex"
+        document.querySelector('.save-result_block-health').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -1509,6 +1513,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckFinance.addEventListener('click', (e) => {
         document.getElementById("spheres-finance_show").style.display = "flex"
+        document.querySelector('.save-result_block-finance').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -1746,6 +1751,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckBusiness.addEventListener('click', (e) => {
         document.getElementById("spheres-business_show").style.display = "flex"
+        document.querySelector('.save-result_block-business').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -1985,6 +1991,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckSpiritual.addEventListener('click', (e) => {
         document.getElementById("spheres-spiritual_show").style.display = "flex"
+        document.querySelector('.save-result_block-spiritual').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -2230,6 +2237,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckPersonal.addEventListener('click', (e) => {
         document.getElementById("spheres-personal_show").style.display = "flex"
+        document.querySelector('.save-result_block-personal').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,
@@ -2505,6 +2513,7 @@ window.addEventListener('load', function (e) {
 
     btnCheckHobby.addEventListener('click', (e) => {
         document.getElementById("spheres-hobby_show").style.display = "flex"
+        document.querySelector('.save-result_block-hobby').style.display = 'flex'
         let dataElements = [
             {
                 value: 0,

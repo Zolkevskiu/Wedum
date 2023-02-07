@@ -4,7 +4,11 @@ const gallery_test_wrap = document.querySelector(".relationship-gallery-test_wra
 
 
 document.getElementById('spheres-button').style.display = 'flex'
-document.getElementById('spheres-button').addEventListener("click", ()=> { document.getElementById('spheres-block').style.display = 'flex' })
+
+document.getElementById('spheres-button').addEventListener("click", ()=> { 
+  document.getElementById('spheres-block').style.display = 'flex' 
+  document.querySelector('.save-result_block').style.display = 'flex'
+})
 
 //krasota blocks
 const krasota_swiper = document.querySelectorAll(".krasota-swiper")
