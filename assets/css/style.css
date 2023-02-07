@@ -269,6 +269,10 @@ body {
   margin-top: 20px;
 }
 
+.road-ul_href-wrap {
+  overflow: hidden;
+}
+
 .road-ul_href .road-href {
   position: relative;
   text-decoration: none;
@@ -278,7 +282,6 @@ body {
   line-height: 130%;
   color: #C4C4C4;
   padding: 0 10px;
-  overflow: hidden;
 }
 
 .road-ul_href .road-href:nth-child(2)::before {
