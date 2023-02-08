@@ -119,8 +119,14 @@
         color: #A43FD4;
         border-radius: 10px;
         background: none;
+        transition: .3s;
+        &:hover {
+          background: #A43FD4;
+          color: #fff;
+        }
       }
       .button-accept {
+        transition: .3s;
         font-size: 18px;
         cursor: pointer;
         margin-left: 20px;
@@ -131,6 +137,9 @@
 
         border: 2px solid #A43FD4;
         border-radius: 10px;
+        &:hover {
+          background: #F400CD;
+        }
       }
     }
     .modal-close_icon {

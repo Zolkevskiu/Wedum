@@ -119,8 +119,14 @@ body {
   color: #A43FD4;
   border-radius: 10px;
   background: none;
+  transition: 0.3s;
+}
+.modal-block .modal-button_container .button-cancel:hover {
+  background: #A43FD4;
+  color: #fff;
 }
 .modal-block .modal-button_container .button-accept {
+  transition: 0.3s;
   font-size: 18px;
   cursor: pointer;
   margin-left: 20px;
@@ -130,6 +136,9 @@ body {
   background: #A43FD4;
   border: 2px solid #A43FD4;
   border-radius: 10px;
+}
+.modal-block .modal-button_container .button-accept:hover {
+  background: #F400CD;
 }
 .modal-block .modal-close_icon {
   cursor: pointer;

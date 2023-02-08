@@ -5,8 +5,7 @@ window.addEventListener('load', function (e) {
     let data = [];
     let inters = [];
     let mostCountSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    // let dataSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let dataSum = [1, 1, 1, 1, 1, 1, 1, 1, 1];
+    let dataSum = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     let sumKrasota = [11, 0, 11, 0, 11, 0, 11, 0];
     let mostKrasotaSum = [0, 0, 0, 0, 0, 0, 0, 0];
     let sumWorks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
